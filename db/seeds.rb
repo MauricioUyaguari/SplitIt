@@ -23,3 +23,15 @@ user5.save!
 user6.save!
 user7.save!
 user8.save!
+
+
+
+
+# this if for the bills
+
+
+# 
+# Bill.Destroy_all
+#
+#
+# bill1 = Bill.new(title: "bill1", description: "dinner", image_url: "a", total_amt: 14.23}

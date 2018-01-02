@@ -78,7 +78,30 @@ formHeading(){
   }
 }
 
+  linkto(){
+    if(this.props.formType === "login"){
+      return(
+        <Link to="/signup"> Sign Up</Link>
+      );
+    } else{
+      return(
+        <Link to="/login"> Log In</Link>
+      );
+    }
+  }
 
+
+
+  renderErrors(){
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+        </li>) )}
+      </ul>
+    );
+  }
 
   render() {
     const {formType } = this.props;
@@ -91,7 +114,8 @@ formHeading(){
         <br />
           {this.passwordRender()}
         <br />
-          <input type="submit" value={submitLabel} />
+          <input type="submit" value={submitLabel} /> or
+            {this.linkto()}
       </form>
     </div>);
   }
