@@ -104,7 +104,7 @@ formHeading(){
     const {formType } = this.props;
     const submitLabel = (formType) === "login" ? "Log In" : "Sign me Up";
     return(
-    <div>
+    <div className="entrance-form">
       <img src={window.staticImages.splititlogo}></img>
       <form className={`login-signup-form`} onSubmit={this.handleSubmit}>
         {this.renderErrors()}

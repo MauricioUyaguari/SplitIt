@@ -16,11 +16,11 @@ const sessionLinks = () => {
 
 const loggedinGreeting = (currentUser, logout) => {
   return (
-  <div>
+  <div className="greetings">
     <hgroup>
-      <h2> Hi, {currentUser.email} </h2>
-      <button className="logoutbutton" onClick={logout}>Log out</button>
-    </hgroup>
+      <h2> {currentUser.email}</h2>
+  </hgroup>
+  <button className="logoutbutton" onClick={logout}>Log out</button>
   </div>
   );
 };

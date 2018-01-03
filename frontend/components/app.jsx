@@ -1,11 +1,13 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
+import Footer from './greeting/footer';
 import { Route,
 Redirect,
 Switch,
 Link,
 HashRouter} from 'react-router-dom';
 import SessionFormContainer from './session_form/session_form_container';
+
 import { AuthRoute } from '../util/route_util';
 
 const App = () => {
@@ -21,6 +23,7 @@ const App = () => {
         <AuthRoute path="/login" component={SessionFormContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
       </main>
+      <Footer />
   </div>
   );
 };

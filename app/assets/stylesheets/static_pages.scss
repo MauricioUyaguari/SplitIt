@@ -10,10 +10,7 @@
       font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif !important;
 }
 
-button {
-  color: red;
-  background-color: red;
-}
+
 
 .nav-header {
   display: flex;
@@ -22,6 +19,7 @@ button {
   text-align: center;
   font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif !important;
   width: 100vw;
+  overflow:hidden;
   position: fixed;
   top: 0;
   left:0;
