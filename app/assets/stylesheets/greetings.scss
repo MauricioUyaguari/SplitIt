@@ -1,10 +1,16 @@
+.main-div {
+  display: flex;
+  flex-direction: column;
+}
+
+
 .bodydiv {
   position: relative;
   top: 40px;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   height: 562px;
 }
 
@@ -120,4 +126,44 @@
   text-shadow: 0 -1px 0 #c83400;
   border-radius: 5px;
   border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+}
+
+
+
+
+footer {
+  background: grey;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: grey;
+  padding: 20px;
+
+}
+
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: grey;
+  padding: 20px;
+}
+
+
+
+.footer-links ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.footer-links li {
+  padding-left: 10px;
+}
+
+
+.aboutus p {
+  padding-top: 5px;
 }
