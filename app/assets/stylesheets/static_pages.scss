@@ -1,19 +1,16 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-//
-
-//
 .main-div {
-  display: flex;
       font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif !important;
 }
 
 
 
+// Application Header
+
 .nav-header {
   display: flex;
+  justify-content: space-around;
+    align-items: center;
   background: #5bc5a7;
   color: #fff;
   text-align: center;
@@ -27,19 +24,10 @@
 }
 
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
-  margin: 0 auto;
-  width: 960px;
-}
-
 .nav-session{
   display: flex;
   justify-content: space-around;
-  width: 167;
+  width: 167px;
   height: 50%;
 
 }
@@ -49,6 +37,8 @@
   padding: 5px;
   font-size: 14px;
 }
+
+
 
 .nav-login {
   color: #fff;
@@ -61,8 +51,14 @@
 .nav-signup {
   background: #ff652f;
   color: #fff;
+  border-radius: 4px;
+  text-shadow: 0 -1px 0 #c83400;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+
 }
 
 .splitit-sign {
   color: white;
+  font-size: 20px;
+  letter-spacing: 7px;
 }
