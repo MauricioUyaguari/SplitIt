@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
 
  passwordRender(){
    return(
-     <label>
+     <label className="password-input">
        <span>Password</span>
        <input type="password"
          value={this.state.password}
@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
  }
  emailRender(){
    return(
-     <label>
+     <label className="email-input">
        <span>Email Address</span>
        <input type="text"
          value={this.state.email}
@@ -61,16 +61,13 @@ class SessionForm extends React.Component {
 formHeading(){
   if(this.props.formType === "login"){
     return(<div>
-      <br />
-      Welcome to SplitIt!
+      WELCOME TO   S P L I T I T
     </div>);
   } else{
   return (<div>
-    <br />
     Introduce Yourself
-    <br />
     <label>
-      <span>Name</span>
+      <span>Hi There! My Name is </span>
       <input type="text">
       </input>
     </label>
@@ -85,7 +82,7 @@ formHeading(){
       );
     } else{
       return(
-        <Link to="/login"> Log In</Link>
+        <Link to="/login"> Log in</Link>
       );
     }
   }
@@ -105,19 +102,27 @@ formHeading(){
 
   render() {
     const {formType } = this.props;
-    const submitLabel = (formType) === "login" ? "Log In" : "Sign Up";
-    return(<div className={`${formType}-form`}>
-      <form onSubmit={this.handleSubmit}>
+    const submitLabel = (formType) === "login" ? "Log In" : "Sign me Up";
+    return(
+    <div>
+      <img src={window.staticImages.splititlogo}></img>
+      <form className={`login-signup-form`} onSubmit={this.handleSubmit}>
         {this.renderErrors()}
-        {this.formHeading()}
-        {this.emailRender()}
-        <br />
+        <section className="form-heading" >
+          {this.formHeading()}
+        </section>
+          {this.emailRender()}
           {this.passwordRender()}
-        <br />
-          <input type="submit" value={submitLabel} /> or
-            {this.linkto()}
+        <div className={`submit-creds${formType}`}>
+          <input type="submit" value={submitLabel} />
+        </div>
+        <p>
+          <span> or</span>
+          <span>{this.linkto()} </span>
+        </p>
       </form>
-    </div>);
+    </div>
+  );
   }
 
 }

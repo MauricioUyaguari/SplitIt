@@ -3,6 +3,10 @@
   	window.currentUser = <%= render("api/users/user.json.jbuilder",
   		user: current_user).html_safe %>
   <% end %>
+
+  window.staticImages = {
+    splititlogo: '<%= asset_url('splititlogo.png') %>'
+  }
 </script>
 
 

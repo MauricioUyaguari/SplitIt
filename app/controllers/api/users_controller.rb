@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
     @user.image_url = "a"
     # To DO this will change once we have images randomly assigned
 
-    if @user
+    if @user.save
       login(@user)
       render 'api/users/show'
     else

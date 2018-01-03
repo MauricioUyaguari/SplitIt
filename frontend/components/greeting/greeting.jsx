@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 
 const sessionLinks = () => {
-  return (<nav>
-    <Link to="/login">Login</Link>
-    <br></br>
-    <Link to="/signup">Sign Up</Link>
-  </nav>);
+  return (<div className="nav-session">
+    <Link className="nav-login" to="/login">Login</Link>
+    <span> or </span>
+    <Link className="nav-signup" to="/signup">Sign Up</Link>
+  </div>);
 };
 
 
@@ -16,10 +16,12 @@ const sessionLinks = () => {
 
 const loggedinGreeting = (currentUser, logout) => {
   return (
+  <div>
     <hgroup>
       <h2> Hi, {currentUser.email} </h2>
-      <button onClick={logout}>Log out</button>
-  </hgroup>
+      <button className="logoutbutton" onClick={logout}>Log out</button>
+    </hgroup>
+  </div>
   );
 };
 
