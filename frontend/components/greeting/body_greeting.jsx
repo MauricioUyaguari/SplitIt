@@ -2,7 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const withUser = () => {
-const message = "Welcome to the future! SplitIt is the easiest and cleanest way to split your bills among friends and family. It ensures you divide up your bills fairly."
+
+const message = () => {
+  return (
+  <p>
+  <span>Welcome </span>
+  to the future!
+  <span> Split </span>
+  <span> IT </span>
+  is the
+  <span> easiest </span>
+  and
+  <span> cleanest </span>
+  way to
+  <span> split </span>
+  your
+  <span> bills </span>
+  among friends and family.
+  </p>
+);
+};
   return (
     <div className="main-greeting-div">
     <section className="main-greeting-top-section">
@@ -10,7 +29,7 @@ const message = "Welcome to the future! SplitIt is the easiest and cleanest way 
         <img src={window.staticImages.splititlogo}></img>
         <p> Split Expenses Fairly and Easily</p>
       </div>
-      <p> {message} </p>
+      {message()}
     </section>
     <section className="main-greeting-bottom-section">
       <figure>

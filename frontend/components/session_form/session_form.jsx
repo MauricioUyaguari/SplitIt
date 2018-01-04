@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
  emailRender(){
    return(
      <label className="email-input">
-       <span>Email Address</span>
+       <span>Username</span>
        <input type="text"
          value={this.state.email}
          onChange={this.update('email')}
@@ -65,11 +65,9 @@ formHeading(){
     </div>);
   } else{
   return (<div>
-    Introduce Yourself
+    Introduce yourself
     <label>
-      <span>Hi There! My Name is </span>
-      <input type="text">
-      </input>
+      <span>Hi there my name is </span>
     </label>
   </div>);
   }
@@ -90,8 +88,11 @@ formHeading(){
 
 
   renderErrors(){
+    if(this.props.errors.length < 1){
+      return (<span></span>);
+    }
     return(
-      <ul>
+      <ul className="creds-errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -111,8 +112,10 @@ formHeading(){
         <section className="form-heading" >
           {this.formHeading()}
         </section>
-          {this.emailRender()}
-          {this.passwordRender()}
+          <secion className="email-and-password">
+            {this.emailRender()}
+            {this.passwordRender()}
+          </secion>
         <div className={`submit-creds${formType}`}>
           <input type="submit" value={submitLabel} />
         </div>

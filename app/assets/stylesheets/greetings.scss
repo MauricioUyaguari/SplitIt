@@ -1,17 +1,11 @@
 
 
-.bodydiv {
-  top: 40px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 562px;
-}
 
 .entrance-form {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  height: calc(100vh - 116px);
 
 }
 
@@ -71,7 +65,9 @@
 }
 
 
-
+.email-and-password * {
+  padding-bottom: 5px;
+}
 .submit-credslogin input {
   background: #ff652f;
   border: none;
@@ -124,41 +120,22 @@
 }
 
 
-// footer stuff
 
-footer {
-  position: fixed;
-  background: grey;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: grey;
-  padding: 20px;
+// errors
 
-}
-
-
-.footer-container {
+.creds-errors {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: grey;
-  padding: 20px;
+  flex-direction: column;
+  padding-bottom: 10px;
+  border-color: #b34;
+  background: #c45;
+  border-radius: 0 0 4px 4px;
+
 }
 
+.creds-errors li {
+  padding: 5px;
+  color: white;
+  font-size: 14px;
 
-
-.footer-links ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.footer-links li {
-  padding-left: 10px;
-}
-
-
-.aboutus p {
-  padding-top: 5px;
 }
