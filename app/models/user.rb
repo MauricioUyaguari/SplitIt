@@ -69,6 +69,10 @@ class User < ApplicationRecord
     self.friends + self.requesters
   end
 
+  def self.find_by_username(username)
+    self.find_by(email: username)
+  end
+
 
 
 
