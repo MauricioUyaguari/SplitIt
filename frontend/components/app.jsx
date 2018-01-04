@@ -5,13 +5,18 @@ Redirect,
 Switch,
 Link,
 HashRouter} from 'react-router-dom';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 // Greeting Containers; Nav, Body and Footer and Session
 import GreetingContainer from './greeting/greeting_container';
 import FooterContainer from './greeting/footer_container';
 import BodyGreetingContainer from './greeting/body_greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
+
+
+
+// Friends, Bill, splits and Transactions
+import FriendsIndexContainter from './friends/friends_index_container';
 
 
 
@@ -29,6 +34,7 @@ const App = () => {
         <AuthRoute path="/login" component={SessionFormContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
         <Route exact path="/" component={BodyGreetingContainer} />
+        <ProtectedRoute component={FriendsIndexContainter} />
       </main>
       <FooterContainer />
   </div>
