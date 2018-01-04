@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  email           :string           not null
+#  image_url       :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
 
   attr_reader :password
@@ -7,6 +20,15 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil: true}
 
   after_initialize :ensure_session_token
+
+
+  has_many :friends,
+  foreign_key: :friend_id,
+  class_name: :Friendship
+
+  has_many :requesters,
+    foreign_key: :requester_id,
+    class_name: :Friendship
 
   def password=(password)
     @password = password
@@ -39,5 +61,15 @@ class User < ApplicationRecord
     return user if user.is_password?(password)
     nil
   end
+
+  #
+
+
+  def friendships
+    self.friends + self.requesters
+  end
+
+
+
 
 end
