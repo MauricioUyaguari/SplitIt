@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import * as ApiUtil from './util/session_api_util';
-import { login } from './actions/session_actions';
+import { fetchAllFriends,createFriend  } from './actions/friend_actions';
+import { login  } from './actions/session_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,10 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
   window.signup = ApiUtil.signup;
   window.logout = ApiUtil.logout;
+  //friends
+  window.fetchAllFriends = fetchAllFriends;
+  window.createFriend = createFriend;
+
   //
   ReactDOM.render(<Root store={store}/>, root);
 });
 
 
-const testUser = {email: "mauricio", password: "password"} ;
-const newUser = {email: "mauricio1", password: "password"} ;
+const testUser = {id: 48};

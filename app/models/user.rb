@@ -22,13 +22,21 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
 
-  has_many :friends,
+  has_many :in_friendships,
   foreign_key: :friend_id,
   class_name: :Friendship
 
-  has_many :requesters,
+  has_many :out_friendships,
     foreign_key: :requester_id,
     class_name: :Friendship
+
+    has_many :in_friends,
+    through: :in_friendships,
+    source: :requester
+
+    has_many :out_friends,
+    through: :out_friendships,
+    source: :friend
 
   def password=(password)
     @password = password
@@ -65,8 +73,8 @@ class User < ApplicationRecord
   #
 
 
-  def friendships
-    self.friends + self.requesters
+  def all_friends
+    self.in_friends + self.out_friends
   end
 
   def self.find_by_username(username)
