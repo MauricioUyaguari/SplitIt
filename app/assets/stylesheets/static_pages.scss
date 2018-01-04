@@ -1,6 +1,11 @@
 
+.html, body {
+height: 100%;
+}
 .main-div {
       font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+      position: relative;
+      min-height: 100%;
 }
 
 
@@ -10,7 +15,7 @@
 .nav-header {
   display: flex;
   justify-content: space-around;
-    align-items: center;
+  align-items: center;
   background: #5bc5a7;
   color: #fff;
   text-align: center;
@@ -26,6 +31,7 @@
 
 .nav-session{
   display: flex;
+  align-items: center;
   justify-content: space-around;
   width: 167px;
   height: 50%;
@@ -38,7 +44,9 @@
   font-size: 14px;
 }
 
+.nav-session span {
 
+}
 
 .nav-login {
   color: #fff;
@@ -61,4 +69,5 @@
   color: white;
   font-size: 20px;
   letter-spacing: 7px;
+  text-align: center;
 }

@@ -1,7 +1,6 @@
 
 
 .bodydiv {
-  position: relative;
   top: 40px;
   width: 100%;
   display: flex;
@@ -125,11 +124,11 @@
 }
 
 
-
+// footer stuff
 
 footer {
+  position: fixed;
   background: grey;
-  position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
