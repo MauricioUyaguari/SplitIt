@@ -9,6 +9,7 @@
     "lodash": "^4.17.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-modal": "^3.1.10",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
@@ -17,9 +18,9 @@
     "webpack": "^3.10.0"
   },
   "engines": {
-  "node": "6.10.1",
-  "npm": "3.10.10"
-},
+    "node": "6.10.1",
+    "npm": "3.10.10"
+  },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
   "main": "index.js",
@@ -29,7 +30,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch",
-  "postinstall": "webpack"
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
