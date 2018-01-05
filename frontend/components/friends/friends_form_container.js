@@ -5,7 +5,7 @@ import { createFriend, fetchSearchedUsers  } from '../../actions/friends_actions
 
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     friends: Object.values(state.friends),
     searchedUsers: Object.values(state.search)

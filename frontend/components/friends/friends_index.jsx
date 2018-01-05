@@ -9,6 +9,8 @@ class FriendsIndex extends React.Component {
   constructor(props){
     super(props);
     this.state = {hidden: true};
+    this.handleHidden = this.handleHidden.bind(this);
+    this.renderForm = this.renderForm.bind(this);
   }
 
   componentDidMount(){
@@ -27,13 +29,33 @@ class FriendsIndex extends React.Component {
   }
 
 
+  handleHidden(){
+    debugger
+    this.setState({ hidden: !this.state.hidden});
+  }
+
+  renderForm(){
+    if(!this.state.hidden){
+      return (
+        <FriendFormContainer />
+      );
+    }
+  }
+
 
   render(){
     return (<nav className="friends-index">
+      <div>
+        <span> Friends </span>
+        <button onClick={this.handleHidden}>+</button>
+      </div>
       <ul>
         { this.renderFriends() }
       </ul>
-      <FriendFormContainer />
+
+
+      {this.renderForm()}
+
     </nav>);
   }
 
