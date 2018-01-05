@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
+
+demoUser = User.new(email: "DemoUser", password: "password", image_url: "test")
+demoUser.save!
+
 user1 = User.new(email: "luis", password: "password", image_url: "test")
 user2 = User.new(email: "mauricio", password: "password", image_url: "test")
 user3 = User.new(email: "uyaguari", password: "password", image_url: "test")
@@ -38,6 +42,21 @@ user14.save!
 
 
 Friendship.destroy_all
+
+#Demo Friendships
+Friendship.create!(requester_id: demoUser.id, friend_id: user1.id)
+Friendship.create!(requester_id: demoUser.id, friend_id: user2.id)
+Friendship.create!(requester_id: demoUser.id, friend_id: user3.id)
+Friendship.create!(requester_id: demoUser.id, friend_id: user4.id)
+Friendship.create!(requester_id: demoUser.id, friend_id: user5.id)
+Friendship.create!(requester_id: demoUser.id, friend_id: user6.id)
+Friendship.create!(requester_id: demoUser.id, friend_id: user7.id)
+Friendship.create!(requester_id: demoUser.id, friend_id: user8.id)
+Friendship.create!(requester_id: demoUser.id, friend_id: user9.id)
+Friendship.create!(requester_id: demoUser.id, friend_id: user10.id)
+Friendship.create!(requester_id: demoUser.id, friend_id: user11.id)
+
+
 
 friendship1 = Friendship.new(requester_id: user1.id, friend_id: user2.id)
 friendship2 = Friendship.new(requester_id: user1.id, friend_id: user3.id)
