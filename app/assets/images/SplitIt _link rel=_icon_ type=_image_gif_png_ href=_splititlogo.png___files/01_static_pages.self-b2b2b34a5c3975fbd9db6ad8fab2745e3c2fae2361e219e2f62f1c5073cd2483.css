@@ -1,0 +1,130 @@
+/* line 6, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.main-div {
+  font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+/* line 20, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.nav-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #5bc5a7;
+  color: #fff;
+  text-align: center;
+  font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+  width: 100vw;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  height: 48px;
+}
+
+/* line 38, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.bodydiv {
+  top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* line 50, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #666;
+}
+
+/* line 68, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.nav-session {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 167px;
+  height: 50%;
+}
+
+/* line 78, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.nav-session * {
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* line 87, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.nav-login {
+  color: #fff;
+  text-shadow: 0 -1px 0 #318970;
+  border-radius: 4px;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* line 95, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.nav-signup {
+  background: #ff652f;
+  color: #fff;
+  border-radius: 4px;
+  text-shadow: 0 -1px 0 #c83400;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+/* line 104, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.splitit-sign {
+  color: white;
+  font-size: 20px;
+  letter-spacing: 7px;
+  text-align: center;
+}
+
+/* line 116, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: grey;
+  padding: 20px;
+  height: 76px;
+}
+
+/* line 128, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.footer-links ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  line-style: none;
+}
+
+/* line 135, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.footer-links ul li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+/* line 143, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.connectLogos {
+  height: 20px;
+  width: 20px;
+  padding: 20px;
+}
+
+/* line 148, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.aboutusNYC {
+  padding-bottom: 10px;
+}
+
+/* line 152, /Users/luismuyaguari/Desktop/FullStack/SplitIt/app/assets/stylesheets/01_static_pages.scss */
+.aboutus p {
+  padding-top: 5px;
+}

@@ -44,17 +44,14 @@ class FriendsIndex extends React.Component {
 
   render(){
     return (<nav className="friends-index">
-      <div>
+      <div className="friends-index-header">
         <span> Friends </span>
-        <button onClick={this.handleHidden}>+</button>
+        <button className="addFriendButton" onClick={this.handleHidden}>+ add </button>
       </div>
       <ul>
         { this.renderFriends() }
       </ul>
-
-
       {this.renderForm()}
-
     </nav>);
   }
 

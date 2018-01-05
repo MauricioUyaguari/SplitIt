@@ -1,0 +1,138 @@
+// left nav
+
+
+//top DashBoard
+
+
+//move after
+
+.left-nav-dashboard {
+  height: 100px;
+
+  padding: 5px;
+  padding-top: 10px;
+  font-size: 18px;
+  //font
+  line-height: 21px;
+  text-rendering: optimizeLegibility;
+  font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+  color: #999;
+
+
+  //use this for testing
+  // background: pink;
+
+}
+
+.left-nav-dashboard ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  height: 100%;
+  padding-right: 15px;
+
+}
+
+.left-nav-dashboard ul li {
+  height: 19px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 3px 8px 2px 8px;
+  text-decoration: none;
+}
+
+.left-nav-dashboard ul li a {
+  color: #666666;
+}
+
+.left-nav-dashboard ul li:hover {
+  background: silver;
+  height: 19px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 3px 8px 2px 8px;
+  text-decoration: none;
+}
+
+
+.left-nav-dashboard ul li img {
+  height: 16px;
+  widht: 16px;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
+
+
+
+// Friends Index
+.friends-index {
+  padding-bottom: 5px;
+  padding-bottom: 15px;
+  padding: 5px;
+  font-size: 14px;
+
+  //testing
+    // background: green;
+}
+
+.friends-index-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: 	#f6f6f6;
+  margin-bottom: 10px;
+}
+
+.friends-index-header span {
+  text-transform: uppercase;
+  color: #A9A9A9;
+
+}
+
+.addFriendButton  {
+    background-color: inherit; /* Green */
+    border: none;
+    color: #BEBEBE;
+    text-align: center;
+
+  }
+
+  .addFriendButton:hover{
+    cursor: pointer;
+  }
+
+.friends-index img {
+  height: 16px;
+  width: 16px;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
+.friends-index a {
+  color: #666666;
+}
+
+.friends-index ul li {
+  height: 19px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 3px 8px 2px 8px;
+  text-decoration: none;
+  padding-down: 5px;
+}
+
+
+.friends-index ul li a {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.friends-index ul li :hover {
+  background: silver;
+}

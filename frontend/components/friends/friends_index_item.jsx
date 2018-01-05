@@ -5,11 +5,14 @@ import { Link } from 'react-router-dom';
 const FriendsIndexItem = ( { friend }) => {
 
 return (
-      <li  key={friend.id}>
+
         <Link to={`/friends/${friend.id}`}>
-        {friend.email}
+          <img src={window.staticImages.icon_person}></img>
+          <span>
+            {friend.email}
+          </span>
         </Link>
-      </li>
+
 );
 
 };

@@ -17,7 +17,7 @@ import SessionFormContainer from './session_form/session_form_container';
 
 // Friends, Bill, splits and Transactions
 import FriendsIndexContainter from './friends/friends_index_container';
-
+import LoggedInContents from './page_components/Logged_in_contents';
 
 
 
@@ -34,7 +34,7 @@ const App = () => {
         <AuthRoute path="/login" component={SessionFormContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
         <Route exact path="/" component={BodyGreetingContainer} />
-        <ProtectedRoute component={FriendsIndexContainter} />
+        <ProtectedRoute component={LoggedInContents} />
       </main>
       <FooterContainer />
   </div>
