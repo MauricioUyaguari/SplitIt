@@ -17,7 +17,7 @@ import SessionFormContainer from './session_form/session_form_container';
 
 // Friends, Bill, splits and Transactions
 import FriendsIndexContainter from './friends/friends_index_container';
-import LoggedInContents from './page_components/Logged_in_contents';
+import LoggedInContents from './page_components/logged_in_contents';
 
 
 
