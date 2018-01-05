@@ -1,10 +1,26 @@
 // Add Friend Modal
 
 .add-friend-modal {
+  position: fixed;
+  left: 40%;
+  right: 40%;
+  width:  352px;
+  top: 20%;
+  border: 1px solid #999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  background: red;
+  min-height: 480px;
+  border-radius: 10px;
+
+  line-height: 18px;
   font-size: 18px;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+}
+
+.add-friend-modal div {
+  padding: 5px;
 }
 
 
@@ -54,4 +70,8 @@
       align-items: center;
       justify-content: space-between;
       width: 40%;
+}
+
+.add-friend-modal button {
+
 }
