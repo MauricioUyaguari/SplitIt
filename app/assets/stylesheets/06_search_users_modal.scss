@@ -1,3 +1,31 @@
+// Add Friend Modal
+
+.add-friend-modal {
+  font-size: 18px;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+}
+
+
+.add-friend-header {
+  background: #5cc5a7;
+  color: #fff;
+  border-bottom: 1px solid #36977b;
+  text-shadow: 0 -1px 0 #318a71;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+
+
+
 .input-search-user {
   padding: 10px;
   font-size: 32px;
@@ -5,4 +33,25 @@
   border-radius: 10px;
   color: #333;
   margin-bottom: 10px;
+}
+
+.input-search-user {
+
+
+}
+
+.search-Results ul {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  font-size: 25px;
+}
+
+.searched-user {
+    display: flex;
+      padding: 5px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 40%;
 }

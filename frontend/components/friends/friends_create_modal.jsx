@@ -16,16 +16,17 @@ const customStyles = {
   content : {
     position                   : 'absolute',
     top                        : '40px',
-    left                       : '40px',
-    right                      : '40px',
+    left                       : '35%',
+    right                      : '35%',
+    width                      : '30%',
     bottom                     : '40px',
-    border                     : '1px solid #ccc',
+    border                     : '1px solid #999',
     background                 : '#fff',
     overflow                   : 'auto',
     WebkitOverflowScrolling    : 'touch',
-    borderRadius               : '4px',
+    borderRadius               : '15px',
     outline                    : 'none',
-    padding                    : '20px'
+    padding                    : '0px'
 
   }
 };
@@ -57,9 +58,14 @@ class FriendCreateModal extends React.Component {
             style={customStyles}
             ariaHideApp={false}
             >
-            <h2>Hello Please Add your Friend</h2>
-            <FriendFormContainer />
-            <button className="close-add-friend" onClick={this.closeModal}>Close</button>
+            <div className="add-friend-modal">
+              <h2 className="add-friend-header">
+                <div>Add a Friend</div>
+                <div>X</div>
+              </h2>
+              <FriendFormContainer />
+              <button className="close-add-friend" onClick={this.closeModal}>Close</button>
+            </div>
           </Modal>
       </div>
       );
