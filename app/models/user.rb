@@ -82,6 +82,11 @@ class User < ApplicationRecord
   end
 
 
+  def search(username)
+    other = self.all_friends.map{|e| e.id} + [self.id]
+    User.where.not(id: other).where('email ~ ?', username)
+  end
+
 
 
 end

@@ -1,9 +1,9 @@
-import { RECEIVE_ALL_FRIENDS, RECEIVE_FRIEND } from '../actions/friend_actions';
+import { RECEIVE_ALL_FRIENDS, RECEIVE_FRIEND } from '../actions/friends_actions';
 import merge from 'lodash/merge';
 
 
 const friendsReducer = (state = {}, action) => {
-
+  
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_FRIENDS:

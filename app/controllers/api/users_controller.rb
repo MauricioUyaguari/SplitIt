@@ -15,12 +15,15 @@ class Api::UsersController < ApplicationController
   end
 
   def search
-    if params[].present?
-      @users = User.where('email ~ ?', params[:query])
+
+    search = params[:query]
+    results = current_user.search(search)
+    if search.present? && results
+      @users  = results
       render 'api/friends/index'
     else
       @users = User.none
-      render 'api/friends/index'
+      render json: {}
     end
 
   end

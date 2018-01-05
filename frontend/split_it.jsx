@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import * as ApiUtil from './util/session_api_util';
-import { fetchAllFriends,createFriend  } from './actions/friend_actions';
+import { fetchAllFriends,createFriend, fetchSearchedUsers  } from './actions/friends_actions';
 import { login  } from './actions/session_actions';
 
 
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //friends
   window.fetchAllFriends = fetchAllFriends;
   window.createFriend = createFriend;
+  window.fetchSearchedUsers = fetchSearchedUsers;
 
   //
   ReactDOM.render(<Root store={store}/>, root);

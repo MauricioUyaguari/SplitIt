@@ -19,21 +19,11 @@ export const createFriend = (user) => {
 
 
 
-export const fetchAllUsers = () => {
-  return( $.ajax({
-
-
+export const searchUsers = (query) => {
+  return($.ajax({
+    url: '/api/users/search',
+    method: 'GET',
+    data: {query}
   })
-  );
-};
-
-
-
-
-
-
-
-
-export const fetchFriend = () => {
-
+);
 };

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import FriendsIndex from './friends_index';
-import { fetchAllFriends, createFriend } from '../../actions/friend_actions';
+import { fetchAllFriends, createFriend } from '../../actions/friends_actions';
 
 
 const mapStateToProps = (state) => {
