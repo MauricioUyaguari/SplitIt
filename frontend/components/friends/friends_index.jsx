@@ -30,7 +30,6 @@ class FriendsIndex extends React.Component {
 
 
   handleHidden(){
-    debugger
     this.setState({ hidden: !this.state.hidden});
   }
 
