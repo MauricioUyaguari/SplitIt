@@ -2,15 +2,25 @@ import React from 'react';
 import { Link, withRouter} from 'react-router-dom';
 import FriendsIndexItem from './friends_index_item';
 import FriendFormContainer from './friends_form_container';
-
+import Modal from 'react-modal';
+import FriendCreateModal from './friends_create_modal';
 
 
 class FriendsIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = {hidden: true};
-    this.handleHidden = this.handleHidden.bind(this);
-    this.renderForm = this.renderForm.bind(this);
+    this.state = {modalIsOpen: false};
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal(){
+    this.setState({modalIsOpen: false});
   }
 
   componentDidMount(){
@@ -19,7 +29,7 @@ class FriendsIndex extends React.Component {
 
   renderFriends () {
     return (
-    this.props.friends.map(friend => <li>
+    this.props.friends.map(friend => <li key={friend.id}>
         <FriendsIndexItem
           friend={friend}
           key={friend.id}
@@ -28,34 +38,18 @@ class FriendsIndex extends React.Component {
   );
   }
 
-
-  handleHidden(){
-    this.setState({ hidden: !this.state.hidden});
-  }
-
-  renderForm(){
-    if(!this.state.hidden){
-      return (
-        <FriendFormContainer />
-      );
-    }
-  }
-
-
   render(){
     return (<nav className="friends-index">
       <div className="friends-index-header">
         <span> Friends </span>
-        <button className="addFriendButton" onClick={this.handleHidden}>+ add </button>
+        <FriendCreateModal />
       </div>
       <ul>
         { this.renderFriends() }
       </ul>
-      {this.renderForm()}
     </nav>);
   }
 
 }
-
 
 export default FriendsIndex;

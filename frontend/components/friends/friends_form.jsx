@@ -10,16 +10,6 @@ class FriendsForm extends React.Component {
   }
 
 
-  componentWillReceiveProps(newProps, newState){
-    if(Object.values(newProps.friends).length == Object.values(this.props.friends).length){
-      return null;
-    }
-      this.props.fetchSearchedUsers(this.state.username);
-
-
-
-  }
-
 
 
   handleChange(event) {
@@ -33,12 +23,10 @@ class FriendsForm extends React.Component {
 
 
   render(){
-    // debugger
     const { searchedUsers } = this.props;
     return (
       <section className="search-users">
-        Add Friend. Please Provide a username
-        <input onChange={this.handleChange}
+        <input className="input-search-user" onChange={this.handleChange}
           type="text"
           value={this.state.username}></input>
         <div className="search-Results">

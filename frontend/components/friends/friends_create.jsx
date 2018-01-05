@@ -10,9 +10,9 @@ const FriendsCreate = ({ user, createFriend}) => {
   };
 
   return (
-    <li>
-          {user.email}
-        <button onClick={update}>Add Friend</button>
+    <li className="searched-user">
+          <span>{user.email}</span>
+        <button onClick={update}>+</button>
     </li>
   );
 
