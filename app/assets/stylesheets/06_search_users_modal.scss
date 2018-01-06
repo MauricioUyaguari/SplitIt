@@ -40,6 +40,17 @@
   margin-bottom: 20px;
 }
 
+.close-x {
+  float: right;
+  font-size: 28px;
+  margin-top: -3px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .search-users {
   padding-left: 10px;
 }
@@ -86,11 +97,23 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 40%;
+    width: 60%;
 }
 
 
+.modal-addFriendButton {
+  background: #5cc5a7;
+  color: #fff;
+  text-shadow: 0 -1px 0 #318a71;
+  padding: 10px;
+  margin: 5px;
+  margin-left: 20px;
+  line-height: normal;
+  border-radius: 5px;
+  font-size: 14px;
 
+
+}
 
 
 
@@ -100,7 +123,11 @@
 .modal-close {
   display: flex;
   justify-content: flex-end;
-  padding: 20px;
+  letter-spacing: 3px;
+  border-top: 1px solid #eee;
+  text-align: right;
+  padding: 8px 10px;
+
 }
 
 
@@ -120,5 +147,6 @@
   border: 1px solid #ccc;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   outline: 0;
+  border-radius: 7.5px;
 
 }

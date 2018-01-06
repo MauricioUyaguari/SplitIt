@@ -13,7 +13,7 @@ const FriendsCreate = ({ user, createFriend}) => {
     <li className="searched-user">
         <img className="connectLogos" src={window.staticImages.dummy_profile_picture}></img>
         <span>{user.email}</span>
-        <button onClick={update}>+</button>
+        <button className="modal-addFriendButton" onClick={update}>+</button>
     </li>
   );
 
