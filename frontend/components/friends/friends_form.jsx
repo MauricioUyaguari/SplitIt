@@ -28,6 +28,7 @@ class FriendsForm extends React.Component {
       <section className="search-users">
         <input className="input-search-user" onChange={this.handleChange}
           type="text"
+          placeholder="Search by Username"
           value={this.state.username}></input>
         <div className="search-Results">
           <ul>

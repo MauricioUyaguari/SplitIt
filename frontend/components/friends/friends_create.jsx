@@ -11,8 +11,9 @@ const FriendsCreate = ({ user, createFriend}) => {
 
   return (
     <li className="searched-user">
-          <span>{user.email}</span>
-        <button onClick={update}>+</button>
+        <img className="connectLogos" src={window.staticImages.dummy_profile_picture}></img>
+        <span>{user.email}</span>
+        <button className="modal-addFriendButton" onClick={update}>+</button>
     </li>
   );
 

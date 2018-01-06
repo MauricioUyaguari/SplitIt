@@ -127,8 +127,11 @@ formHeading(){
           </section>
         <div className={`submit-creds${formType}`}>
           <input type="submit" value={submitLabel} />
+<<<<<<< HEAD
 
+=======
           {this.demoLogin()}
+>>>>>>> style_user_search_modal
         </div>
         <p>
           <span> or</span>

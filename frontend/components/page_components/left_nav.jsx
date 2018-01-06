@@ -6,7 +6,7 @@ import FriendsIndexContainter from '../friends/friends_index_container';
 
 const LeftNav = () => {
 
-
+  
   const topDashboard = () =>  {
     return(
       <ul>

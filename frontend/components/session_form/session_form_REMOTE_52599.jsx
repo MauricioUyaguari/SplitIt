@@ -127,7 +127,6 @@ formHeading(){
           </section>
         <div className={`submit-creds${formType}`}>
           <input type="submit" value={submitLabel} />
-
           {this.demoLogin()}
         </div>
         <p>

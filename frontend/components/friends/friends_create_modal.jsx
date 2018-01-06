@@ -5,30 +5,19 @@ import Modal from 'react-modal';
 
 
 const customStyles = {
-  overlay : {
-    position          : 'fixed',
-    top               : 0,
-    left              : 0,
-    right             : 0,
-    bottom            : 0,
-    backgroundColor   : 'rgba(255, 255, 255, 0.75)'
-  },
-  content : {
-    position                   : 'absolute',
-    top                        : '40px',
-    left                       : '40px',
-    right                      : '40px',
-    bottom                     : '40px',
-    border                     : '1px solid #ccc',
-    background                 : '#fff',
-    overflow                   : 'auto',
-    WebkitOverflowScrolling    : 'touch',
-    borderRadius               : '4px',
-    outline                    : 'none',
-    padding                    : '20px'
 
-  }
-};
+    overlay : {
+      position          : 'fixed',
+      top               : 0,
+      left              : 0,
+      right             : 0,
+      bottom            : 0,
+      backgroundColor   : 'rgba(255, 255, 255, 0.75)'
+    },
+    content : {
+
+    }
+  };
 
 
 
@@ -56,10 +45,20 @@ class FriendCreateModal extends React.Component {
             onRequestOpen={this.closeModal}
             style={customStyles}
             ariaHideApp={false}
+            className={{
+            base: 'add-friend-modal',
+            afterOpen: 'add-friend-modal',
+            beforeClose: 'add-friend-modal'
+          }}
             >
-            <h2>Hello Please Add your Friend</h2>
-            <FriendFormContainer />
-            <button className="close-add-friend" onClick={this.closeModal}>Close</button>
+              <h2 className="add-friend-header">
+                <div>Add a Friend</div>
+                <div className="close-x" onClick={this.closeModal} >x</div>
+              </h2>
+              <FriendFormContainer />
+              <fotter className="modal-close">
+                <button className="close-add-friend" onClick={this.closeModal}>Cancel</button>
+              </fotter>
           </Modal>
       </div>
       );
