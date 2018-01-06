@@ -100,24 +100,34 @@ formHeading(){
       </ul>
     );
   }
-
+  demoLogin(){
+    const show = (this.props.formType) === "login" ? true : false;
+    if(show){
+      const demoUser = {email: "DemoUser", password: "password"};
+      return(<div className="demo-button" onClick={() => this.props.processForm(demoUser)}>Demo Login</div>);
+    }
+    return null;
+  }
   render() {
     const {formType } = this.props;
     const submitLabel = (formType) === "login" ? "Log In" : "Sign me Up";
     return(
     <div className="entrance-form">
-      <img src={window.staticImages.splititlogo}></img>
+      <div>
+      <img className="signin-logo" src={window.staticImages.splititlogo}></img>
+      </div>
       <form className={`login-signup-form`} onSubmit={this.handleSubmit}>
         {this.renderErrors()}
         <section className="form-heading" >
           {this.formHeading()}
         </section>
-          <secion className="email-and-password">
+          <section className="email-and-password">
             {this.emailRender()}
             {this.passwordRender()}
-          </secion>
+          </section>
         <div className={`submit-creds${formType}`}>
           <input type="submit" value={submitLabel} />
+          {this.demoLogin()}
         </div>
         <p>
           <span> or</span>

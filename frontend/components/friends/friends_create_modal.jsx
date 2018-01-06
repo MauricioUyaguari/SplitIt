@@ -5,13 +5,19 @@ import Modal from 'react-modal';
 
 
 const customStyles = {
-  overlay : {
-    position          : 'fixed'
-  },
-  content : {
-    position                   : 'absolute',
-  }
-};
+
+    overlay : {
+      position          : 'fixed',
+      top               : 0,
+      left              : 0,
+      right             : 0,
+      bottom            : 0,
+      backgroundColor   : 'rgba(255, 255, 255, 0.75)'
+    },
+    content : {
+
+    }
+  };
 
 
 
@@ -50,8 +56,9 @@ class FriendCreateModal extends React.Component {
                 <div onClick={this.closeModal} >X</div>
               </h2>
               <FriendFormContainer />
-              <button className="close-add-friend" onClick={this.closeModal}>Cancel</button>
-              <div></div>
+              <section className="modal-close">
+                <button className="close-add-friend" onClick={this.closeModal}>Cancel</button>
+              </section>
           </Modal>
       </div>
       );
