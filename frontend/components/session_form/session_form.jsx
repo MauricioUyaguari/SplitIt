@@ -112,12 +112,13 @@ formHeading(){
         <section className="form-heading" >
           {this.formHeading()}
         </section>
-          <secion className="email-and-password">
+          <section className="email-and-password">
             {this.emailRender()}
             {this.passwordRender()}
-          </secion>
+          </section>
         <div className={`submit-creds${formType}`}>
           <input type="submit" value={submitLabel} />
+
         </div>
         <p>
           <span> or</span>
