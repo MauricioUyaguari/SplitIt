@@ -1,10 +1,21 @@
 class Api::FriendsController < ApplicationController
 
-  # before_action :require_logged_in
+  before_action :require_logged_in
   def index
     # you wan to show all the friends the current user has
-    @users = current_user.all_friends
+    @friends = current_user.all_friends
     render 'api/friends/index'
+  end
+
+
+  def show
+    # debugger
+    @friend =  User.find(params[:id])
+    if @friend && current_user
+      render 'api/friends/show'
+    else
+      render json: ["Friend not found"], status: 404
+    end
   end
 
 
@@ -13,8 +24,8 @@ class Api::FriendsController < ApplicationController
     friend_id = params[:user][:id]
     @friendship = Friendship.new(requester_id: current_user.id, friend_id: friend_id)
     if @friendship.save
-      @user = User.find(@friendship.friend_id)
-      render '/api/users/show'
+      @friend = User.find(@friendship.friend_id)
+      render '/api/friends/show'
     else
       render json: @friendship.errors.full_messages
     end

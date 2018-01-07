@@ -3,10 +3,15 @@ import sessionReducer from './session_reducer';
 import errorsReducer from './errors_reducer';
 import friendsReducer from './friends_reducer';
 import searchReducer from './search_reducer';
+import billsReducer from './bills_reducer';
+import splitsReducer from './splits_reducer';
+
 
 export const rootReducer = combineReducers({
   session: sessionReducer,
   friends: friendsReducer,
+  bills: billsReducer,
+  splits: splitsReducer,
   search: searchReducer,
   errors: errorsReducer
 });

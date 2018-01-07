@@ -7,14 +7,16 @@ class FriendsShow extends React.Component {
   }
 
   componentWillMount(){
-    if(this.props.friend == undefined){
 
-    this.props.fetchFriends();
-    }
-
+    this.props.fetchSingleFriend(this.props.friendId);
   }
 
+  componentWillReceiveProps(newProps){
 
+    if(this.props.friendId != newProps.friendId){
+      this.props.fetchSingleFriend(newProps.friendId);
+    }
+  }
 
   render () {
 

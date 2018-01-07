@@ -1,3 +1,12 @@
+export const fetchSingleFriend = (id) => {
+  return ( $.ajax({
+    url: `/api/friends/${id}`,
+    method: 'GET'
+  })
+);
+};
+
+
 export const fetchFriends = () => {
   return ( $.ajax({
     url: '/api/friends',

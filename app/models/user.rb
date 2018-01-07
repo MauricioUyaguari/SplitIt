@@ -38,6 +38,31 @@ class User < ApplicationRecord
     through: :out_friendships,
     source: :friend
 
+    ## direct
+    #bills
+
+    has_many :paid_bills,
+    foreign_key: :payer_id,
+    class_name: :Bill
+
+    #splits
+    has_many :splits_due,
+    foreign_key: :debtor_id,
+    class_name: :Split
+
+
+    #Assoicated
+    has_many :bills,
+    through: :splits_due,
+    source: :bill
+    # Assoicated Splits
+    has_many :splits_on_paid_bills,
+    through: :paid_bills,
+    source: :splits
+
+
+
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
@@ -87,6 +112,28 @@ class User < ApplicationRecord
     User.where.not(id: other).where('email ~ ?', username)
   end
 
+
+
+  #shared_bills
+  # def uniq_bills
+  #   self.bills.distinct(:id)
+  # end
+
+  def shared_bills(friend)
+    other = friend.bills.map{|e| e.id}
+    self.bills.where(id: other)
+  end
+
+
+  def shared_splits(friend)
+    shared_bills_ids = self.shared_bills(friend).map{|el| el.id}
+    Split.all.where(bill_id: shared_bills_ids)
+  end
+
+
+  def bills_not_assigned_to_pay
+    self.bills - self.paid_bills
+  end
 
 
 end

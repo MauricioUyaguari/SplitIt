@@ -1,14 +1,13 @@
 # == Schema Information
 #
-# Table name: bills
+# Table name: splits
 #
-#  id          :integer          not null, primary key
-#  description :string           not null
-#  date        :date             not null
-#  payer_id    :integer          not null
-#  total_amt   :decimal(10, 2)   not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id         :integer          not null, primary key
+#  debtor_id  :integer          not null
+#  bill_id    :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  amount_due :decimal(10, 2)   not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

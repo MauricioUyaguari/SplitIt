@@ -1,4 +1,4 @@
-import { RECEIVE_SEARCHED_USERS, RECEIVE_FRIEND } from '../actions/friends_actions';
+import { RECEIVE_SEARCHED_USERS, RECEIVE_SINGLE_FRIEND } from '../actions/friends_actions';
 import merge from 'lodash/merge';
 
 
@@ -8,7 +8,7 @@ const searchReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_SEARCHED_USERS:
     return merge({}, action.users);
-    case RECEIVE_FRIEND:
+    case RECEIVE_SINGLE_FRIEND:
       const newState = Object.assign({}, state);
       delete newState[action.friend.id];
       return newState;

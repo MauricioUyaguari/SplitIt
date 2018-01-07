@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104143432) do
+ActiveRecord::Schema.define(version: 20180106225814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bills", force: :cascade do |t|
+    t.string "description", null: false
+    t.date "date", null: false
+    t.integer "payer_id", null: false
+    t.decimal "total_amt", precision: 10, scale: 2, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "friendships", force: :cascade do |t|
     t.integer "requester_id", null: false
@@ -21,6 +30,14 @@ ActiveRecord::Schema.define(version: 20180104143432) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["requester_id", "friend_id"], name: "index_friendships_on_requester_id_and_friend_id", unique: true
+  end
+
+  create_table "splits", force: :cascade do |t|
+    t.integer "debtor_id", null: false
+    t.integer "bill_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "amount_due", precision: 10, scale: 2, null: false
   end
 
   create_table "users", force: :cascade do |t|

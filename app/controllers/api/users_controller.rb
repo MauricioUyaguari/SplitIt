@@ -20,7 +20,7 @@ class Api::UsersController < ApplicationController
     results = current_user.search(search)
     if search.present? && results
       @users  = results
-      render 'api/friends/index'
+      render 'api/users/index'
     else
       @users = User.none
       render json: {}
