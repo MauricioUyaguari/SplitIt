@@ -1,4 +1,3 @@
-
 export const fetchAllBills = () => {
   return ($.ajax({
     url: '/api/bills',

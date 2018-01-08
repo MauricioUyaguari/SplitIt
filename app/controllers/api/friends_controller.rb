@@ -9,7 +9,7 @@ class Api::FriendsController < ApplicationController
 
 
   def show
-    # debugger
+    
     @friend =  User.find(params[:id])
     if @friend && current_user
       render 'api/friends/show'

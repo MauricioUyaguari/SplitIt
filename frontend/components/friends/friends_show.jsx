@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FriendsBillsIndexContainer from '../bills/friends_bills_index_container';
+import BillsFormContainer from '../bills/bills_form_container';
+
+import BillsFormModal from '../bills/bills_form_modal';
 
 class FriendsShow extends React.Component {
   constructor(props){
@@ -26,16 +30,20 @@ class FriendsShow extends React.Component {
 
     return (
     <div className="friends-show">
-          <section>
+    <section>
       <div>
         <img className="connectLogos" src={window.staticImages.dummy_profile_picture}></img>
         <span>{this.props.friend.email}</span>
       </div>
       <div>
-        <button>Add a Bill</button>
+        <BillsFormModal
+          />
         <button>Pay Up</button>
       </div>
     </section>
+    <div className="friend-bill-show">
+      <FriendsBillsIndexContainer friendId={this.props.friendId} />
+    </div>
     </div>
 
     );

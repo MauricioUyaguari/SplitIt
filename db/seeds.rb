@@ -68,24 +68,47 @@ friendship14 = Friendship.create!(requester_id: user8.id, friend_id: user2.id)
 
 
 
-#demoUser Bills
-
-dbill1 = Bill.create!(description: "dem-bill1", date: Date.today, total_amt: 100, payer_id: demoUser.id)
-
-split1A = Split.create!(debtor_id: demoUser.id, bill_id: dbill1.id, amount_due: 50)
-split1B = Split.create!(debtor_id: user1.id, bill_id: dbill1.id, amount_due: 50)
-
-dbill2 = Bill.create!(description: "demo-bill2", date: Date.today, total_amt: 200, payer_id: user1.id)
-
-split2A = Split.create!(debtor_id: demoUser.id, bill_id: dbill2.id, amount_due: 150)
-split2B = Split.create!(debtor_id: user1.id, bill_id: dbill2.id, amount_due: 50)
 
 
 
-dbill3 = Bill.create!(description: "demo-bill3", date: Date.today, total_amt: 100, payer_id: user2.id)
-split3A = Split.create!(debtor_id: user2.id, bill_id: dbill3.id, amount_due: 50)
-split3B = Split.create!(debtor_id: demoUser.id, bill_id: dbill3.id, amount_due: 50)
 
+#demoUser Bills with Luis
+
+luis1 = Bill.create!(description: "luis1", date: Date.today, total_amt: 500, payer_id: demoUser.id)
+split1 = Split.create!(debtor_id: user1.id, bill_id: luis1.id, amount_due: 250)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis1.id, amount_due: 250)
+
+luis2 = Bill.create!(description: "luis2", date: Date.today, total_amt: 500, payer_id: demoUser.id)
+split1 = Split.create!(debtor_id: user1.id, bill_id: luis2.id, amount_due: 250)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis2.id, amount_due: 250)
+
+luis3 = Bill.create!(description: "luis3", date: Date.today, total_amt: 500, payer_id: user1.id)
+split1 = Split.create!(debtor_id: user1.id, bill_id: luis3.id, amount_due: 250)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis3.id, amount_due: 250)
+
+luis4 = Bill.create!(description: "luis4", date: Date.today, total_amt: 500, payer_id: user1.id)
+split1 = Split.create!(debtor_id: user1.id, bill_id: luis4.id, amount_due: 250)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis4.id, amount_due: 250)
+
+
+
+
+#Demo bills with "mauricio"
+mauricio1 = Bill.create!(description: "mauricio1", date: Date.today, total_amt: 100, payer_id: user2.id)
+split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio1.id, amount_due: 10)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio1.id, amount_due: 90)
+
+mauricio2 = Bill.create!(description: "mauricio2", date: Date.today, total_amt: 200, payer_id: user2.id)
+split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio2.id, amount_due: 20)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio2.id, amount_due: 80)
+
+mauricio3 = Bill.create!(description: "mauricio3", date: Date.today, total_amt: 300, payer_id: user2.id)
+split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio3.id, amount_due: 30)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio3.id, amount_due: 70)
+
+mauricio4 = Bill.create!(description: "mauricio4", date: Date.today, total_amt: 400, payer_id: demoUser.id)
+split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio4.id, amount_due: 40)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio4.id, amount_due: 60)
 
 
 

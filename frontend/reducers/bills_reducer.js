@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_BILLS } from '../actions/bills_actions';
+import { RECEIVE_ALL_BILLS, RECEIVE_BILL } from '../actions/bills_actions';
 import { RECEIVE_SINGLE_FRIEND } from '../actions/friends_actions';
 import merge from 'lodash/merge';
 
@@ -7,6 +7,8 @@ const billsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_ALL_BILLS:
       return merge({}, action.bills);
+    case RECEIVE_BILL:
+    return merge({}, state, {[action.bill.id]: action.bill});
     case RECEIVE_SINGLE_FRIEND:
       const bills = action.bills.reduce((acc, bill) => {
         acc[bill.id] = bill;
