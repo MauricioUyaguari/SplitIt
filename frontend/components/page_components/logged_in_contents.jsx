@@ -15,6 +15,7 @@ const LoggedInContents = () => {
     <div className="logged-in-div">
       <LeftNav />
       <section className="logged-in-body-div">
+        
          <Route path="/friends/:friendId" component={FriendsShowContainer} />
       </section>
       <section className="right-nav">

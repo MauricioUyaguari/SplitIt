@@ -12,10 +12,11 @@ export const receiveAllBills = (bills) => {
 };
 
 
-export const receiveBill = (bill) => {
+export const receiveBill = (billData) => {
   return {
     type: RECEIVE_BILL,
-    bill
+    bill: billData,
+    splits: billData.splits
   };
 };
 
