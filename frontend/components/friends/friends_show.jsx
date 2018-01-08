@@ -30,15 +30,15 @@ class FriendsShow extends React.Component {
 
     return (
     <div className="friends-show">
-    <section>
-      <div>
+    <section className="topbar-friend">
+      <div className="friend-top-div">
         <img className="connectLogos" src={window.staticImages.dummy_profile_picture}></img>
         <span>{this.props.friend.email}</span>
       </div>
-      <div>
+      <div className="actions">
         <BillsFormModal
           />
-        <button>Pay Up</button>
+        <button className="settleup-button">Settle Up</button>
       </div>
     </section>
     <div className="friend-bill-show">

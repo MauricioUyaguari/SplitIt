@@ -15,26 +15,28 @@ const FriendsBillsIndex = ({ bills, splits, friend}) => {
       friendsSplits.push(split);
     }
   });
+
+  const sortedBills = friendsBills.sort(function(a,b){
+    return new Date(b.date) - new Date(a.date);
+  }
+  );
+
     return (
-    friendsBills.map(bill =>
-      <li key={bill.id}>
+    sortedBills.map(bill =>
           <FriendsBillShow
             bill={bill}
             friendsSplits={friendsSplits}
             friend={friend}
             />
-    </li>)
+    )
   );
   };
 
   if(friend.bills_id === undefined){
     return (<div></div>);
   }
-  return (<div>
-    Bills shared with {friend.email}
-    <ul>
+  return (<div className="bills">
       {renderBills()}
-    </ul>
   </div>);
 
 
