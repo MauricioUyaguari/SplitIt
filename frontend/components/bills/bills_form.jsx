@@ -6,7 +6,8 @@ class BillForm extends React.Component {
   constructor(props){
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {description: "", date: "", total_amt: "", split_due: "", friend_id: this.props.friend.id };
+    let dateObj = new Date().toISOString().split('T')[0];
+    this.state = {description: "", date: `${dateObj}` , total_amt: "", split_due: "", friend_id: this.props.friend.id };
   }
 
 
@@ -34,49 +35,70 @@ class BillForm extends React.Component {
 render(){
 
   return(
-    <section onSubmit={this.handleSubmit}>
-      Add A Bill
-      <form>
-        <label>Description
-          <input
-            type="text"
-            value={this.state.text}
-            onChange={this.update('description')}
-            />
-        </label>
-        <label>Date
-          <input
-            type="date"
-            value={this.state.date}
-            onChange={this.update('date')}
-            />
-        </label>
-        <label>Bill Total
-          <input
-            type="number"
-            value={this.state.total_amt}
-            onChange={this.update('total_amt')}
-            />
-        </label>
-        <label>Payer
-          <select id="dropdown"
-            onChange={this.update("payer")}
-            >
-            <option >You</option>
-            <option >{this.props.friend.email}</option>
-          </select>
-          </label>
-          <span>Split the Bill</span>
-          <label> Enter your assigned percentage
-            <input onChange={this.update("split_due")}
-              value={this.state.split_due}
-              type="number"
-              min="1"
-              max="100"
-              id="myPercent"
-              starting="50" /> %
-          </label>
-          <input type='submit'></input>
+    <section>
+      <div className="add-bill-form-header">
+        <div>With <strong>you</strong> and: </div>
+        <div className="add-bill-form-header-friend">
+          <span>{this.props.friend.email}</span>
+        </div>
+      </div>
+      <form className="add-bill-form" onSubmit={this.handleSubmit}>
+        <div className="bill-form-middle">
+          <figure>
+            <img className="connectLogos" src={window.staticImages.icon_bill2}></img>
+          </figure>
+          <div className="bill-descr-amt-div">
+            <label>
+              <input
+                className="input-bill-description"
+                placeholder="Enter a description"
+                type="text"
+                value={this.state.description}
+                onChange={this.update('description')}
+                />
+            </label>
+            <label> $
+              <input
+                 className="input-bill-total"
+                type="number"
+                placeholder="0.00"
+                min="0"
+                max="99999999"
+                value={this.state.total_amt}
+                onChange={this.update('total_amt')}
+                />
+
+            </label>
+          </div>
+        </div>
+        <section className="bill-form-splits">
+          Paid by
+            <select className="pay-dropdown" id="dropdown"
+              onChange={this.update("payer")}
+              >
+              <option >You</option>
+              <option >{this.props.friend.email}</option>
+            </select>.
+              Your split is
+              <input onChange={this.update("split_due")}
+                className="split-percentage"
+                value={this.state.split_due}
+                type="number"
+                min="1"
+                max="100"
+                id="myPercent"
+                starting="50" /> %
+          </section>
+          <section className="date-div">
+              <input
+                id="myDate"
+                className="input-bill-date"
+                type="date"
+                value={this.state.date}
+                onChange={this.update('date')}
+                />
+            </section>
+          <button className="save-bill">Save</button>
       </form>
     </section>
   );

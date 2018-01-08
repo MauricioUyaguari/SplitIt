@@ -37,6 +37,7 @@ class BillsFormModal extends React.Component {
     }
 
     render(){
+      const { friend } = this.props.friend
       return(
         <div>
           <button className="addBillButton" onClick={this.openModal}>Add Bill</button>
@@ -45,20 +46,22 @@ class BillsFormModal extends React.Component {
             onRequestOpen={this.closeModal}
             style={customStyles}
             ariaHideApp={false}
+            friend={friend}
             className={{
-            base: 'add-friend-modal',
-            afterOpen: 'add-friend-modal',
-            beforeClose: 'add-friend-modal'
+            base: 'add-bill-modal add-friend-modal',
+            afterOpen: 'add-friend-modal add-bill-modal',
+            beforeClose: 'add-bill-modal add-friend-modal'
           }}
             >
+
               <h2 className="add-friend-header">
                 <div>Add a Bill</div>
                 <div className="close-x" onClick={this.closeModal} >x</div>
               </h2>
               <BillsFormContainer />
-              <fotter className="modal-close">
-                <button className="close-add-friend" onClick={this.closeModal}>Cancel</button>
-              </fotter>
+              <div className="modal-close">
+                <button className="close-add-bill close-add-friend" onClick={this.closeModal}>Cancel</button>
+              </div>
           </Modal>
       </div>
       );
