@@ -15,6 +15,7 @@ class BillForm extends React.Component {
 
 
   update(field) {
+
     return (e) => {
       this.setState({[field]: e.target.value});
     };
@@ -29,6 +30,7 @@ class BillForm extends React.Component {
   const split_amt_due = (this.state.split_due/100) * (this.state.total_amt)
   let newBill = merge({}, this.state, {"payer_id": payer_id}, {"split_due": split_amt_due});
   this.props.createBill(newBill);
+  this.props.closeModal();
   }
 
 
@@ -64,6 +66,7 @@ render(){
                 placeholder="0.00"
                 min="0"
                 max="99999999"
+                step="0.01"
                 value={this.state.total_amt}
                 onChange={this.update('total_amt')}
                 />

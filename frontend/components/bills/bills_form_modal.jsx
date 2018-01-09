@@ -58,7 +58,7 @@ class BillsFormModal extends React.Component {
                 <div>Add a Bill</div>
                 <div className="close-x" onClick={this.closeModal} >x</div>
               </h2>
-              <BillsFormContainer />
+              <BillsFormContainer closeModal={() => this.closeModal() }/>
               <div className="modal-close">
                 <button className="close-add-bill close-add-friend" onClick={this.closeModal}>Cancel</button>
               </div>

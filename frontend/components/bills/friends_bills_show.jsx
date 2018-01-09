@@ -2,7 +2,6 @@ import React from 'react';
 
 
 const FriendsBillShow = ({ bill, friendsSplits, friend}) => {
-  debugger
   const billSplits = [];
 
   friendsSplits.forEach((split) => {
@@ -42,8 +41,8 @@ const FriendsBillShow = ({ bill, friendsSplits, friend}) => {
 
 
   const renderDate = () => {
-
     let newDate = new Date(bill.date);
+    newDate.setDate(newDate.getDate()+1);
     let monthNames = ["Jan", "Feb", "March", "April", "May", "June",
     "July", "Aug", "Sept", "Oct", "Nov", "Dec"
     ];

@@ -16,7 +16,7 @@ class FriendsShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    debugger
+    
     if(this.props.friendId != newProps.friendId){
       this.props.fetchSingleFriend(newProps.friendId);
     }

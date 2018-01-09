@@ -2,7 +2,6 @@ import merge from 'lodash/merge';
 import { RECEIVE_SINGLE_FRIEND } from '../actions/friends_actions';
 import { RECEIVE_BILL } from '../actions/bills_actions';
 const splitsReducer = (state = {}, action) => {
-  debugger
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SINGLE_FRIEND:
@@ -17,7 +16,6 @@ const splitsReducer = (state = {}, action) => {
         return acc;
       }, {});
       const check = merge({}, state, billSplits);
-      debugger
       return check
     default:
     return state;

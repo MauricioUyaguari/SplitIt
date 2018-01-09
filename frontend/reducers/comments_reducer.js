@@ -3,7 +3,7 @@ import { RECEIVE_SINGLE_FRIEND } from '../actions/friends_actions';
 import { RECEIVE_BILL } from '../actions/bills_actions';
 
 const commentsReducer = (state = {}, action) => {
-  debugger
+  
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SINGLE_FRIEND:

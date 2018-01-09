@@ -13,7 +13,7 @@ export const receiveAllBills = (bills) => {
 
 
 export const receiveBill = (billData) => {
-  debugger
+  
   return {
     type: RECEIVE_BILL,
     bill: billData.bill,

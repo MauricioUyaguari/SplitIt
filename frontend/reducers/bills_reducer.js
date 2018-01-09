@@ -3,7 +3,7 @@ import { RECEIVE_SINGLE_FRIEND } from '../actions/friends_actions';
 import merge from 'lodash/merge';
 
 const billsReducer = (state = {}, action) => {
-  debugger
+  
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_BILLS:

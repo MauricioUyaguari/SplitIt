@@ -5,7 +5,7 @@ import merge from 'lodash/merge';
 
 
 const friendsReducer = (state = {}, action) => {
-  debugger
+
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_FRIENDS:
@@ -15,11 +15,9 @@ const friendsReducer = (state = {}, action) => {
     case RECEIVE_BILL:
     let newFriend = state[action.friend[0].id];
     let newSplits = action.splits.map(split => split.id);
-    debugger
     newFriend.bills_id = state[action.friend[0].id].bills_id.concat(action.bill.id);
     newFriend.splits_id = state[action.friend[0].id].splits_id.concat(newSplits);
     const volver = merge({}, state, {[action.friend[0].id]: newFriend});
-    debugger
     return volver;
     return 1;
     default:
