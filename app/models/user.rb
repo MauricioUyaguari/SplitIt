@@ -60,7 +60,10 @@ class User < ApplicationRecord
     through: :paid_bills,
     source: :splits
 
-
+    #comments
+    has_many :authored_comments,
+    foreign_key: :author_id,
+    class_name: :Comment
 
 
   def password=(password)
@@ -128,6 +131,11 @@ class User < ApplicationRecord
   def shared_splits(friend)
     shared_bills_ids = self.shared_bills(friend).map{|el| el.id}
     Split.all.where(bill_id: shared_bills_ids)
+  end
+
+  def shared_comments(friend)
+    shared_bills_id = self.shared_bills(friend).map{|bill| bill.id}
+    Comment.all.where(bill_id: shared_bills_id)
   end
 
 

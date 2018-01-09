@@ -13,10 +13,13 @@ export const receiveAllBills = (bills) => {
 
 
 export const receiveBill = (billData) => {
+  debugger
   return {
     type: RECEIVE_BILL,
-    bill: billData,
-    splits: billData.splits
+    bill: billData.bill,
+    splits: billData.splits,
+    comments: billData.comments,
+    friend: billData.friend
   };
 };
 

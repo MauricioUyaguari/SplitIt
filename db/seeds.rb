@@ -9,6 +9,7 @@ User.destroy_all
 Friendship.destroy_all
 Bill.destroy_all
 Split.destroy_all
+Comment.destroy_all
 
 demoUser = User.create!(email: "DemoUser", password: "password", image_url: "test")
 demoUser.save!
@@ -72,11 +73,15 @@ friendship14 = Friendship.create!(requester_id: user8.id, friend_id: user2.id)
 
 
 
+
+
 #demoUser Bills with Luis
 
 luis1 = Bill.create!(description: "luis1", date: Date.today, total_amt: 500, payer_id: demoUser.id)
 split1 = Split.create!(debtor_id: user1.id, bill_id: luis1.id, amount_due: 250)
 split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis1.id, amount_due: 250)
+
+
 
 luis2 = Bill.create!(description: "luis2", date: Date.today, total_amt: 500, payer_id: demoUser.id)
 split1 = Split.create!(debtor_id: user1.id, bill_id: luis2.id, amount_due: 250)
@@ -89,6 +94,32 @@ split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis3.id, amount_due: 25
 luis4 = Bill.create!(description: "luis4", date: Date.today, total_amt: 500, payer_id: user1.id)
 split1 = Split.create!(debtor_id: user1.id, bill_id: luis4.id, amount_due: 250)
 split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis4.id, amount_due: 250)
+
+
+## Demo Comments with Luis
+
+comment1 = Comment.create!(body: "comment 1 bill 1", author_id: demoUser.id, bill_id: luis1.id)
+comment2 = Comment.create!(body: "comment 2 bill 1", author_id: user1.id, bill_id: luis1.id)
+comment3 = Comment.create!(body: "comment 3 bill 1", author_id: demoUser.id, bill_id: luis1.id)
+comment4 = Comment.create!(body: "comment 4 bill 1", author_id: user1.id, bill_id: luis1.id)
+#bills 2
+comment1 = Comment.create!(body: "comment 1 bill 2", author_id: demoUser.id, bill_id: luis2.id)
+comment2 = Comment.create!(body: "comment 1 bill 2", author_id: user1.id, bill_id: luis2.id)
+comment3 = Comment.create!(body: "comment 1 bill 2", author_id: demoUser.id, bill_id: luis2.id)
+comment4 = Comment.create!(body: "comment 1 bill 2", author_id: user1.id, bill_id: luis2.id)
+
+#bill 3
+comment1 = Comment.create!(body: "comment 1 bill 3", author_id: demoUser.id, bill_id: luis3.id)
+comment2 = Comment.create!(body: "comment 2 bill 3", author_id: user1.id, bill_id: luis3.id)
+comment3 = Comment.create!(body: "comment 3 bill 3", author_id: demoUser.id, bill_id: luis3.id)
+comment4 = Comment.create!(body: "comment 4 bill 3", author_id: user1.id, bill_id: luis3.id)
+
+
+#bill 4
+comment1 = Comment.create!(body: "comment 1 bill 4", author_id: demoUser.id, bill_id: luis4.id)
+comment2 = Comment.create!(body: "comment 2 bill 4", author_id: user1.id, bill_id: luis4.id)
+comment3 = Comment.create!(body: "comment 3 bill 4", author_id: demoUser.id, bill_id: luis4.id)
+comment4 = Comment.create!(body: "comment 4 bill 4", author_id: user1.id, bill_id: luis4.id)
 
 
 
@@ -110,6 +141,38 @@ mauricio4 = Bill.create!(description: "mauricio4", date: Date.today, total_amt: 
 split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio4.id, amount_due: 40)
 split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio4.id, amount_due: 60)
 
+#Demo Comments with Mauricio
+
+#one bill 1
+comment1 = Comment.create!(body: "comment 1 bill 1", author_id: user2.id, bill_id: mauricio1.id)
+comment1 = Comment.create!(body: "comment 2 bill 1", author_id: user2.id, bill_id: mauricio1.id)
+comment1 = Comment.create!(body: "comment 3 bill 1", author_id: user2.id, bill_id: mauricio1.id)
+comment1 = Comment.create!(body: "comment 4 bill 1", author_id: demoUser.id, bill_id: mauricio1.id)
+comment1 = Comment.create!(body: "comment 5 bill 1", author_id: user2.id, bill_id: mauricio1.id)
+
+#comments bill 2
+comment1 = Comment.create!(body: "comment 1 bill 2", author_id: demoUser.id, bill_id: mauricio2.id)
+comment1 = Comment.create!(body: "comment 2 bill 2", author_id: user2.id, bill_id: mauricio2.id)
+comment1 = Comment.create!(body: "comment 3 bill 2", author_id: user2.id, bill_id: mauricio2.id)
+comment1 = Comment.create!(body: "comment 4 bill 2", author_id: demoUser.id, bill_id: mauricio2.id)
+comment1 = Comment.create!(body: "comment 5 bill 2", author_id: user2.id, bill_id: mauricio2.id)
+
+#comments bill 3
+comment1 = Comment.create!(body: "comment 1 bill 3", author_id: demoUser.id, bill_id: mauricio3.id)
+comment1 = Comment.create!(body: "comment 2 bill 3", author_id: user2.id, bill_id: mauricio3.id)
+comment1 = Comment.create!(body: "comment 3 bill 3", author_id: user2.id, bill_id: mauricio3.id)
+comment1 = Comment.create!(body: "comment 4 bill 3", author_id: demoUser.id, bill_id: mauricio3.id)
+comment1 = Comment.create!(body: "comment 5 bill 3", author_id: user2.id, bill_id: mauricio3.id)
+
+
+#comments bill 4
+comment1 = Comment.create!(body: "comment 1 bill 4", author_id: demoUser.id, bill_id: mauricio4.id)
+comment1 = Comment.create!(body: "comment 2 bill 4", author_id: user2.id, bill_id: mauricio4.id)
+comment1 = Comment.create!(body: "comment 3 bill 4", author_id: user2.id, bill_id: mauricio4.id)
+comment1 = Comment.create!(body: "comment 4 bill 4", author_id: demoUser.id, bill_id: mauricio4.id)
+comment1 = Comment.create!(body: "comment 5 bill 4", author_id: user2.id, bill_id: mauricio4.id)
+
+
 
 
 
@@ -123,7 +186,6 @@ bill6 = Bill.create!(description: "bill16", date: Date.today, total_amt: 100, pa
 bill7 = Bill.create!(description: "bill17", date: Date.today, total_amt: 100, payer_id: user8.id)
 bill8 = Bill.create!(description: "bill18", date: Date.today, total_amt: 100, payer_id: user9.id)
 bill9 = Bill.create!(description: "bill19", date: Date.today, total_amt: 100, payer_id: user10.id)
-
 
 
 
@@ -151,18 +213,18 @@ user1015 = User.create!(email: "Ryan" , password: "password", image_url: "test")
 user1016 = User.create!(email: "Zachary" , password: "password", image_url: "test")
 user1017 = User.create!(email: "Justin" , password: "password", image_url: "test")
 user1018 = User.create!(email: "Anthony" , password: "password", image_url: "test")
-# user1019 = User.create!(email: "William" , password: "password", image_url: "test")
-# user1020 = User.create!(email: "Robert" , password: "password", image_url: "test")
-# user1021 = User.create!(email: "Jonathan" , password: "password", image_url: "test")
-# user1022 = User.create!(email: "Kyle" , password: "password", image_url: "test")
-# user1023 = User.create!(email: "Austin" , password: "password", image_url: "test")
-# user1024 = User.create!(email: "Alexander" , password: "password", image_url: "test")
-# user1025 = User.create!(email: "Kevin" , password: "password", image_url: "test")
-# user1026 = User.create!(email: "Cody" , password: "password", image_url: "test")
-# user1027 = User.create!(email: "Thomas" , password: "password", image_url: "test")
-# user1028 = User.create!(email: "Jordan" , password: "password", image_url: "test")
-# user1029 = User.create!(email: "Eric" , password: "password", image_url: "test")
-# user1030 = User.create!(email: "Benjamin" , password: "password", image_url: "test")
+user1019 = User.create!(email: "William" , password: "password", image_url: "test")
+user1020 = User.create!(email: "Robert" , password: "password", image_url: "test")
+user1021 = User.create!(email: "Jonathan" , password: "password", image_url: "test")
+user1022 = User.create!(email: "Kyle" , password: "password", image_url: "test")
+user1023 = User.create!(email: "Austin" , password: "password", image_url: "test")
+user1024 = User.create!(email: "Alexander" , password: "password", image_url: "test")
+user1025 = User.create!(email: "Kevin" , password: "password", image_url: "test")
+user1026 = User.create!(email: "Cody" , password: "password", image_url: "test")
+user1027 = User.create!(email: "Thomas" , password: "password", image_url: "test")
+user1028 = User.create!(email: "Jordan" , password: "password", image_url: "test")
+user1029 = User.create!(email: "Eric" , password: "password", image_url: "test")
+user1030 = User.create!(email: "Benjamin" , password: "password", image_url: "test")
 # user1031 = User.create!(email: "Aaron" , password: "password", image_url: "test")
 # user1032 = User.create!(email: "Jose" , password: "password", image_url: "test")
 # user1033 = User.create!(email: "Christian" , password: "password", image_url: "test")

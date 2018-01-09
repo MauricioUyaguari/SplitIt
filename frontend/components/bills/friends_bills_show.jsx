@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const FriendsBillShow = ({ bill, friendsSplits, friend}) => {
-
+  debugger
   const billSplits = [];
 
   friendsSplits.forEach((split) => {

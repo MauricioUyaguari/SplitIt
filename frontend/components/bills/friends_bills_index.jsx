@@ -24,6 +24,7 @@ const FriendsBillsIndex = ({ bills, splits, friend}) => {
     return (
     sortedBills.map(bill =>
           <FriendsBillShow
+            key={bill.id}
             bill={bill}
             friendsSplits={friendsSplits}
             friend={friend}

@@ -29,4 +29,12 @@ class Bill < ApplicationRecord
   through: :splits,
   source: :debtor
 
+
+  has_many :comments,
+  foreign_key: :bill_id,
+  class_name: :Comment
+
+
+
+
 end

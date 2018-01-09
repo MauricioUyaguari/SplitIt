@@ -13,11 +13,13 @@ export const receiveAllFriends = (friends) => {
 };
 
 export const receiveSingleFriend = (state) => {
+  debugger
   return {
     type: RECEIVE_SINGLE_FRIEND,
     friend: state.friend,
     bills: state.bills,
-    splits: state.splits
+    splits: state.splits,
+    comments: state.comments
   };
 };
 

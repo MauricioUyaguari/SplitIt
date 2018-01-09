@@ -16,14 +16,13 @@ class FriendsShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-
+    debugger
     if(this.props.friendId != newProps.friendId){
       this.props.fetchSingleFriend(newProps.friendId);
     }
   }
 
   render () {
-
     if(this.props.friend == undefined){
       return null;
     }
@@ -36,7 +35,7 @@ class FriendsShow extends React.Component {
         <span>{this.props.friend.email}</span>
       </div>
       <div className="actions">
-        <BillsFormModal friend={this.props.friend} 
+        <BillsFormModal friend={this.props.friend}
           />
         <button className="settleup-button">Settle Up</button>
       </div>
