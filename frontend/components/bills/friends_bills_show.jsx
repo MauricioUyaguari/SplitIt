@@ -1,29 +1,47 @@
 import React from 'react';
+import BillCommentsShowContainer from '../comments/bill_comments_show_container';
 
 
-const FriendsBillShow = ({ bill, friendsSplits, friend}) => {
-  const billSplits = [];
+class FriendsBillShow extends React.Component {
 
-  friendsSplits.forEach((split) => {
-    if(split.bill_id == bill.id) {
-      billSplits.push(split);
-    }
-  });
-  const splitsRender = () => {
+  constructor(props){
+    super(props);
+    this.splitsRender = this.splitsRender.bind(this);
+    this.renderDate = this.renderDate.bind(this);
+    this.toggleDetail = this.toggleDetail.bind(this);
+    this.state = {detail: false};
+  }
+
+
+
+  billSplits(){
+    const { friendsSplits, bill, friend} = this.props;
+    const result = [];
+    friendsSplits.forEach((split) => {
+      if(split.bill_id == bill.id) {
+        result.push(split);
+      }
+    });
+    return result;
+  }
+
+  splitsRender () {
+    const { friendsSplits, bill, friend} = this.props;
     return (
-    billSplits.map(split =>
+    this.billSplits().map(split =>
       <div key={split.id}>
         <span>{(split.debtor_id == friend.id) ? friend.email : "You"}:</span>
         <span className="split-amount"> ${split.amount_due}</span>
       </div>
     )
   );
-  };
+  }
 
 
-  const splitMessage = () => {
-    const currentUserSplit = billSplits.filter(el => el.debtor_id !== friend.id)
-    const friendSplit =  billSplits.filter(el => el.debtor_id === friend.id)
+  splitMessage () {
+    const { friendsSplits, bill, friend} = this.props;
+    const currentUserSplit = this.billSplits().filter(el => el.debtor_id !== friend.id);
+    const friendSplit =  this.billSplits().filter(el => el.debtor_id === friend.id);
     if(bill.payer_id == friend.id){
       return (<li className="bill-red">
         {friend.email} lent you
@@ -37,10 +55,11 @@ const FriendsBillShow = ({ bill, friendsSplits, friend}) => {
         <span> ${friendSplit[0].amount_due}</span>
       </li>);
     }
-  };
+  }
 
 
-  const renderDate = () => {
+  renderDate  ()  {
+    const { friendsSplits, bill, friend} = this.props;
     let newDate = new Date(bill.date);
     newDate.setDate(newDate.getDate()+1);
     let monthNames = ["Jan", "Feb", "March", "April", "May", "June",
@@ -54,31 +73,49 @@ const FriendsBillShow = ({ bill, friendsSplits, friend}) => {
       <span>{day}</span>
       <span>{year}</span>
     </div>);
-  };
+  }
 
+
+  toggleDetail(e){
+    e.preventDefault();
+    this.setState({detail: !this.state.detail});
+  }
+
+  render () {
+    const { friendsSplits, bill, friend} = this.props;
+    let commentsDetail;
+    if(this.state.detail){
+      commentsDetail = <BillCommentsShowContainer friend={friend} bill={bill}/>;
+    }
 
   return(
-  <div className="friend-bill-show-item">
-    <ul className="friend-bill-show-left-bar">
-      <li > {renderDate()}</li>
-      <img className="bill-image" src={window.staticImages.icon_bill}></img>
-      <li className="bill-description">{bill.description}</li>
-    </ul>
-    <ul className="friend-bill-show-middle-bar">
-      <li className="payer">{(bill.payer_id == friend.id) ? friend.email : "You"} paid
-        <span>${bill.total_amt}</span>
-      </li>
-      {splitMessage()}
-    </ul>
-    <div className="friend-bill-show-right-bar">
-    <span>Splits</span>
-    {splitsRender()}
+    <div>
+      <div onClick={this.toggleDetail} className="friend-bill-show-item">
+        <ul className="friend-bill-show-left-bar">
+          <li > {this.renderDate()}</li>
+          <img className="bill-image" src={window.staticImages.icon_bill}></img>
+          <li className="bill-description">{bill.description}</li>
+        </ul>
+        <ul className="friend-bill-show-middle-bar">
+          <li className="payer">{(bill.payer_id == friend.id) ? friend.email : "You"} paid
+            <span>${bill.total_amt}</span>
+          </li>
+            {this.splitMessage()}
+        </ul>
+        <div className="friend-bill-show-right-bar">
+        <span>Splits</span>
+          {this.splitsRender()}
+        </div>
+      </div>
+      <div>
+        {commentsDetail}
+      </div>
     </div>
-  </div>
   );
+  }
 
 
-};
+}
 
 
 export default FriendsBillShow;

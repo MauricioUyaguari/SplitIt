@@ -16,7 +16,7 @@ const splitsReducer = (state = {}, action) => {
         return acc;
       }, {});
       const check = merge({}, state, billSplits);
-      return check
+      return check;
     default:
     return state;
 

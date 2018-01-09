@@ -27,7 +27,7 @@ class BillForm extends React.Component {
   const { currentUser, friend} = this.props;
   let drop = $( "#dropdown option:selected" ).text();
   let payer_id = (drop === "You") ? currentUser.id : friend.id;
-  const split_amt_due = (this.state.split_due/100) * (this.state.total_amt)
+  const split_amt_due = (this.state.split_due/100) * (this.state.total_amt);
   let newBill = merge({}, this.state, {"payer_id": payer_id}, {"split_due": split_amt_due});
   this.props.createBill(newBill);
   this.props.closeModal();

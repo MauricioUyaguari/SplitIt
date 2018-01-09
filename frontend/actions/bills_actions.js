@@ -13,7 +13,7 @@ export const receiveAllBills = (bills) => {
 
 
 export const receiveBill = (billData) => {
-  
+
   return {
     type: RECEIVE_BILL,
     bill: billData.bill,
@@ -33,6 +33,12 @@ export const fetchAllBills = () => dispatch => {
 
 export const createBill = (inputBill) => dispatch => {
   return BillApiUtil.createBill(inputBill).then(bill => {
+    return dispatch(receiveBill(bill));
+  });
+};
+
+export const fetchBill = (id) => dispatch => {
+  return BillApiUtil.fetchBill(id).then(bill => {
     return dispatch(receiveBill(bill));
   });
 };
