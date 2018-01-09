@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import FriendsBillsIndexContainer from '../bills/friends_bills_index_container';
 import BillsFormContainer from '../bills/bills_form_container';
-
 import BillsFormModal from '../bills/bills_form_modal';
+import FriendsBillBalance from '../bills/friends_bill_balance';
 
 class FriendsShow extends React.Component {
   constructor(props){
@@ -16,7 +16,7 @@ class FriendsShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    
+
     if(this.props.friendId != newProps.friendId){
       this.props.fetchSingleFriend(newProps.friendId);
     }
@@ -42,6 +42,9 @@ class FriendsShow extends React.Component {
     </section>
     <div className="friend-bill-show">
       <FriendsBillsIndexContainer friendId={this.props.friendId} />
+    </div>
+    <div>
+      <FriendsBillBalance friend={this.props.friend}/>
     </div>
     </div>
 

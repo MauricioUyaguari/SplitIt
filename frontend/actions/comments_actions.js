@@ -27,7 +27,7 @@ export const receiveAllComments = (comments) => {
 
 
 export const removeComment = (commentData) => {
-  debugger
+  
   return {
   type: REMOVE_COMMENT,
   comment: commentData.comment,

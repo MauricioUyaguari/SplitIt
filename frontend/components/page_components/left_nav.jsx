@@ -6,12 +6,12 @@ import FriendsIndexContainter from '../friends/friends_index_container';
 
 const LeftNav = () => {
 
-  
+
   const topDashboard = () =>  {
     return(
       <ul>
         <li>
-          <Link to="/">
+          <Link to="/dashboard">
           <img src={window.staticImages.icon_house}></img>
           <span>DashBoard</span>
           </Link>

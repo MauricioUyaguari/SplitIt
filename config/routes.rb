@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :api, defaults: {format: 'json'} do
       resources :users, only: [:create] do
         get "search", on: :collection
+        get "dashboard", on: :collection
       end
       resource :session, only: [:destroy, :create]
       resources :friends, only: [:show, :index, :create]

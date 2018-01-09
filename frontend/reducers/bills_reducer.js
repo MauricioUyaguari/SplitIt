@@ -30,7 +30,6 @@ const billsReducer = (state = {}, action) => {
     let attBill = state[action.bill.id];
     attBill.comments_id = attBill.comments_id.filter(commentId => commentId != action.comment.id);
     const rcResult = merge({}, state, {[attBill.id]: attBill});
-    debugger
     return rcResult;
     default:
       return state;

@@ -1,8 +1,6 @@
 class Api::UsersController < ApplicationController
 
 
-
-
   def create
     @user = User.new(user_params)
     @user.image_url = "a"
@@ -17,7 +15,6 @@ class Api::UsersController < ApplicationController
   end
 
   def search
-
     search = params[:query]
     results = current_user.search(search)
     if search.present? && results
@@ -27,7 +24,11 @@ class Api::UsersController < ApplicationController
       @users = User.none
       render json: {}
     end
+  end
 
+
+  def dashboard
+    render 'api/users/dashboard'
   end
 
 

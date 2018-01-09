@@ -3,12 +3,15 @@ import { Route, Redirect, Switch, Link , HashRouter} from 'react-router-dom';
 import '../../util/route_util';
 
 
-
 // Friends Bills Splits and Transactions
 
 import FriendsIndexContainter from '../friends/friends_index_container';
 import LeftNav from './left_nav';
 import FriendsShowContainer from '../friends/friends_show_container';
+
+
+// import
+import DashboardContainer from '../currentUser/dashboard_container';
 
 const LoggedInContents = () => {
   return(
@@ -17,12 +20,12 @@ const LoggedInContents = () => {
       <section className="logged-in-body-div">
 
          <Route path="/friends/:friendId" component={FriendsShowContainer} />
-      </section>
-      <section className="right-nav">
-        <p> right shit goes here</p>
+         <Route exact path="/" component={DashboardContainer} />
+         <Route path="/dashboard" component={DashboardContainer} />
       </section>
     </div>
   );
+
 };
 
 

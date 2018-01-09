@@ -159,4 +159,55 @@ class User < ApplicationRecord
   end
 
 
+
+
+#balances
+  def all_balances
+    friends = self.all_friends
+    balances = []
+
+    friends.each do |friend|
+      temp = [];
+      temp.push(friend.id);
+      temp.push(friend.email)
+      temp.push(self.balance_with(friend))
+      balances.push(temp)
+    end
+    return balances
+  end
+
+  def total_balance
+    total = 0;
+    all_balances = self.all_balances
+    all_balances.each do |balance|
+      total += balance[2]
+    end
+    return total
+  end
+
+  def you_owe
+    total = 0;
+    all_balances = self.all_balances
+    all_balances.each do |balance|
+      if balance[2] < 0
+      total += balance[2]
+      end
+    end
+    return total.abs
+  end
+
+  def you_are_owed
+    total = 0;
+    all_balances = self.all_balances
+    all_balances.each do |balance|
+      if balance[2] > 0
+      total += balance[2]
+      end
+    end
+    return total
+  end
+
+
+
+
 end
