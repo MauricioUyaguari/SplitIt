@@ -26,10 +26,12 @@ export const receiveAllComments = (comments) => {
 };
 
 
-export const removeComment = (id) => {
+export const removeComment = (commentData) => {
+  debugger
   return {
   type: REMOVE_COMMENT,
-  id
+  comment: commentData.comment,
+  bill: commentData.bill
 };
 };
 
@@ -55,6 +57,6 @@ export const fetchComments = () => dispatch => {
 
 export const deleteComment = (inputId) => dispatch => {
   return CommentApiUtil.deleteComment(inputId).then(comment => {
-    return dispatch(removeComment(inputId));
+    return dispatch(removeComment(comment));
   });
 };

@@ -78,22 +78,22 @@ friendship14 = Friendship.create!(requester_id: user8.id, friend_id: user2.id)
 #demoUser Bills with Luis
 
 luis1 = Bill.create!(description: "luis1", date: Date.today, total_amt: 500, payer_id: demoUser.id)
-split1 = Split.create!(debtor_id: user1.id, bill_id: luis1.id, amount_due: 250)
-split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis1.id, amount_due: 250)
+split1 = Split.create!(debtor_id: user1.id, bill_id: luis1.id, amount_due: 300)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis1.id, amount_due: 200)
 
 
 
 luis2 = Bill.create!(description: "luis2", date: Date.today, total_amt: 500, payer_id: demoUser.id)
-split1 = Split.create!(debtor_id: user1.id, bill_id: luis2.id, amount_due: 250)
-split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis2.id, amount_due: 250)
+split1 = Split.create!(debtor_id: user1.id, bill_id: luis2.id, amount_due: 100)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis2.id, amount_due: 400)
 
 luis3 = Bill.create!(description: "luis3", date: Date.today, total_amt: 500, payer_id: user1.id)
-split1 = Split.create!(debtor_id: user1.id, bill_id: luis3.id, amount_due: 250)
-split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis3.id, amount_due: 250)
+split1 = Split.create!(debtor_id: user1.id, bill_id: luis3.id, amount_due: 450)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis3.id, amount_due: 50)
 
 luis4 = Bill.create!(description: "luis4", date: Date.today, total_amt: 500, payer_id: user1.id)
-split1 = Split.create!(debtor_id: user1.id, bill_id: luis4.id, amount_due: 250)
-split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis4.id, amount_due: 250)
+split1 = Split.create!(debtor_id: user1.id, bill_id: luis4.id, amount_due: 500)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis4.id, amount_due: 0)
 
 
 ## Demo Comments with Luis
@@ -130,16 +130,16 @@ split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio1.id, amount_due: 1
 split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio1.id, amount_due: 90)
 
 mauricio2 = Bill.create!(description: "mauricio2", date: Date.today, total_amt: 200, payer_id: user2.id)
-split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio2.id, amount_due: 20)
-split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio2.id, amount_due: 80)
+split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio2.id, amount_due: 150)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio2.id, amount_due: 50)
 
 mauricio3 = Bill.create!(description: "mauricio3", date: Date.today, total_amt: 300, payer_id: user2.id)
-split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio3.id, amount_due: 30)
-split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio3.id, amount_due: 70)
+split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio3.id, amount_due: 200)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio3.id, amount_due: 100)
 
 mauricio4 = Bill.create!(description: "mauricio4", date: Date.today, total_amt: 400, payer_id: demoUser.id)
-split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio4.id, amount_due: 40)
-split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio4.id, amount_due: 60)
+split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio4.id, amount_due: 250)
+split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio4.id, amount_due: 150)
 
 #Demo Comments with Mauricio
 

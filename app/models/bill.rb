@@ -13,7 +13,7 @@
 
 class Bill < ApplicationRecord
 
-  validates :description, :date, :payer_id, presence: true
+  validates :description, :date, :payer_id, :total_amt, presence: true
 
   belongs_to :payer,
   foreign_key: :payer_id,

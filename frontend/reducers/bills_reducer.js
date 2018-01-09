@@ -1,6 +1,6 @@
 import { RECEIVE_ALL_BILLS, RECEIVE_BILL } from '../actions/bills_actions';
 import { RECEIVE_SINGLE_FRIEND } from '../actions/friends_actions';
-import { RECEIVE_COMMENT } from '../actions/comments_actions';
+import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comments_actions';
 import merge from 'lodash/merge';
 
 const billsReducer = (state = {}, action) => {
@@ -25,8 +25,13 @@ const billsReducer = (state = {}, action) => {
     let newCommentsIds = (newBill.comments_id.concat(action.comment.id)).filter(onlyUnique);
     newBill.comments_id = newCommentsIds;
     const result = merge({}, state, {[newBill.id]: newBill});
-
     return result;
+    case REMOVE_COMMENT:
+    let attBill = state[action.bill.id];
+    attBill.comments_id = attBill.comments_id.filter(commentId => commentId != action.comment.id);
+    const rcResult = merge({}, state, {[attBill.id]: attBill});
+    debugger
+    return rcResult;
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 import merge from 'lodash/merge';
 import { RECEIVE_SINGLE_FRIEND } from '../actions/friends_actions';
 import { RECEIVE_BILL } from '../actions/bills_actions';
-import {RECEIVE_COMMENT} from '../actions/comments_actions';
+import {RECEIVE_COMMENT, REMOVE_COMMENT} from '../actions/comments_actions';
 const commentsReducer = (state = {}, action) => {
 
 
@@ -10,6 +10,10 @@ const commentsReducer = (state = {}, action) => {
 
     case RECEIVE_COMMENT:
     return merge({}, state, {[action.comment.id]: action.comment});
+    case REMOVE_COMMENT:
+    let newState = merge({}, state);
+    delete newState[action.comment.id];
+    return newState;
 
     // case RECEIVE_SINGLE_FRIEND:
     // // const comments = action.comments.reduce((acc, comment) => {
@@ -23,6 +27,7 @@ const commentsReducer = (state = {}, action) => {
       return acc;
     }, {});
     return merge({}, state, billComments);
+
     default:
       return state;
   }

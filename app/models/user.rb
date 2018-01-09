@@ -143,5 +143,20 @@ class User < ApplicationRecord
     self.bills - self.paid_bills
   end
 
+  def balance_with(friend)
+    bills = shared_bills(friend)
+    result = 0
+    bills.each do |bill|
+      if bill.payer_id == self.id
+        split = bill.splits.select{|split| split.debtor_id != bill.payer_id}
+        split.each{|el| result += el.amount_due}
+      else
+        split = bill.splits.select{|split| split.debtor_id != bill.payer_id }
+          split.each{|el| result -= el.amount_due}
+      end
+    end
+    return result
+  end
+
 
 end

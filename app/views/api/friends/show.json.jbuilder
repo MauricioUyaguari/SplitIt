@@ -7,13 +7,14 @@ comments_id = current_user.shared_comments(@friend).map{|comment| comment.id}
 @bills = current_user.shared_bills(@friend)
 @splits = current_user.shared_splits(@friend)
 @comments = current_user.shared_comments(@friend)
-
+@balance = current_user.balance_with(@friend)
 
 json.friend do
   json.extract! @friend, :id, :email
   json.bills_id bills_id
   json.splits_id splits_id
   json.comments_id comments_id
+  json.balance_with_current_user @balance
 end
 
 

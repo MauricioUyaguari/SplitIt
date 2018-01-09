@@ -12,7 +12,6 @@ class BillCommentsShow  extends React.Component {
     this.props.fetchBill(this.props.bill.id);
   }
   handleSubmit(e){
-
     let {currentUser, bill} = this.props;
     e.preventDefault();
     let newComment = {body: this.state.body, author_id: currentUser.id, bill_id: bill.id};
@@ -27,10 +26,11 @@ class BillCommentsShow  extends React.Component {
   }
   renderComments(){
     const filteredComments = this.props.comments.filter(comment => comment.bill_id === this.props.bill.id);
+    debugger
     return(filteredComments.map(comment =>
       <li key={comment.id}>
         <span key={comment.id}>{comment.body}</span>
-        <button>x</button>
+        <button onClick={() => this.props.deleteComment(comment.id)}>x</button>
       </li>
       )
     );

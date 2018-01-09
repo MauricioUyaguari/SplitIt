@@ -41,7 +41,6 @@ class Api::BillsController < ApplicationController
   end
 
   def index
-
     @bills = current_user.bills
     if @bills
       render 'api/bills/index'
