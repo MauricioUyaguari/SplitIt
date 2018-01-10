@@ -8,17 +8,158 @@
 .bill-detail-div {
   border-bottom: 1px solid #ddd;
   display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.comment-body {
+
+.bill-comment-image{
+  background: inherit;
+  margin-left: 15px;
+  height: 70px;
+  width: 70px;
+  margin-right: 0px;
+  padding: 0px;
+}
+
+
+.bill-detail-div-left-side {
+  display: flex;
+  flex-direction: column
+}
+
+.bill-detail-div-left-side * {
+  padding-top: 5px;
+}
+
+
+.bill-detail-div-descr {
+  font-size: 16px;
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 27px;
+}
+.bill-detail-div-amt{
+  margin-top: -1px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.bill-detail-div-date{
+  padding-top: 10px;
+  font-size: 15px;
+  color: #999;
+}
+
+
+
+.bill-detail-div-payer-info-div {
+    display: flex;
+    align-items: center;
+}
+
+  .bill-detail-div-loaner-info-div{
+  display: flex;
+  align-items: center;
+}
+
+.bill-detail-div-trans-info {
+  font-size: 13px;
+line-height: 18px;
+color: #333;
+}
+
+
+.span-person, .money {
+  font-wight: bold;
+  font-size: 16px;
+}
+// comment section
+
+.comment-info {
   border: 1px solid #ccc;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    padding: 6px 8px;
-    background: #fff;
-    margin-bottom: 8px;
-    word-wrap: break-word;
+  border-radius: 5px;
+  padding: 6px 8px;
+  background: #fff;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+.comment-author {
+  font-weight: bold;
+}
+
+.notes-comments-label {
+  font-size: 12px;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  color: #999;
+  line-height: 18px;
+  font-weight: bold;
+  font-family: inherit;
+  padding: 10px;
+
+}
+
+.ul-comments {
+  padding-left: 10px;
+}
+.icon_comment {
+  font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    height: 14px;
+    width: 18px;
+    padding-right: 2px;
+}
+
+.close-comment {
+  float: right;
+  color: #c00;
+  font-weight: bold;
+
+  margin: -2px -2px -2px -2px;
+}
+
+
+.add-comment-form {
+  display: flex;
+flex-direction: column;
+padding:10px;
+}
+
+.add-comment-input {
+  margin-bottom: 8px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  width: 300px;
+  height: 52px;
+}
+
+
+.post-comment-button {
+  width: 15%;
+  font-size: 13px;
+  padding: 3px 6px;
+  background: #ff652f;
+  color: #fff;
+  text-shadow: 0 -1px 0 #c83400;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
 }

@@ -1,0 +1,162 @@
+.dashboard-top-nav{
+  flex-direction: column;
+  padding: 0px;
+}
+
+.dashboard-top-nav-upper {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 10px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.dashboard-label {
+  max-width: 315px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 24px !important;
+  line-height: 38px;
+  height: 38px;
+  /* display: inline-block; */
+  vertical-align: middle;
+  color: #333;
+  padding-left: 5px;
+  font-weight: bold;
+}
+.dashboard-top-nav-bottom{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+  padding: 15px;
+}
+
+.dashboard-bottom-block {
+  text-align: center;
+  padding: 0 5px;
+  border-left: 1px solid #ddd;
+  flex: 1;
+}
+
+.no-left {
+  border-left: 0px;
+}
+
+.dashboard-bottom-block div {
+  line-height: 16px;
+  font-size: 13px;
+  text-align: center;
+  color: #999;
+  padding: 2px;
+}
+
+
+.money *,  {
+  line-height: 16px;
+  font-size: 13px;
+  color: #5bc5a7;
+}
+
+.neg *{
+      color: #ff652f;
+}
+
+
+
+
+
+
+// main dashboard
+.dashboard-main-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dashboard-container-figure{
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard-figure {
+  height: 182px;
+  width: 85px;
+}
+
+.dashboard-main-owe {
+  flex: 3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 10px;
+}
+
+.dashboard-main-owe ul {
+  width: 100%;
+}
+.dashboard-main-owe ul li {
+  list-style: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin-bottom: 5px;
+  line-height: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: black;
+  border-radius: 4px;
+  min-width: 55px;
+  font-size: 16px;
+}
+
+
+
+
+.dashboard-container-figure {
+  flex: 1;
+}
+
+
+.dashboard-neg {
+        background: #ff652f;
+        align-items: flex-end;
+}
+
+.dashboard-pos {
+          background: #5bc5a7;
+
+}
+
+.dashboard-pos * {
+  padding-left: 2.5px;
+}
+.dashboard-neg * {
+  padding-right: 2.5px;
+}
+
+.dashboard-friend-links {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 16px;
+}
+
+.dashboard-middle {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: flex-end; */
+  justify-content: space-between;
+  padding-left: 4px;
+  padding: riht;
+  padding-right: 4px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #999;
+  padding-top: 20px;
+  padding-bottom: 0px;
+}

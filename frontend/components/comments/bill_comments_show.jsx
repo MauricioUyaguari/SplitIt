@@ -24,13 +24,25 @@ class BillCommentsShow  extends React.Component {
       this.setState({["body"]: e.target.value});
     };
   }
+
+  author(comment) {
+    const author = (comment.author_id === this.props.currentUser.id) ? this.props.currentUser : this.props.friend;
+    return (
+      <div>{author.email}</div>
+    );
+  }
   renderComments(){
     const filteredComments = this.props.comments.filter(comment => comment.bill_id === this.props.bill.id);
 
     return(filteredComments.map(comment =>
       <li key={comment.id}>
-        <div key={comment.id} className="comment-body">{comment.body}</div>
-        <button onClick={() => this.props.deleteComment(comment.id)}>x</button>
+        <div key={comment.id} className="comment-info">
+          <div className="comment-body-author">
+            <div className="comment-author">{this.author(comment)}</div>
+            <div>{comment.body}</div>
+          </div>
+          <button className="close-comment"onClick={() => this.props.deleteComment(comment.id)}>x</button>
+        </div>
       </li>
       )
     );
@@ -38,21 +50,25 @@ class BillCommentsShow  extends React.Component {
 
   render () {
     return(<div>
-      {this.props.bill.description}
-      <div>Notes and Comments
-        <ul>
+      <div className="notes-comments-label">
+        <img className="icon_comment" src={window.staticImages.icon_comment}></img>
+        Notes and Comments
+      </div>
+      <div>
+        <ul className="ul-comments">
         {this.renderComments()}
         </ul>
       </div>
-      <form onSubmit={this.handleSubmit}>
+      <form className="add-comment-form" onSubmit={this.handleSubmit}>
         <label>
-          <input
+          <textarea
+            className="add-comment-input"
             value={this.state.body}
             onChange={this.updateBody()}
             placeholder="Add a Comment"
             />
         </label>
-        <button>Post</button>
+        <button className="post-comment-button">Post</button>
       </form>
     </div>);
   }

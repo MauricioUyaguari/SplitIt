@@ -9,7 +9,7 @@ class FriendsBillShow extends React.Component {
     this.splitsRender = this.splitsRender.bind(this);
     this.renderDate = this.renderDate.bind(this);
     this.toggleDetail = this.toggleDetail.bind(this);
-    this.state = {detail: false};
+    this.state = {detail: false, splitsForBill: this.billSplits()};
   }
 
 
@@ -82,29 +82,34 @@ class FriendsBillShow extends React.Component {
   }
 
   detailedView(){
-    const { friendsSplits, bill, friend, currentUser} = this.props;
+    const { bill, friend, currentUser} = this.props;
+    const {splitsForBill} = this.state;
     let newDate = new Date(bill.date);
     newDate.setDate(newDate.getDate()+1);
     let payer = (bill.payer_id === currentUser.id) ? currentUser : friend;
     let debtor = (bill.payer_id === currentUser.id) ? friend : currentUser ;
-    let splitPayer = (friendsSplits[0].debtor_id === payer.id) ? friendsSplits[0] : friendsSplits[1];
-    let splitDebtor = (friendsSplits[0].debtor_id === payer.id) ? friendsSplits[1] : friendsSplits[0];
+    let splitPayer = (splitsForBill[0].debtor_id === payer.id) ? splitsForBill[0] : splitsForBill[1];
+    let splitDebtor = (splitsForBill[0].debtor_id === payer.id) ? splitsForBill[1] : splitsForBill[0];
     return(
       <div className="bill-detail-div">
-        <div >
-        <div>{bill.description}</div>
-          <img className="bill-image" src={window.staticImages.icon_bill}></img>
-          <div>Added on {newDate.toDateString()}</div>
+        <div><img className="bill-comment-image bill-image" src={window.staticImages.icon_bill}></img></div>
+        <div className="bill-detail-div-left-side">
+          <div className="bill-detail-div-descr">{bill.description}</div>
+          <div className="bill-detail-div-amt">${bill.total_amt}</div>
+          <div className="bill-detail-div-date">Added on </div>
+          <div className="bill-detail-div-date"> {newDate.toDateString()}</div>
         </div>
-        <div>
-          <div>
-            <img className="bill-image" src={window.staticImages.person_icon}></img>
-            {payer.email} paid ${bill.total_amt}
-            {payer.email} owes ${splitPayer.amount_due}
+      <div>
+          <div className="bill-detail-div-payer-info-div">
+            <div><img className="bill-image" src={window.staticImages.person_icon}></img></div>
+            <div className="bill-detail-div-trans-info">
+              <div> <span className="span-person">{payer.email} </span> paid $<span className="money">{bill.total_amt}</span></div>
+              <div>and owes <span className="money">${splitPayer.amount_due}</span></div>
+            </div>
           </div>
-          <div>
-            <img className="bill-image" src={window.staticImages.person_icon}></img>
-            {debtor.email} owes ${splitDebtor.amount_due}
+          <div className="bill-detail-div-loaner-info-div">
+            <div><img className="bill-image" src={window.staticImages.person_icon}></img></div>
+            <div> <span className="span-person">{debtor.email}</span> owes <span className="money">${splitDebtor.amount_due}</span></div>
           </div>
         </div>
       </div>
