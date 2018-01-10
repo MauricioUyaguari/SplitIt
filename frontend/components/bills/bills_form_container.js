@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   let friendId = ownProps.match.params.friendId;
   return {
   currentUser: state.session.currentUser,
-  friend: state.friends[friendId]
+  friend: state.entities.friends[friendId]
 } ;
 };
 

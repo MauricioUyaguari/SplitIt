@@ -4,8 +4,8 @@ import ActivityView from './activity';
 const mapStateToProps = (state) => {
 return{
   currentUser: state.session.currentUser,
-  friends: state.friends,
-  bills: state.bills
+  friends: state.entities.friends,
+  bills: state.entities.bills
 };
 
 };

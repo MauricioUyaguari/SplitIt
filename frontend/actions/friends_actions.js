@@ -12,14 +12,14 @@ export const receiveAllFriends = (friends) => {
   };
 };
 
-export const receiveSingleFriend = (state) => {
-  
+export const receiveSingleFriend = (friendData) => {
+
   return {
     type: RECEIVE_SINGLE_FRIEND,
-    friend: state.friend,
-    bills: state.bills,
-    splits: state.splits,
-    comments: state.comments
+    friend: friendData.friend,
+    bills: friendData.bills,
+    splits: friendData.splits,
+    comments: friendData.comments
   };
 };
 

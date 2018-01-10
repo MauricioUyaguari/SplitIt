@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
 
   const { friend } = ownProps;
   return{
-    comments: Object.values(state.comments),
+    comments: Object.values(state.entities.comments),
     currentUser: state.session.currentUser,
     friend
   };

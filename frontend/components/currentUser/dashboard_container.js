@@ -5,7 +5,7 @@ import { fetchDashboard } from '../../actions/currentUser_actions';
 const mapStateToProps = (state) => {
   return{
       currentUser: state.session.currentUser,
-      friends: state.friends
+      friends: state.entities.friends
   };
 };
 

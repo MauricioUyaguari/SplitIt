@@ -7,8 +7,8 @@ import { createFriend, fetchSearchedUsers  } from '../../actions/friends_actions
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    friends: Object.values(state.friends),
-    searchedUsers: Object.values(state.search)
+    friends: Object.values(state.entities.friends),
+    searchedUsers: Object.values(state.entities.earch)
   };
 };
 

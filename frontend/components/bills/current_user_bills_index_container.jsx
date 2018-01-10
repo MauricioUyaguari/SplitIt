@@ -7,7 +7,7 @@ import CurrentUserBillsIndex from './current_user_bills_index.jsx';
 const mapStateToProps = (state) => {
 
   return {
-    bills: Object.values(state.friends)
+    bills: Object.values(state.entities.friends)
   };
 };
 

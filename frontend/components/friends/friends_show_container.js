@@ -6,9 +6,9 @@ const mapStateToProps = (state, { match }) => {
 
 
   const friendId = parseInt(match.params.friendId);
-  const friend = state.friends[friendId];
+  const friend = state.entities.friends[friendId];
   return {
-    friends: state.friends,
+    friends: state.entities.friends,
     friend,
     friendId
   };

@@ -5,7 +5,7 @@ import { fetchAllFriends, createFriend } from '../../actions/friends_actions';
 
 const mapStateToProps = (state) => {
   return {
-    friends: Object.values(state.friends)
+    friends: Object.values(state.entities.friends)
   };
 };
 
