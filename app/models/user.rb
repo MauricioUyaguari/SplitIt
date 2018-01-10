@@ -21,7 +21,6 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-
   has_many :in_friendships,
   foreign_key: :friend_id,
   class_name: :Friendship
@@ -64,6 +63,17 @@ class User < ApplicationRecord
     has_many :authored_comments,
     foreign_key: :author_id,
     class_name: :Comment
+
+
+    # has many paid transactions
+
+    has_many :incoming_transactions,
+    foreign_key: :loaner_id,
+    class_name: :Transaction
+
+    has_many :outgoing_transactions,
+    foreign_key: :payer_id,
+    class_name: :Transaction
 
 
   def password=(password)
