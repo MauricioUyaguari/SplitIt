@@ -50,14 +50,28 @@ youAreOwed(){
 }
 
 
-  renderFriendsBalances(){
+  renderFriendsYouOwe(){
     const { currentUser } = this.props;
     if(currentUser.balances === undefined){
       return null;
     }
-    debugger
-    const noZeros = currentUser.balances.filter(el => el[2] !== 0);
-    debugger
+    const noZeros = currentUser.balances.filter(el => el[2] < 0);
+    return(
+      noZeros.map(balance =>
+        <li key={balance[0]}>
+          {balance[1]}
+          {balance[2]}
+        </li>
+      )
+    );
+  }
+
+  renderFriendsYouAreOwed(){
+    const { currentUser } = this.props;
+    if(currentUser.balances === undefined){
+      return null;
+    }
+    const noZeros = currentUser.balances.filter(el => el[2] > 0);
     return(
       noZeros.map(balance =>
         <li key={balance[0]}>
@@ -97,8 +111,11 @@ render(){
         </div>
     </div>
     <div>
-      <ul>
-        {this.renderFriendsBalances()}
+      <ul> You owe
+        {this.renderFriendsYouOwe()}
+      </ul>
+      <ul> You are Owed
+          {this.renderFriendsYouAreOwed()}
       </ul>
     </div>
   </div>

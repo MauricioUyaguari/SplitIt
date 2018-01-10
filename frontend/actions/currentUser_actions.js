@@ -12,7 +12,8 @@ export const receiveDashboard = (dashboard) => {
   return{
     type: RECEIVE_DASHBOARD,
     currentUser: dashboard.current_user,
-    friends: dashboard.friends
+    friends: dashboard.friends,
+    bills: dashboard.bills
   };
 };
 

@@ -12,6 +12,8 @@ import FriendsShowContainer from '../friends/friends_show_container';
 
 // import
 import DashboardContainer from '../currentUser/dashboard_container';
+import ActivityViewContainter from '../currentUser/activity_container';
+
 
 const LoggedInContents = () => {
   return(
@@ -22,6 +24,7 @@ const LoggedInContents = () => {
          <Route path="/friends/:friendId" component={FriendsShowContainer} />
          <Route exact path="/" component={DashboardContainer} />
          <Route path="/dashboard" component={DashboardContainer} />
+         <Route path="/activity" component={ActivityViewContainter} />
       </section>
     </div>
   );
