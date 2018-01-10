@@ -151,7 +151,6 @@ render(){
       </div>
       <div className="dashboard-main-section">
         <div className="dashboard-main-owe">
-          You owe {max}
           <ul>
             {this.renderFriendsYouOwe(max)}
           </ul>
@@ -160,7 +159,6 @@ render(){
           <img className="dashboard-figure" src={window.staticImages.dashboard_figure}></img>
         </figure>
         <div className="dashboard-main-owe">
-          You are Owed {max}
           <ul>
               {this.renderFriendsYouAreOwed(max)}
           </ul>
