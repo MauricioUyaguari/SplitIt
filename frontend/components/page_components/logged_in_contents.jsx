@@ -20,7 +20,6 @@ const LoggedInContents = () => {
     <div className="logged-in-div">
       <LeftNav />
       <section className="logged-in-body-div">
-
          <Route path="/friends/:friendId" component={FriendsShowContainer} />
          <Route exact path="/" component={DashboardContainer} />
          <Route path="/dashboard" component={DashboardContainer} />

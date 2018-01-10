@@ -7,8 +7,8 @@ const FriendsBillBalance = ({friend}) => {
   const positiveBalance = () => {
     const balance = Math.abs(friend.balance_with_current_user);
     return(
-      <div>
-        <span> {friend.email} owes you {balance} </span>
+      <div className="summary-positiveBalance">
+        <div> {friend.email} owes you <span className="money-span">${balance}</span> </div>
       </div>
     );
   };
@@ -16,14 +16,14 @@ const FriendsBillBalance = ({friend}) => {
   const negativeBalance = () => {
     const balance = Math.abs(friend.balance_with_current_user);
     return(
-      <div>
-        <span> You owe {friend.email} {balance} </span>
+      <div className="summary-negativeBalance">
+        <div> You owe {friend.email} <span className="money-span">${balance}</span> </div>
       </div>
     );
   };
 
   return (
-    <div> Your Balance
+    <div className="friend-bill-summary"> <span className="span-your-balance">Your Balance</span>
       {(friend.balance_with_current_user > 0) ? positiveBalance() : negativeBalance()}
     </div>
 

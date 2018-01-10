@@ -1,7 +1,7 @@
 import React from 'react';
 import FriendsBillShow from './friends_bills_show';
 
-const FriendsBillsIndex = ({ bills, splits, friend}) => {
+const FriendsBillsIndex = ({ bills, splits, friend, currentUser}) => {
   const renderBills = () => {
     const friendsBills = [];
     bills.forEach((el) => {
@@ -28,6 +28,8 @@ const FriendsBillsIndex = ({ bills, splits, friend}) => {
             bill={bill}
             friendsSplits={friendsSplits}
             friend={friend}
+            currentUser={currentUser}
+
             />
     )
   );

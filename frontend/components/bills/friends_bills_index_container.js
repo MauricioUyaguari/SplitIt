@@ -7,7 +7,8 @@ const mapStateToProps = (state, { friendId }) => {
       friends: state.friends,
       bills: Object.values(state.bills),
       splits: Object.values(state.splits),
-      friend: state.friends[friendId]
+      friend: state.friends[friendId],
+      currentUser: state.session.currentUser
   };
 };
 

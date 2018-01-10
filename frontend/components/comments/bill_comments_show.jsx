@@ -26,10 +26,10 @@ class BillCommentsShow  extends React.Component {
   }
   renderComments(){
     const filteredComments = this.props.comments.filter(comment => comment.bill_id === this.props.bill.id);
-    
+
     return(filteredComments.map(comment =>
       <li key={comment.id}>
-        <span key={comment.id}>{comment.body}</span>
+        <div key={comment.id} className="comment-body">{comment.body}</div>
         <button onClick={() => this.props.deleteComment(comment.id)}>x</button>
       </li>
       )

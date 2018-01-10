@@ -29,21 +29,23 @@ class FriendsShow extends React.Component {
 
     return (
     <div className="friends-show">
-    <section className="topbar-friend">
-      <div className="friend-top-div">
-        <img className="connectLogos" src={window.staticImages.dummy_profile_picture}></img>
-        <span>{this.props.friend.email}</span>
+      <div className="new-div">
+        <section className="topbar-friend">
+          <div className="friend-top-div">
+            <img className="connectLogos" src={window.staticImages.dummy_profile_picture}></img>
+            <span>{this.props.friend.email}</span>
+          </div>
+            <div className="actions">
+            <BillsFormModal friend={this.props.friend}
+              />
+            <button className="settleup-button">Settle Up</button>
+          </div>
+        </section>
+      <div className="friend-bill-show">
+        <FriendsBillsIndexContainer friendId={this.props.friendId} />
       </div>
-      <div className="actions">
-        <BillsFormModal friend={this.props.friend}
-          />
-        <button className="settleup-button">Settle Up</button>
-      </div>
-    </section>
-    <div className="friend-bill-show">
-      <FriendsBillsIndexContainer friendId={this.props.friendId} />
     </div>
-    <div>
+    <div className="right-nav-friends-summary">
       <FriendsBillBalance friend={this.props.friend}/>
     </div>
     </div>

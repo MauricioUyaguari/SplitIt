@@ -8,7 +8,7 @@ const billsReducer = (state = {}, action) => {
   function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
   }
-  debugger
+  
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_BILLS:
