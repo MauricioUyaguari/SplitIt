@@ -1,7 +1,8 @@
 import merge from 'lodash/merge';
 import { RECEIVE_SINGLE_FRIEND } from '../actions/friends_actions';
-import { RECEIVE_BILL } from '../actions/bills_actions';
+import { RECEIVE_BILL, RECEIVE_NEW_BILL } from '../actions/bills_actions';
 const splitsReducer = (state = {}, action) => {
+
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SINGLE_FRIEND:
@@ -17,8 +18,16 @@ const splitsReducer = (state = {}, action) => {
       }, {});
       const check = merge({}, state, billSplits);
       return check;
-    default:
-    return state;
+      case RECEIVE_NEW_BILL:
+        const newBillSplits = action.splits.reduce((acc, split) => {
+          acc[split.id] = split;
+          return acc;
+        }, {});
+        let result = merge({}, state, newBillSplits);
+        debugger
+        return result;
+      default:
+      return state;
 
   }
 

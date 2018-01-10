@@ -3,6 +3,7 @@ import FriendsBillsIndex from './friends_bills_index';
 
 
 const mapStateToProps = (state, { friendId }) => {
+  debugger
     return {
       friends: state.entities.friends,
       bills: Object.values(state.entities.bills),
