@@ -1,5 +1,7 @@
 import React from 'react';
 import FriendsBillShow from './friends_bills_show';
+import { billsSort } from '../../util/functions';
+
 
 const FriendsBillsIndex = ({ bills, splits, friend, currentUser}) => {
 
@@ -18,6 +20,10 @@ const FriendsBillsIndex = ({ bills, splits, friend, currentUser}) => {
           friendsSplits.push(split);
         }
       });
+      debugger
+
+      const test = billsSort(friendsBills);
+      debugger
     const sortedBills = friendsBills.sort(function(a,b){
       return new Date(b.date) - new Date(a.date);
       }

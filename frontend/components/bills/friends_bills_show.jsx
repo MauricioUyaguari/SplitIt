@@ -39,7 +39,7 @@ class FriendsBillShow extends React.Component {
 
 
   splitMessage () {
-    debugger
+    
     const { friendsSplits, bill, friend} = this.props;
     const currentUserSplit = this.billSplits().filter(el => el.debtor_id !== friend.id);
     const friendSplit =  this.billSplits().filter(el => el.debtor_id === friend.id);

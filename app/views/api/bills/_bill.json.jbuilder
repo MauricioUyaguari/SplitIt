@@ -1,1 +1,1 @@
-json.extract! bill, :id, :description, :date, :payer_id, :total_amt
+json.extract! bill, :id, :description, :date, :payer_id, :total_amt, :created_at

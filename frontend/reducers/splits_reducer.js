@@ -24,7 +24,6 @@ const splitsReducer = (state = {}, action) => {
           return acc;
         }, {});
         let result = merge({}, state, newBillSplits);
-        debugger
         return result;
       default:
       return state;
