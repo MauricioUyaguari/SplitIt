@@ -15,9 +15,6 @@ componentWillMount (){
 }
 
 
-
-
-
 totalBalance(){
   const {currentUser} = this.props;
   const absBalance = Math.abs(currentUser.totalBalance);
@@ -63,9 +60,15 @@ youAreOwed(){
       return null;
     }
     const noZeros = currentUser.balances.filter(el => el[2] < 0);
+
+    const styles = (amt) => {
+      let per = Math.round(((Math.abs(amt))/(max)) * 100);
+      return {width: `${per}%`};
+    };
+
     return(
       noZeros.map(balance =>
-        <li className="dashboard-neg" key={balance[0]}>
+        <li className="dashboard-neg" style={styles(balance[2])}  key={balance[0]} >
           <Link  className="dashboard-friend-links" to={`/friends/${balance[0]}`}>
           <span>{balance[1]}</span>
           <span>${Math.abs(balance[2])}</span>
@@ -117,7 +120,15 @@ youAreOwed(){
   }
 
 render(){
+
+
+  if(this.props.currentUser.friends_id === undefined){
+    return null;
+  }
   const max = this.calculateMax();
+  
+
+
   return(<div className="friends-show">
   <div className="new-div">
       <div className="dashboard-top-nav topbar-friend ">
@@ -132,7 +143,7 @@ render(){
           <div className="dashboard-top-nav-bottom">
             <div className="no-left dashboard-bottom-block">
               <div>total balance</div>
-              <div className={(this.youAreOwed() >= 0) ? "neg money" : "pos money"}>{this.totalBalance()}</div>
+              <div className={(this.props.currentUser.totalBalance < 0) ? "neg money" : "pos money"}>{this.totalBalance()}</div>
             </div>
             <div className="dashboard-bottom-block" >
               <div>You Owe</div>

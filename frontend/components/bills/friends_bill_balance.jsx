@@ -28,7 +28,7 @@ const FriendsBillBalance = ({friend}) => {
 
   return (
     <div className="friend-bill-summary"> <span className="span-your-balance">Your Balance</span>
-      {(friend.balance_with_current_user > 0) ? positiveBalance() : negativeBalance()}
+      {(friend.balance_with_current_user >= 0) ? positiveBalance() : negativeBalance()}
     </div>
 
   );

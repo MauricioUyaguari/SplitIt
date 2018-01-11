@@ -6,7 +6,7 @@ import merge from 'lodash/merge';
 import { onlyUnique } from '../util/functions';
 
 const friendsReducer = (state = {}, action) => {
-  debugger
+
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_FRIENDS:
@@ -28,6 +28,12 @@ const friendsReducer = (state = {}, action) => {
     case RECEIVE_NEW_TRANSACTION:
     newFriend = state[action.friend.id];
     newFriend.transactions_id = newFriend.transactions_id.concat(action.transaction.id);
+    let amt = parseFloat(action.transaction.amount_payed);
+    if(action.friend.id === action.transaction.payer_id){
+      newFriend.balance_with_current_user = parseFloat(newFriend.balance_with_current_user) - parseFloat(amt);
+    } else {
+      newFriend.balance_with_current_user = parseFloat(newFriend.balance_with_current_user) + parseFloat(amt);
+    }
     const result = merge({}, state, {[action.friend.id]: newFriend});
     return result ;
     default:
