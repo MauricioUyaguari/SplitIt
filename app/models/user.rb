@@ -239,5 +239,74 @@ class User < ApplicationRecord
   # end
 
 
+  def balance_from_transactions(friend)
+    transactions = self.shared_transactions(friend)
+    amt = 0
+    transactions.each do |transaction|
+      if transaction.payer_id == self.id
+        amt += transaction.amount_payed
+      else
+        amt -= transaction.amount_payed
+      end
+    end
+    return amt
+  end
+
+
+
+
+
+  ####final balances with transactions
+
+  def final_expenses_with_friend(friend)
+    result = self.balance_from_transactions(friend) + self.balance_with(friend)
+    return result
+  end
+
+  #balances
+    def final_all_balances
+      friends = self.all_friends
+      final_balances = []
+
+      friends.each do |friend|
+        temp = [];
+        temp.push(friend.id)
+        temp.push(friend.email)
+        temp.push(self.final_expenses_with_friend(friend))
+        final_balances.push(temp)
+      end
+      return final_balances
+    end
+
+
+    def final_you_owe
+      total = 0
+      self.final_all_balances.each do |balance|
+        if balance[2] < 0
+        total += balance[2]
+        end
+      end
+      return total
+    end
+
+    def final_you_are_owed
+      total = 0
+      self.final_all_balances.each do |balance|
+        if balance[2] > 0
+        total += balance[2]
+        end
+      end
+      return total
+    end
+
+
+    def final_total_balance
+      total = 0
+      self.final_all_balances.each do |balance|
+        total += balance[2]
+      end
+      return total
+    end
+
 
 end

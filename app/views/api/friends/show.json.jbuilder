@@ -9,7 +9,7 @@ transactions_id = current_user.shared_transactions(@friend).map{|trans| trans.id
 @splits = current_user.shared_splits(@friend)
 @comments = current_user.shared_comments(@friend)
 @transactions = current_user.shared_transactions(@friend)
-@balance = current_user.balance_with(@friend)
+@balance = current_user.final_expenses_with_friend(@friend)
 
 
 json.friend do
