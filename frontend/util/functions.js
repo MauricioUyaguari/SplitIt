@@ -42,12 +42,12 @@ export const customStyles = {
 export const transactionsSort = (transactions) => {
 
   const result = transactions.sort(function(a,b) {
-    const aDate = new Date(a.date);
-    const bDate = new Date(b.date);
+    const aDate = new Date(a.created_at);
+    const bDate = new Date(b.created_at);
     if(aDate < bDate){
-      return -1;
-    } else{
       return 1;
+    } else{
+      return -1;
     }
   }
   );
