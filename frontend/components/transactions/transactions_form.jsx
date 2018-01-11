@@ -29,7 +29,7 @@ class TransactionsForm extends React.Component {
   updatePayer(){
     return (e) => {
       let drop = $( "#transaction-dropdown option:selected" ).text();
-      const loaner = (drop == "You") ? this.props.friend.email : "You"
+      const loaner = (drop == "You") ? this.props.friend.email : "You";
       this.setState({loaner: loaner});
     };
   }
@@ -43,35 +43,39 @@ class TransactionsForm extends React.Component {
   render(){
     return(
       <section>
-        <form onSubmit={this.handleSubmit}>
-
-
-
-          <label> $
-            <input
-               className="input-bill-total"
-              type="number"
-              placeholder="0.00"
-              min="0.01"
-              max="99999999"
-              step="0.01"
-              value={this.state.amount_payed}
-              onChange={this.update()}
-              />
-          </label>
-          Paid by
-            <select className="pay-dropdown" id="transaction-dropdown"
-              onChange={this.updatePayer()}
-              >
-              <option >You</option>
-              <option >{this.props.friend.email}</option>
-            </select>
-            to
-            <div>{this.state.loaner}</div>
-            <button>save</button>
+        <form className="trans-modal-form"onSubmit={this.handleSubmit}>
+          <div className="trans-modal-figure-container">
+            <div><img className="trans-person-image bill-image" src={window.staticImages.transaction_person}></img></div>
+            <div><img className="trans-arrow-image bill-image" src={window.staticImages.arrow}></img></div>
+            <div><img className="trans-person-image bill-image" src={window.staticImages.transaction_person}></img></div>
+          </div>
+          <div className="trans-modal-payment-info">
+            <div>
+              <select className="select-trans trans-dropdown pay-dropdown" id="transaction-dropdown"
+                onChange={this.updatePayer()}
+                >
+                <option >You</option>
+                <option >{this.props.friend.email}</option>
+              </select>
+            </div>
+            <div><span className="label-paid">paid</span></div>
+            <div className="trans-dropdown  pay-dropdown" >{this.state.loaner}</div>
+          </div>
+            <div className="input-trans-div"><label> <span className="input-trans-span">$</span>
+              <input
+                 className="input-trans-total"
+                type="number"
+                placeholder="0.00"
+                min="0.01"
+                max="99999999"
+                step="0.01"
+                value={this.state.amount_payed}
+                onChange={this.update()}
+                />
+            </label>
+            </div>
+            <div><button className="save-trans">save</button></div>
         </form>
-
-
       </section>
     );
   }

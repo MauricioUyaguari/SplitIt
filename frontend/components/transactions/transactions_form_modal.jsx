@@ -31,9 +31,9 @@ class TransactionsFormModal extends React.Component {
           style={customStyles}
           ariaHideApp={false}
           className={{
-          base: 'add-bill-modal add-friend-modal',
-          afterOpen: 'add-friend-modal add-bill-modal',
-          beforeClose: 'add-bill-modal add-friend-modal'
+          base: 'add-trans-modal add-bill-modal add-friend-modal',
+          afterOpen: 'add-trans-modal add-friend-modal add-bill-modal',
+          beforeClose: 'add-trans-modal add-bill-modal add-friend-modal'
         }}
           >
             <h2 className="add-friend-header">
