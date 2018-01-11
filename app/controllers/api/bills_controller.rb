@@ -21,6 +21,7 @@ class Api::BillsController < ApplicationController
     if @bill.save == false
       render json: @bill.errors.full_messages, status: 422
     end
+    
 
     @split1 = Split.new(debtor_id: current_user.id, bill_id: @bill.id, amount_due: params[:bill][:split_due])
     friend_amt_due = @bill.total_amt - params[:bill][:split_due].to_f

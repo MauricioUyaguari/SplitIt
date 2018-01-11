@@ -19,6 +19,7 @@ export const receiveSingleFriend = (friendData) => {
     friend: friendData.friend,
     bills: friendData.bills,
     splits: friendData.splits,
+    transactions: friendData.transactions,
     comments: friendData.comments
   };
 };

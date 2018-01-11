@@ -6,7 +6,20 @@ export const RECEIVE_NEW_TRANSACTION = 'RECEIVE_NEW_TRANSACTION';
 
 
 
-export const receiveNewTransaction = (transaction) => {
+export const receiveNewTransaction = (transactionData) => {
+  debugger
+  return{
+    type: RECEIVE_NEW_TRANSACTION,
+    transaction: transactionData.transaction,
+    friend: transactionData.friend[0]
+  };
+};
 
 
+
+export const createTransaction = (inputTransaction) => dispatch => {
+
+  return TransactionApiUtil.createTransaction(inputTransaction).then(transaction => {
+    return dispatch(receiveNewTransaction(transaction));
+  });
 };

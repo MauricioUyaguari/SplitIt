@@ -4,6 +4,8 @@ import FriendsBillsIndexContainer from '../bills/friends_bills_index_container';
 import BillsFormContainer from '../bills/bills_form_container';
 import BillsFormModal from '../bills/bills_form_modal';
 import FriendsBillBalance from '../bills/friends_bill_balance';
+import FriendsTransactionsIndexContainer from '../transactions/friends_transactions_index_container';
+import TransactionsFormModal from '../transactions/transactions_form_modal';
 
 class FriendsShow extends React.Component {
   constructor(props){
@@ -38,11 +40,15 @@ class FriendsShow extends React.Component {
             <div className="actions">
             <BillsFormModal friend={this.props.friend}
               />
-            <button className="settleup-button">Settle Up</button>
+            <TransactionsFormModal />
           </div>
         </section>
       <div className="friend-bill-show">
         <FriendsBillsIndexContainer friendId={this.props.friendId} />
+        <FriendsTransactionsIndexContainer
+          friend={this.props.friend}
+
+           />
       </div>
     </div>
     <div className="right-nav-friends-summary">

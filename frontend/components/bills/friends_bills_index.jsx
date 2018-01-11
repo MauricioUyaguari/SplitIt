@@ -20,16 +20,15 @@ const FriendsBillsIndex = ({ bills, splits, friend, currentUser}) => {
           friendsSplits.push(split);
         }
       });
-      debugger
 
-      const test = billsSort(friendsBills);
-      debugger
+  const test = billsSort(friendsBills);
+
     const sortedBills = friendsBills.sort(function(a,b){
       return new Date(b.date) - new Date(a.date);
       }
     );
     return (
-    sortedBills.map(bill =>
+    test.map(bill =>
           <FriendsBillShow
             key={bill.id}
             bill={bill}

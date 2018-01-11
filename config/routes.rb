@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :friends, only: [:show, :index, :create]
       resources :bills, only: [:show, :index, :create, :destroy]
       resources :comments, only: [:show, :index, :create, :destroy]
+      resources :transactions, only: [:show, :index, :create]
     end
 
 end

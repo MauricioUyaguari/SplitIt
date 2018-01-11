@@ -1,17 +1,13 @@
 import { RECEIVE_ALL_FRIENDS, RECEIVE_SINGLE_FRIEND  }
 from '../actions/friends_actions';
 import {RECEIVE_BILL, RECEIVE_NEW_BILL } from '../actions/bills_actions';
+import { RECEIVE_NEW_TRANSACTION } from '../actions/transactions_actions';
 import merge from 'lodash/merge';
-
+import { onlyUnique } from '../util/functions';
 
 const friendsReducer = (state = {}, action) => {
-
-  function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
-  }
-
+  debugger
   Object.freeze(state);
-
   switch (action.type) {
     case RECEIVE_ALL_FRIENDS:
     return merge({},  action.friends);
@@ -29,6 +25,11 @@ const friendsReducer = (state = {}, action) => {
     }
     const volver = merge({}, state, {[action.friend.id]: newFriend});
     return volver;
+    case RECEIVE_NEW_TRANSACTION:
+    newFriend = state[action.friend.id];
+    newFriend.transactions_id = newFriend.transactions_id.concat(action.transaction.id);
+    const result = merge({}, state, {[action.friend.id]: newFriend});
+    return result ;
     default:
       return state;
   }

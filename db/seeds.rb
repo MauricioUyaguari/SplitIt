@@ -10,6 +10,7 @@ Friendship.destroy_all
 Bill.destroy_all
 Split.destroy_all
 Comment.destroy_all
+Transaction.destroy_all
 
 demoUser = User.create!(email: "DemoUser", password: "password", image_url: "test")
 demoUser.save!
@@ -124,6 +125,30 @@ comment4 = Comment.create!(body: "comment 4 bill 4", author_id: user1.id, bill_i
 
 
 
+## Demo Transactions with Luis
+
+transaction1 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed: 50 )
+transaction2 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed:  50)
+transaction3 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed:  100)
+transaction4 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed:  100)
+transaction5 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed: 20)
+
+transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
+transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
+transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
+transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
+transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
+
+
+
+
+
+
+
+
+
+
+
 #Demo bills with "mauricio"
 mauricio1 = Bill.create!(description: "mauricio1", date: Date.today, total_amt: 100, payer_id: user2.id)
 split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio1.id, amount_due: 10)
@@ -174,18 +199,35 @@ comment1 = Comment.create!(body: "comment 5 bill 4", author_id: user2.id, bill_i
 
 
 
+## Demo transactions with Mauricio
+
+# one thousand paid by user 2 to demoUser
+transactionM1 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 50 )
+transactionM2 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 100 )
+transactionM3 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 100 )
+transactionM4 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 200 )
+transactionM5 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 50 )
+transactionM6 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 500 )
+
+
+# paid by demoUser
+transactionM1 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 10 )
+transactionM2 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 20 )
+transactionM3 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 30 )
+transactionM4 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 40 )
+transactionM5 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 50 )
+transactionM6 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 60 )
 
 
 
-bill1 = Bill.create!(description: "bill11", date: Date.today, total_amt: 100, payer_id: user1.id)
-bill2 = Bill.create!(description: "bill12", date: Date.today, total_amt: 100, payer_id: user2.id)
-bill3 = Bill.create!(description: "bill13", date: Date.today, total_amt: 100, payer_id: user4.id)
-bill4 = Bill.create!(description: "bill14", date: Date.today, total_amt: 100, payer_id: user5.id)
-bill5 = Bill.create!(description: "bill15", date: Date.today, total_amt: 100, payer_id: user6.id)
-bill6 = Bill.create!(description: "bill16", date: Date.today, total_amt: 100, payer_id: user7.id)
-bill7 = Bill.create!(description: "bill17", date: Date.today, total_amt: 100, payer_id: user8.id)
-bill8 = Bill.create!(description: "bill18", date: Date.today, total_amt: 100, payer_id: user9.id)
-bill9 = Bill.create!(description: "bill19", date: Date.today, total_amt: 100, payer_id: user10.id)
+
+
+
+
+
+
+
+
 
 
 
@@ -225,33 +267,33 @@ user1027 = User.create!(email: "Thomas" , password: "password", image_url: "test
 user1028 = User.create!(email: "Jordan" , password: "password", image_url: "test")
 user1029 = User.create!(email: "Eric" , password: "password", image_url: "test")
 user1030 = User.create!(email: "Benjamin" , password: "password", image_url: "test")
-# user1031 = User.create!(email: "Aaron" , password: "password", image_url: "test")
-# user1032 = User.create!(email: "Jose" , password: "password", image_url: "test")
-# user1033 = User.create!(email: "Christian" , password: "password", image_url: "test")
-# user1034 = User.create!(email: "Steven" , password: "password", image_url: "test")
-# user1035 = User.create!(email: "Samuel" , password: "password", image_url: "test")
-# user1036 = User.create!(email: "Brian" , password: "password", image_url: "test")
-# user1037 = User.create!(email: "Dylan" , password: "password", image_url: "test")
-# user1038 = User.create!(email: "Timothy" , password: "password", image_url: "test")
-# user1039 = User.create!(email: "Adam" , password: "password", image_url: "test")
-# user1040 = User.create!(email: "Nathan" , password: "password", image_url: "test")
-# user1041 = User.create!(email: "Richard" , password: "password", image_url: "test")
-# user1042 = User.create!(email: "Sean" , password: "password", image_url: "test")
-# user1043 = User.create!(email: "Charles" , password: "password", image_url: "test")
-# user1044 = User.create!(email: "Patrick" , password: "password", image_url: "test")
-# user1045 = User.create!(email: "Jason" , password: "password", image_url: "test")
-# user1046 = User.create!(email: "Luis" , password: "password", image_url: "test")
-# user1047 = User.create!(email: "Jeremy" , password: "password", image_url: "test")
-# user1048 = User.create!(email: "Stephen" , password: "password", image_url: "test")
-# user1049 = User.create!(email: "Mark" , password: "password", image_url: "test")
-# user1050 = User.create!(email: "Jesse" , password: "password", image_url: "test")
-# user1051 = User.create!(email: "Juan" , password: "password", image_url: "test")
-# user1052 = User.create!(email: "Alex" , password: "password", image_url: "test")
-# user1053 = User.create!(email: "Cameron" , password: "password", image_url: "test")
-# user1054 = User.create!(email: "Travis" , password: "password", image_url: "test")
-# user1055 = User.create!(email: "Jeffrey" , password: "password", image_url: "test")
-# user1056 = User.create!(email: "Bryan" , password: "password", image_url: "test")
-# user1057 = User.create!(email: "Caleb" , password: "password", image_url: "test")
+user1031 = User.create!(email: "Aaron" , password: "password", image_url: "test")
+user1032 = User.create!(email: "Jose" , password: "password", image_url: "test")
+user1033 = User.create!(email: "Christian" , password: "password", image_url: "test")
+user1034 = User.create!(email: "Steven" , password: "password", image_url: "test")
+user1035 = User.create!(email: "Samuel" , password: "password", image_url: "test")
+user1036 = User.create!(email: "Brian" , password: "password", image_url: "test")
+user1037 = User.create!(email: "Dylan" , password: "password", image_url: "test")
+user1038 = User.create!(email: "Timothy" , password: "password", image_url: "test")
+user1039 = User.create!(email: "Adam" , password: "password", image_url: "test")
+user1040 = User.create!(email: "Nathan" , password: "password", image_url: "test")
+user1041 = User.create!(email: "Richard" , password: "password", image_url: "test")
+user1042 = User.create!(email: "Sean" , password: "password", image_url: "test")
+user1043 = User.create!(email: "Charles" , password: "password", image_url: "test")
+user1044 = User.create!(email: "Patrick" , password: "password", image_url: "test")
+user1045 = User.create!(email: "Jason" , password: "password", image_url: "test")
+user1046 = User.create!(email: "Luis" , password: "password", image_url: "test")
+user1047 = User.create!(email: "Jeremy" , password: "password", image_url: "test")
+user1048 = User.create!(email: "Stephen" , password: "password", image_url: "test")
+user1049 = User.create!(email: "Mark" , password: "password", image_url: "test")
+user1050 = User.create!(email: "Jesse" , password: "password", image_url: "test")
+user1051 = User.create!(email: "Juan" , password: "password", image_url: "test")
+user1052 = User.create!(email: "Alex" , password: "password", image_url: "test")
+user1053 = User.create!(email: "Cameron" , password: "password", image_url: "test")
+user1054 = User.create!(email: "Travis" , password: "password", image_url: "test")
+user1055 = User.create!(email: "Jeffrey" , password: "password", image_url: "test")
+user1056 = User.create!(email: "Bryan" , password: "password", image_url: "test")
+user1057 = User.create!(email: "Caleb" , password: "password", image_url: "test")
 # user1058 = User.create!(email: "Carlos" , password: "password", image_url: "test")
 # user1059 = User.create!(email: "Jared" , password: "password", image_url: "test")
 # user1060 = User.create!(email: "Ethan" , password: "password", image_url: "test")

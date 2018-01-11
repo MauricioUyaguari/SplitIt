@@ -12,7 +12,8 @@
 
 class Transaction < ApplicationRecord
 
-  validates :payer_id, :loaner_id, presence: true
+  validates :payer_id, :loaner_id, :amount_payed, presence: true
+  validate :check_payer_and_loaner
 
   belongs_to :payer,
   foreign_key: :payer_id,
@@ -21,5 +22,17 @@ class Transaction < ApplicationRecord
   belongs_to :loaner,
   foreign_key: :loaner_id,
   class_name: :User
+
+  def check_payer_and_loaner
+    errors.add(:loaner_id, "you can't pay yourself") if payer_id == loaner_id
+  end
+
+
+
+  def people_on_it
+    people = [self.payer_id] + [self.loaner_id]
+    User.where(id: people)
+  end
+
 
 end

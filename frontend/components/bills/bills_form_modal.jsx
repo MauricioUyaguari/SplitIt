@@ -53,7 +53,6 @@ class BillsFormModal extends React.Component {
             beforeClose: 'add-bill-modal add-friend-modal'
           }}
             >
-
               <h2 className="add-friend-header">
                 <div>Add a Bill</div>
                 <div className="close-x" onClick={this.closeModal} >x</div>

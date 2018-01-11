@@ -138,6 +138,8 @@ class User < ApplicationRecord
   end
 
 
+
+
   def shared_splits(friend)
     shared_bills_ids = self.shared_bills(friend).map{|el| el.id}
     Split.all.where(bill_id: shared_bills_ids)
@@ -217,6 +219,24 @@ class User < ApplicationRecord
     return total
   end
 
+
+  ## with transactions
+  def all_transactions
+    self.incoming_transactions + self.outgoing_transactions
+  end
+
+  def shared_transactions(friend)
+    other = friend.all_transactions.map{|trans| trans.id}
+    mine = self.all_transactions.map{|trans| trans.id}
+    union = other.select{|trans| mine.include?(trans)}
+    Transaction.where(id: union)
+  end
+
+
+  # # total_balance with transactions
+  # def transaction_balances(friend)
+  #
+  # end
 
 
 
