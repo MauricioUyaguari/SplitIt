@@ -17,6 +17,7 @@ json.current_user do
   json.youOwe current_user.final_you_owe
   json.youAreOwed current_user.final_you_are_owed
   json.bills_id bills_id
+  json.all_transactions current_user.all_transactions
 end
 
 json.friends do

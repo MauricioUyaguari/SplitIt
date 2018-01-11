@@ -309,4 +309,24 @@ class User < ApplicationRecord
     end
 
 
+
+
+    # detailed transactions for all activity
+
+    def array_all_transactions
+      result = [];
+      transactions = self.all_transactions
+      transactions.each do |transaction|
+        temp = []
+        temp.push(transaction.id)
+        temp.push(transaction.payer_id)
+        temp.push(transaction.loaner_id)
+        temp.push(transaction.amount_payed)
+        temp.push(transaction.created_at)
+        result.push(temp)
+      end
+      return result;
+    end
+
+
 end
