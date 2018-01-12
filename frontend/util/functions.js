@@ -52,5 +52,23 @@ export const transactionsSort = (transactions) => {
   }
   );
 
+
+
+
   return result;
+};
+
+
+
+
+export const monthDayYearDateFormat = (date) => {
+  let monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+  ];
+  let month = monthNames[date.getMonth()];
+  let day = date.getDate();
+  let year = date.getFullYear();
+  return month + ' ' + day + ', ' + year;
+
+
 };

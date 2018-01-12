@@ -1,5 +1,5 @@
 import React from 'react';
-import { transactionsSort } from '../../util/functions';
+import { transactionsSort, monthDayYearDateFormat  } from '../../util/functions';
 
 class FriendsTransactionsIndex extends React.Component {
 
@@ -11,15 +11,16 @@ class FriendsTransactionsIndex extends React.Component {
 
   renderSingleTansaction(transaction){
     const date = new Date (transaction.created_at);
-    const dateString = date.toDateString();
-    const second = date.toLocaleString();
+    const dateString = monthDayYearDateFormat(date);
     const { currentUser, friend } = this.props;
-    const payer = (transaction.payer_id === currentUser.id) ? currentUser : friend;
-    const loaner = (transaction.loaner_id === currentUser.id) ? currentUser : friend;
+    const payer = (transaction.payer_id === currentUser.id) ? "You" : friend.email;
+    const loaner = (transaction.loaner_id === currentUser.id) ? "you" : friend.email;
     return(
-      <div key={transaction.id}>
-        {payer.email} paid {loaner.email} ${transaction.amount_payed} on {second}
-      </div>
+      <li className="trans-li" key={transaction.id}>
+        <div>{payer} paid {loaner}
+         <span className={(payer ==="You") ? "neg-money" : "pos-money" }> ${transaction.amount_payed} </span></div>
+         <div>on {dateString}</div>
+      </li>
     );
 
   }
@@ -56,8 +57,11 @@ class FriendsTransactionsIndex extends React.Component {
   render(){
 
     return(
-      <div>
+      <div className="transactions-index">
+        <div className="trans-index-details-label"> Transactions Details</div>
+        <ul>
         {this.renderTransactions()}
+        </ul>
       </div>
     );
 

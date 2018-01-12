@@ -45,14 +45,14 @@ class FriendsShow extends React.Component {
         </section>
       <div className="friend-bill-show">
         <FriendsBillsIndexContainer friendId={this.props.friendId} />
-        <FriendsTransactionsIndexContainer
-          friend={this.props.friend}
 
-           />
       </div>
     </div>
     <div className="right-nav-friends-summary">
       <FriendsBillBalance friend={this.props.friend}/>
+        <FriendsTransactionsIndexContainer
+          friend={this.props.friend}
+           />
     </div>
     </div>
 
