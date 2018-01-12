@@ -34,4 +34,77 @@
 
 .pos-money {
   color: #5bc5a7;
+  font-size: 13px;
+font-weight: bold;
+line-height: 18px;
+}
+
+
+
+
+// dashboard
+
+.dashboard-index-trans-outermost-div {
+  width: 100%;
+}
+
+
+.dashboard-trans-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.dashboard-trans-item-left {
+  display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.dashboard-trans-item-left * {
+  padding-left: 10px;
+}
+
+.trans-money-icon {
+  background: inherit;
+  width: 19px;
+  height: 19px;
+  margin: 0 8px 0 4px;
+
+}
+
+.dashboard-trans-item-right {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.dashboard-trans-item-right-mes {
+  padding-right: 19px;
+  text-align: right;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #aaa;
+}
+
+
+.pos-money2, .neg-money2 {
+  color: #5bc5a7;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.neg-money2 {
+      color: #ff652f;
 }

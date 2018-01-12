@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { transactionsSort } from '../../util/functions';
+import { transactionsSort, monthDayYearDateFormat } from '../../util/functions';
 
 
 class AllTransactionsView extends React.Component {
@@ -18,14 +18,27 @@ class AllTransactionsView extends React.Component {
 
   renderSingleTansaction(transaction){
     const {friends, currentUser} = this.props;
-    const payer = (transaction.payer_id === currentUser.id) ? "You" : friends[transaction.payer_id].email;
-    const loaner =   (payer === "You") ? friends[transaction.loaner_id].email : "You";
+    const payer1 = (transaction.payer_id === currentUser.id) ? currentUser.email : friends[transaction.payer_id].email;
+    const loaner1 =   (payer1 === currentUser.email) ? friends[transaction.loaner_id].email : currentUser.email;
     const date = new Date (transaction.created_at);
-    const dateString = date.toLocaleString();
-    debugger
-    return (<div key={transaction.id}>
-      <div> {payer} paid {loaner} ${transaction.amount_payed} on {dateString} </div>
-      <br />
+    const dateString = monthDayYearDateFormat(date);
+    const rightMessage = (transaction.payer_id === currentUser.id) ? "you paid" : "you received"
+    return (
+    <div className="dashboard-trans-item" key={transaction.id}>
+       <div className="dashboard-trans-item-left">
+         <div>
+           <img className="trans-money-icon" src={window.staticImages.icon_money}></img>
+         </div>
+         <div>
+           <div>{payer1} paid {loaner1} ${transaction.amount_payed}</div>
+             <div> on {dateString}</div>
+         </div>
+      </div>
+      <div className="dashboard-trans-item-right">
+        <div className="dashboard-trans-item-right-mes">{rightMessage}</div>
+        <div className={(rightMessage === "you paid") ? "pos-money2" : "neg-money2"}> ${parseFloat(transaction.amount_payed)}
+        </div>
+      </div>
     </div>);
 
   }
@@ -58,9 +71,9 @@ class AllTransactionsView extends React.Component {
               </div>
           </div>
           <div className="dashboard-main-section">
-            <ul>
+            <div className="dashboard-index-trans-outermost-div">
               {this.renderAllTransactions(sortedTransactions)}
-            </ul>
+            </div>
           </div>
         </div>
         <div className="right-nav-friends-summary">
