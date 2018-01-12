@@ -23,3 +23,9 @@ Things you may want to cover:
 
 * ...
 # SplitIt
+
+
+SplitIt is an application to help calculate expenses between two parties usually including friends and family.  It does all the heavy lifting of crunching numbers and how the bill should split and keeps tracks of the payments between the two parties.
+
+The link to the live can be found at
+[I'm an inline-style link](https://splitit-mu.herokuapp.com/#/)
