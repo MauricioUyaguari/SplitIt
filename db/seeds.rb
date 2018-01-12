@@ -111,124 +111,124 @@ luis4 = Bill.create!(description: "mealpal", date: Date.today, total_amt: 500, p
 split1 = Split.create!(debtor_id: user1.id, bill_id: luis4.id, amount_due: 500)
 split2 = Split.create!(debtor_id: demoUser.id, bill_id: luis4.id, amount_due: 0)
 
-
-## Demo Comments with Luis
-
-comment1 = Comment.create!(body: "comment 1 bill 1", author_id: demoUser.id, bill_id: luis1.id)
-comment2 = Comment.create!(body: "comment 2 bill 1", author_id: user1.id, bill_id: luis1.id)
-comment3 = Comment.create!(body: "comment 3 bill 1", author_id: demoUser.id, bill_id: luis1.id)
-comment4 = Comment.create!(body: "comment 4 bill 1", author_id: user1.id, bill_id: luis1.id)
-#bills 2
-comment1 = Comment.create!(body: "comment 1 bill 2", author_id: demoUser.id, bill_id: luis2.id)
-comment2 = Comment.create!(body: "comment 1 bill 2", author_id: user1.id, bill_id: luis2.id)
-comment3 = Comment.create!(body: "comment 1 bill 2", author_id: demoUser.id, bill_id: luis2.id)
-comment4 = Comment.create!(body: "comment 1 bill 2", author_id: user1.id, bill_id: luis2.id)
-
-#bill 3
-comment1 = Comment.create!(body: "comment 1 bill 3", author_id: demoUser.id, bill_id: luis3.id)
-comment2 = Comment.create!(body: "comment 2 bill 3", author_id: user1.id, bill_id: luis3.id)
-comment3 = Comment.create!(body: "comment 3 bill 3", author_id: demoUser.id, bill_id: luis3.id)
-comment4 = Comment.create!(body: "comment 4 bill 3", author_id: user1.id, bill_id: luis3.id)
-
-
-#bill 4
-comment1 = Comment.create!(body: "comment 1 bill 4", author_id: demoUser.id, bill_id: luis4.id)
-comment2 = Comment.create!(body: "comment 2 bill 4", author_id: user1.id, bill_id: luis4.id)
-comment3 = Comment.create!(body: "comment 3 bill 4", author_id: demoUser.id, bill_id: luis4.id)
-comment4 = Comment.create!(body: "comment 4 bill 4", author_id: user1.id, bill_id: luis4.id)
-
+# 
+# ## Demo Comments with Luis
+#
+# comment1 = Comment.create!(body: "comment 1 bill 1", author_id: demoUser.id, bill_id: luis1.id)
+# comment2 = Comment.create!(body: "comment 2 bill 1", author_id: user1.id, bill_id: luis1.id)
+# comment3 = Comment.create!(body: "comment 3 bill 1", author_id: demoUser.id, bill_id: luis1.id)
+# comment4 = Comment.create!(body: "comment 4 bill 1", author_id: user1.id, bill_id: luis1.id)
+# #bills 2
+# comment1 = Comment.create!(body: "comment 1 bill 2", author_id: demoUser.id, bill_id: luis2.id)
+# comment2 = Comment.create!(body: "comment 1 bill 2", author_id: user1.id, bill_id: luis2.id)
+# comment3 = Comment.create!(body: "comment 1 bill 2", author_id: demoUser.id, bill_id: luis2.id)
+# comment4 = Comment.create!(body: "comment 1 bill 2", author_id: user1.id, bill_id: luis2.id)
+#
+# #bill 3
+# comment1 = Comment.create!(body: "comment 1 bill 3", author_id: demoUser.id, bill_id: luis3.id)
+# comment2 = Comment.create!(body: "comment 2 bill 3", author_id: user1.id, bill_id: luis3.id)
+# comment3 = Comment.create!(body: "comment 3 bill 3", author_id: demoUser.id, bill_id: luis3.id)
+# comment4 = Comment.create!(body: "comment 4 bill 3", author_id: user1.id, bill_id: luis3.id)
+#
+#
+# #bill 4
+# comment1 = Comment.create!(body: "comment 1 bill 4", author_id: demoUser.id, bill_id: luis4.id)
+# comment2 = Comment.create!(body: "comment 2 bill 4", author_id: user1.id, bill_id: luis4.id)
+# comment3 = Comment.create!(body: "comment 3 bill 4", author_id: demoUser.id, bill_id: luis4.id)
+# comment4 = Comment.create!(body: "comment 4 bill 4", author_id: user1.id, bill_id: luis4.id)
+#
 
 
 
 ## Demo Transactions with Luis
-
-transaction1 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed: 50 )
-transaction2 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed:  50)
-transaction3 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed:  100)
-transaction4 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed:  100)
-transaction5 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed: 20)
-
-transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
-transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
-transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
-transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
-transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
-
-
-
-
+#
+# transaction1 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed: 50 )
+# transaction2 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed:  50)
+# transaction3 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed:  100)
+# transaction4 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed:  100)
+# transaction5 = Transaction.create!(payer_id: user1.id , loaner_id: demoUser.id, amount_payed: 20)
+#
+# transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
+# transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
+# transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
+# transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
+# transaction5 = Transaction.create!(payer_id: demoUser.id , loaner_id: user1.id, amount_payed: 100)
+#
+#
 
 
 
 
 
 
-
-#Demo bills with "mauricio"
-mauricio1 = Bill.create!(description: "mauricio1", date: Date.today, total_amt: 100, payer_id: user2.id)
-split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio1.id, amount_due: 10)
-split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio1.id, amount_due: 90)
-
-mauricio2 = Bill.create!(description: "mauricio2", date: Date.today, total_amt: 200, payer_id: user2.id)
-split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio2.id, amount_due: 150)
-split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio2.id, amount_due: 50)
-
-mauricio3 = Bill.create!(description: "mauricio3", date: Date.today, total_amt: 300, payer_id: user2.id)
-split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio3.id, amount_due: 200)
-split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio3.id, amount_due: 100)
-
-mauricio4 = Bill.create!(description: "mauricio4", date: Date.today, total_amt: 400, payer_id: demoUser.id)
-split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio4.id, amount_due: 250)
-split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio4.id, amount_due: 150)
-
-#Demo Comments with Mauricio
-
-#one bill 1
-comment1 = Comment.create!(body: "comment 1 bill 1", author_id: user2.id, bill_id: mauricio1.id)
-comment1 = Comment.create!(body: "comment 2 bill 1", author_id: user2.id, bill_id: mauricio1.id)
-comment1 = Comment.create!(body: "comment 3 bill 1", author_id: user2.id, bill_id: mauricio1.id)
-comment1 = Comment.create!(body: "comment 4 bill 1", author_id: demoUser.id, bill_id: mauricio1.id)
-comment1 = Comment.create!(body: "comment 5 bill 1", author_id: user2.id, bill_id: mauricio1.id)
-
-#comments bill 2
-comment1 = Comment.create!(body: "comment 1 bill 2", author_id: demoUser.id, bill_id: mauricio2.id)
-comment1 = Comment.create!(body: "comment 2 bill 2", author_id: user2.id, bill_id: mauricio2.id)
-comment1 = Comment.create!(body: "comment 3 bill 2", author_id: user2.id, bill_id: mauricio2.id)
-comment1 = Comment.create!(body: "comment 4 bill 2", author_id: demoUser.id, bill_id: mauricio2.id)
-comment1 = Comment.create!(body: "comment 5 bill 2", author_id: user2.id, bill_id: mauricio2.id)
-
-#comments bill 3
-comment1 = Comment.create!(body: "comment 1 bill 3", author_id: demoUser.id, bill_id: mauricio3.id)
-comment1 = Comment.create!(body: "comment 2 bill 3", author_id: user2.id, bill_id: mauricio3.id)
-comment1 = Comment.create!(body: "comment 3 bill 3", author_id: user2.id, bill_id: mauricio3.id)
-comment1 = Comment.create!(body: "comment 4 bill 3", author_id: demoUser.id, bill_id: mauricio3.id)
-comment1 = Comment.create!(body: "comment 5 bill 3", author_id: user2.id, bill_id: mauricio3.id)
-
-
-#comments bill 4
-comment1 = Comment.create!(body: "comment 1 bill 4", author_id: demoUser.id, bill_id: mauricio4.id)
-comment1 = Comment.create!(body: "comment 2 bill 4", author_id: user2.id, bill_id: mauricio4.id)
-comment1 = Comment.create!(body: "comment 3 bill 4", author_id: user2.id, bill_id: mauricio4.id)
-comment1 = Comment.create!(body: "comment 4 bill 4", author_id: demoUser.id, bill_id: mauricio4.id)
-comment1 = Comment.create!(body: "comment 5 bill 4", author_id: user2.id, bill_id: mauricio4.id)
-
-
-
-## Demo transactions with Mauricio
-
-# one thousand paid by user 2 to demoUser
-transactionM1 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 50 )
-transactionM2 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 100 )
-transactionM3 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 100 )
-transactionM4 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 200 )
-transactionM5 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 50 )
-transactionM6 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 500 )
+#
+#
+#
+# #Demo bills with "mauricio"
+# mauricio1 = Bill.create!(description: "mauricio1", date: Date.today, total_amt: 100, payer_id: user2.id)
+# split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio1.id, amount_due: 10)
+# split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio1.id, amount_due: 90)
+#
+# mauricio2 = Bill.create!(description: "mauricio2", date: Date.today, total_amt: 200, payer_id: user2.id)
+# split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio2.id, amount_due: 150)
+# split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio2.id, amount_due: 50)
+#
+# mauricio3 = Bill.create!(description: "mauricio3", date: Date.today, total_amt: 300, payer_id: user2.id)
+# split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio3.id, amount_due: 200)
+# split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio3.id, amount_due: 100)
+#
+# mauricio4 = Bill.create!(description: "mauricio4", date: Date.today, total_amt: 400, payer_id: demoUser.id)
+# split1 = Split.create!(debtor_id: user2.id, bill_id: mauricio4.id, amount_due: 250)
+# split2 = Split.create!(debtor_id: demoUser.id, bill_id: mauricio4.id, amount_due: 150)
+#
+# #Demo Comments with Mauricio
+#
+# #one bill 1
+# comment1 = Comment.create!(body: "comment 1 bill 1", author_id: user2.id, bill_id: mauricio1.id)
+# comment1 = Comment.create!(body: "comment 2 bill 1", author_id: user2.id, bill_id: mauricio1.id)
+# comment1 = Comment.create!(body: "comment 3 bill 1", author_id: user2.id, bill_id: mauricio1.id)
+# comment1 = Comment.create!(body: "comment 4 bill 1", author_id: demoUser.id, bill_id: mauricio1.id)
+# comment1 = Comment.create!(body: "comment 5 bill 1", author_id: user2.id, bill_id: mauricio1.id)
+#
+# #comments bill 2
+# comment1 = Comment.create!(body: "comment 1 bill 2", author_id: demoUser.id, bill_id: mauricio2.id)
+# comment1 = Comment.create!(body: "comment 2 bill 2", author_id: user2.id, bill_id: mauricio2.id)
+# comment1 = Comment.create!(body: "comment 3 bill 2", author_id: user2.id, bill_id: mauricio2.id)
+# comment1 = Comment.create!(body: "comment 4 bill 2", author_id: demoUser.id, bill_id: mauricio2.id)
+# comment1 = Comment.create!(body: "comment 5 bill 2", author_id: user2.id, bill_id: mauricio2.id)
+#
+# #comments bill 3
+# comment1 = Comment.create!(body: "comment 1 bill 3", author_id: demoUser.id, bill_id: mauricio3.id)
+# comment1 = Comment.create!(body: "comment 2 bill 3", author_id: user2.id, bill_id: mauricio3.id)
+# comment1 = Comment.create!(body: "comment 3 bill 3", author_id: user2.id, bill_id: mauricio3.id)
+# comment1 = Comment.create!(body: "comment 4 bill 3", author_id: demoUser.id, bill_id: mauricio3.id)
+# comment1 = Comment.create!(body: "comment 5 bill 3", author_id: user2.id, bill_id: mauricio3.id)
+#
+#
+# #comments bill 4
+# comment1 = Comment.create!(body: "comment 1 bill 4", author_id: demoUser.id, bill_id: mauricio4.id)
+# comment1 = Comment.create!(body: "comment 2 bill 4", author_id: user2.id, bill_id: mauricio4.id)
+# comment1 = Comment.create!(body: "comment 3 bill 4", author_id: user2.id, bill_id: mauricio4.id)
+# comment1 = Comment.create!(body: "comment 4 bill 4", author_id: demoUser.id, bill_id: mauricio4.id)
+# comment1 = Comment.create!(body: "comment 5 bill 4", author_id: user2.id, bill_id: mauricio4.id)
 
 
-# paid by demoUser
-transactionM1 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 10 )
-transactionM2 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 20 )
-transactionM3 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 30 )
-transactionM4 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 40 )
-transactionM5 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 50 )
-transactionM6 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 60 )
+#
+# ## Demo transactions with Mauricio
+#
+# # one thousand paid by user 2 to demoUser
+# transactionM1 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 50 )
+# transactionM2 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 100 )
+# transactionM3 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 100 )
+# transactionM4 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 200 )
+# transactionM5 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 50 )
+# transactionM6 =  Transaction.create!(payer_id: user2.id , loaner_id: demoUser.id, amount_payed: 500 )
+#
+#
+# # paid by demoUser
+# transactionM1 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 10 )
+# transactionM2 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 20 )
+# transactionM3 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 30 )
+# transactionM4 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 40 )
+# transactionM5 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 50 )
+# transactionM6 =  Transaction.create!(payer_id: demoUser.id , loaner_id: user2.id, amount_payed: 60 )
