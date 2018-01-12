@@ -72,3 +72,14 @@ export const monthDayYearDateFormat = (date) => {
 
 
 };
+
+
+export const displayNumber = (number) => {
+  const ensureFloat = parseFloat(number);
+  if(ensureFloat < 0){
+    return "-$" + Math.abs(number);
+  } else{
+    return "$" + Math.abs(number);
+  }
+
+};

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { transactionsSort, monthDayYearDateFormat } from '../../util/functions';
+import { transactionsSort, monthDayYearDateFormat, displayNumber } from '../../util/functions';
 
 
 class AllTransactionsView extends React.Component {
@@ -54,6 +54,21 @@ class AllTransactionsView extends React.Component {
 
   }
 
+  renderTotalBalance(){
+    const { totalBalance} = this.props.currentUser;
+    if(totalBalance == 0){
+      return (<div> All Settled Up</div>);
+    }
+    const message = (this.props.currentUser.totalBalance > 0 ) ? "you are owed" : "you owe";
+    const moneyClassName = (this.props.currentUser.totalBalance > 0 ) ? "pos2" : "neg2";
+    return (<div className={moneyClassName}>
+      <div>{message}</div>
+      <div className="more-money">{displayNumber(totalBalance)}</div>
+    </div>
+    );
+
+  }
+
   render(){
 
       if(this.props.currentUser.all_transactions === undefined){
@@ -77,7 +92,8 @@ class AllTransactionsView extends React.Component {
           </div>
         </div>
         <div className="right-nav-friends-summary">
-          <p>Welcome to Split It the best app ever</p>
+          <div className="your-total-balance-label">Your total balance </div>
+          {this.renderTotalBalance()}
         </div>
       </div>
 
