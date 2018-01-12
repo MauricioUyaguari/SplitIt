@@ -13,7 +13,7 @@ class ActivityView extends React.Component {
 
 render(){
   return(
-    <div>all activity will be here</div>
+    <div></div>
   );
 }
 

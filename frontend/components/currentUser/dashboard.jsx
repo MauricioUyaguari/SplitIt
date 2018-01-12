@@ -126,7 +126,7 @@ render(){
     return null;
   }
   const max = this.calculateMax();
-  
+
 
 
   return(<div className="friends-show">
@@ -137,7 +137,7 @@ render(){
               Dashboard
             </div>
             <div>
-              <button className="addBillButton">Add a Bill</button>
+              <button className="addBillButton2 addBillButton">Add a Bill</button>
             </div>
           </div>
           <div className="dashboard-top-nav-bottom">
