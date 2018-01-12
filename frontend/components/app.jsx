@@ -31,10 +31,12 @@ const App = () => {
         <GreetingContainer />
       </nav>
       <main className="bodydiv">
-        <AuthRoute path="/login" component={SessionFormContainer} />
-        <AuthRoute path="/signup" component={SessionFormContainer} />
-        <Route exact path="/" component={BodyGreetingContainer} />
-        <ProtectedRoute component={LoggedInContents} />
+
+          <AuthRoute path="/login" component={SessionFormContainer} />
+          <AuthRoute path="/signup" component={SessionFormContainer} />
+          <AuthRoute exact path="/" component={BodyGreetingContainer} />
+          <ProtectedRoute path="/" component={LoggedInContents} />
+
       </main>
       <FooterContainer />
   </div>

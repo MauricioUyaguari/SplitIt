@@ -27,11 +27,11 @@ class SessionForm extends React.Component {
   }
 
 
-  componentWillReceiveProps(nextProps) {
-   if( nextProps.loggedIn){
-     this.props.history.push('/');
-   }
+
+ componentWillUnmount(){
+   this.props.removeErrors();
  }
+
 
  passwordRender(){
    return(
@@ -74,6 +74,7 @@ formHeading(){
 }
 
   linkto(){
+    debugger
     if(this.props.formType === "login"){
       return(
         <Link to="/signup"> Sign Up</Link>
@@ -109,6 +110,7 @@ formHeading(){
     return null;
   }
   render() {
+    debugger
     const {formType } = this.props;
     const submitLabel = (formType) === "login" ? "Log In" : "Sign me Up";
     return(
