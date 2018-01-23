@@ -17,12 +17,36 @@ SplitIt uses the following technologies to implement:
 #Set Up
 In order to run on your local machine, you will need to `npm install` and run `bundle install`.  After this is completed to see it in your local host, run  `webpack --watch` and `rails s`.
 
+
+
 # Main Features
 ## Create and login with secure authenication
 Lets user securely log in and create and account. Uses Bcrypt.
 ![GitHub Logo](/app/assets/images/snipet_User_Auth.png)
 ## Adding friends through searching  by username
 My app gives the ability for the user to search through the user database and add friends.  After searching one can simply click on add to add them to their friends list.
+
+
+The following is the ajax request given by the string searched by the user.
+```javascript
+export const searchUsers = (query) => {
+  return($.ajax({
+    url: '/api/users/search',
+    method: 'GET',
+    data: {query}
+  })
+);
+};
+```
+
+Returns all users that match the string and are not the current user's friends.
+```ruby
+def search(username)
+  other = self.all_friends.map{|e| e.id} + [self.id]
+  User.where.not(id: other).where('email ~ ?', username)
+end
+```
+
 ![GitHub Logo](/app/assets/images/snipet_search.png)
 ## Adding bills and being able to split it by chosen amount with friends
 ![GitHub Logo](/app/assets/images/snipet_bill.png)
