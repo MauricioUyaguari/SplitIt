@@ -26,7 +26,7 @@ const withUser = () => {
 
               </li>
               <li>
-                <a className="connectLogos" href="wwww.mauriciouyaguari.com">
+                <a className="connectLogos" href="http://mauriciouyaguari.com">
                 <i className="fas fa-desktop"></i></a>
                 <span>Website</span>
 

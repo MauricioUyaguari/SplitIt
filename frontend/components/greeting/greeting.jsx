@@ -24,7 +24,7 @@ const loggedinGreeting = (currentUser, logout) => {
   <div>
     <a  className="headerLogos" href="https://www.linkedin.com/in/luismauriciouyaguari/"><i className="fab fa-linkedin"></i></a>
     <a className="headerLogos" href="https://github.com/MauricioUyaguari">  <i className="fab fa-github"></i>  </a>
-    <a className="headerLogos" href="wwww.mauriciouyaguari.com"><i className="fas fa-desktop"></i></a>
+    <a className="headerLogos" href="http://mauriciouyaguari.com"><i className="fas fa-desktop"></i></a>
 
   </div>
   </div>
