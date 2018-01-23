@@ -1,7 +1,7 @@
 # SplitIt
 
 
-SplitIt is an application to help calculate expenses between two parties.  The app lets friends and family keep track of their bills.  This is done by doing the calculation on how much each should paid based on a percentage and keeping track of transactions between the two. It also provides some graphs and has a dashboard for the user to keep track of their balances between parties.  SplitIt is meant to be a clone of [Splitwise](https://splitwise.com).
+SplitIt is an application to help calculate expenses between two parties.  The app lets friends and family keep track of their bills.  This is done by doing the calculation on how much each should paid based on a percentage and keeping track of transactions between the two. It also provides some graphs and has a dashboard for the user to keep track of their balances.  SplitIt is meant to be a clone of [Splitwise](https://splitwise.com).
 
 SplitIt uses the following technologies to implement:
 
@@ -14,17 +14,17 @@ SplitIt uses the following technologies to implement:
 [Link to App](https://splitit-mu.herokuapp.com/#/)
 
 
-#Set Up
-In order to run on your local machine, you will need to `npm install` and run `bundle install`.  After this is completed to see it in your local host, run  `webpack --watch` and `rails s`.
+## Set Up
+In order to run on your local machine, you will need to run `npm install` and run `bundle install`.  After, run `webpack --watch` and `rails s` to see it in your local server.
 
 
 
 # Main Features
 ## Create and login with secure authenication
-Lets user securely log in and create and account. Uses Bcrypt.
+Lets user securely log in and create an account. Uses Bcrypt.  Gives a demo login for anyone who just wants to check out the basic layout of the app.
 ![GitHub Logo](/app/assets/images/snipet_User_Auth.png)
 ## Adding friends through searching  by username
-My app gives the ability for the user to search through the user database and add friends.  After searching one can simply click on add to add them to their friends list.
+The app gives the ability for the user to search through the user database and add friends.  After searching, one can simply click on "add" to add them to their friends list.
 
 
 The following is the ajax request given by the string searched by the user.
@@ -50,7 +50,7 @@ end
 ![GitHub Logo](/app/assets/images/snipet_search.png)
 ## Adding bills and being able to split it by chosen amount with friends
 ![GitHub Logo](/app/assets/images/snipet_bill.png)
-## Being able to comment on each others Bills.
+## Being able to comment on each other's Bills.
 ![GitHub Logo](/app/assets/images/snipet_friend_dashboard.png)
 ## Adding transactions so friends can pay each other back
 ![GitHub Logo](/app/assets/images/snipet_transaction.png)
