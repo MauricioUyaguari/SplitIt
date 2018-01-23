@@ -21,6 +21,12 @@ const loggedinGreeting = (currentUser, logout) => {
       <h2> {currentUser.email}</h2>
   </hgroup>
   <button className="logoutbutton" onClick={logout}>Log out</button>
+  <div>
+    <a  className="headerLogos" href="https://www.linkedin.com/in/luismauriciouyaguari/"><i className="fab fa-linkedin"></i></a>
+    <a className="headerLogos" href="https://github.com/MauricioUyaguari">  <i className="fab fa-github"></i>  </a>
+    <a className="headerLogos" href="wwww.mauriciouyaguari.com"><i className="fas fa-desktop"></i></a>
+
+  </div>
   </div>
   );
 };
