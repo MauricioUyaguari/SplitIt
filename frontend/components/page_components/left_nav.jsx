@@ -17,12 +17,6 @@ const LeftNav = () => {
           </Link>
         </li>
         <li>
-          <Link to="/activity">
-            <img src={window.staticImages.icon_list}></img>
-            <span>Recent Activity</span>
-          </Link>
-        </li>
-        <li>
           <Link to="/all">
             <img src={window.staticImages.icon_flag}></img>
             <span>All Transactions</span>

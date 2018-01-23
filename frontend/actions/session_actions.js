@@ -22,7 +22,6 @@ export const receiveErrors = (errors) => {
 
 
 export const removeErrors = () => {
-  debugger
   return {
     type: REMOVE_ERRORS
   };

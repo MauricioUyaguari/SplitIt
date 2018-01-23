@@ -16,17 +16,20 @@ const withUser = () => {
           <section className="footer-links">
             <ul>
               <li>
-                <img className="connectLogos" src={window.staticImages.linkedinLogo}></img>
+                <a className="connectLogos" href="https://www.linkedin.com/in/luismauriciouyaguari/"><i className="fab fa-linkedin"></i></a>
                 <span>Linkedin</span>
+              </li>
+              <li>
+                <a className="connectLogos" href="https://github.com/MauricioUyaguari">
+                  <i className="fab fa-github"></i>  </a>
+                  <span>Github</span>
 
               </li>
               <li>
-                <img className="connectLogos" src={window.staticImages.githubLogo}></img>
-                <span>Github</span>
-              </li>
-              <li>
-                <img></img>
+                <a className="connectLogos" href="wwww.mauriciouyaguari.com">
+                <i className="fas fa-desktop"></i></a>
                 <span>Website</span>
+
               </li>
             </ul>
           </section>

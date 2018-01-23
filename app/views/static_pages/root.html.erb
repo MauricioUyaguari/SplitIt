@@ -1,4 +1,8 @@
+
 <script id="bootstrap-current-user" type="text/javascript">
+
+
+
   <% if logged_in? %>
   	window.currentUser = <%= render("api/users/user.json.jbuilder",
   		user: current_user).html_safe %>
@@ -26,4 +30,6 @@
 </script>
 
 
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
 <main id="root"></main>
