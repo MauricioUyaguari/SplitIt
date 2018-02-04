@@ -39,7 +39,6 @@ class User < ApplicationRecord
 
     ## direct
     #bills
-
     has_many :paid_bills,
     foreign_key: :payer_id,
     class_name: :Bill
@@ -112,7 +111,8 @@ class User < ApplicationRecord
 
 
   def all_friends
-    self.in_friends + self.out_friends
+    all = self.in_friends + self.out_friends
+    all
   end
 
   def self.find_by_username(username)
@@ -127,10 +127,6 @@ class User < ApplicationRecord
 
 
 
-  #shared_bills
-  # def uniq_bills
-  #   self.bills.distinct(:id)
-  # end
 
   def shared_bills(friend)
     other = friend.bills.map{|e| e.id}

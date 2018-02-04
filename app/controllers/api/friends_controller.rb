@@ -9,7 +9,7 @@ class Api::FriendsController < ApplicationController
 
 
   def show
-    
+
     @friend =  User.find(params[:id])
     if @friend && current_user
       render 'api/friends/show'
@@ -22,7 +22,8 @@ class Api::FriendsController < ApplicationController
   def create
 
     friend_id = params[:user][:id]
-    @friendship = Friendship.new(requester_id: current_user.id, friend_id: friend_id)
+    @friendship = Friendship.new(requester_id: current_user.id, friend_id: friend_id, accepted: true)
+    debugger
     if @friendship.save
       @friend = User.find(@friendship.friend_id)
       render '/api/friends/show'
