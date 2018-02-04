@@ -48,6 +48,24 @@ class User < ApplicationRecord
     through: :pending_friendships,
     source: :requester
 
+
+    def pending_friends_with_friendships
+      id = self.id
+      hello = Friendship.find_by_sql(<<-SQL)
+        SELECT
+        *
+        from
+        friendships
+        left join
+        users
+        on friendships.requester_id = users.id
+        where
+        friendships.friend_id = #{id}
+      SQL
+      debugger
+      hello
+    end
+
     ## direct
     #bills
     has_many :paid_bills,

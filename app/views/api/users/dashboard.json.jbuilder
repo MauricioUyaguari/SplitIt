@@ -29,6 +29,12 @@ json.bills do
 end
 
 
+
+
+@pending_friends.each do |friend|
+
+end
+
 json.pending_friends do
   json.array! @pending_friends, partial: 'api/users/user', as: :user
 end
