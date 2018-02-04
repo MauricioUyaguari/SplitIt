@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PendingFriendsContainer from './pending_friends_container';
 
 class DashboardView extends React.Component {
 
@@ -177,7 +178,7 @@ render(){
       </div>
     </div>
     <div className="right-nav-friends-summary">
-      <p>Welcome to Split It the best app ever</p>
+      <PendingFriendsContainer />
     </div>
   </div>
 );

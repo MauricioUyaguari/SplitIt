@@ -7,9 +7,16 @@ class PendingFriendsView extends React.Component {
 
 
 
+
+
+
 render(){
+  const {pendingFriends} = this.props;
 
-  return(<div>hello</div>);
+  return(<div>
+  <div>Pending Friend Requests</div>
+
+  </div>);
 
 
 }
@@ -17,3 +24,6 @@ render(){
 
 
 }
+
+
+export default PendingFriendsView;
