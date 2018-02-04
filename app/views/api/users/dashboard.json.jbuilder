@@ -5,7 +5,7 @@ friends_id = @friends.map{|friend| friend.id}
 bills_id = @bills.map{|bill| bill.id}
 @balances = current_user.final_all_balances
 
-
+@pending_friends = current_user.pending_friends
 
 
 
@@ -26,4 +26,9 @@ end
 
 json.bills do
   json.array! @bills, partial: 'api/bills/bill', as: :bill
+end
+
+
+json.pending_friends do
+  json.array! @pending_friends, partial: 'api/users/user', as: :user
 end
