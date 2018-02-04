@@ -18,6 +18,7 @@ export const sessionReducer = (state = nullUser, action) => {
     return merge({}, { currentUser });
     case RECEIVE_DASHBOARD:
     let current = action.currentUser;
+    current.pending_friends = action.pending_friends;
     return merge({}, {currentUser: current });
     default:
       return state;

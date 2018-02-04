@@ -13,7 +13,8 @@ export const receiveDashboard = (dashboard) => {
     type: RECEIVE_DASHBOARD,
     currentUser: dashboard.current_user,
     friends: dashboard.friends,
-    bills: dashboard.bills
+    bills: dashboard.bills,
+    pending_friends: dashboard.pending_friends
   };
 };
 

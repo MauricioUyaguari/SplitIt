@@ -20,7 +20,6 @@ class Api::FriendsController < ApplicationController
 
 
   def create
-
     friend_id = params[:user][:id]
     @friendship = Friendship.new(requester_id: current_user.id, friend_id: friend_id)
     if @friendship.save
@@ -33,7 +32,7 @@ class Api::FriendsController < ApplicationController
 
 
   def update
-    
+
   end
 
 
