@@ -9,7 +9,7 @@ Rails.application.routes.draw do
         get "dashboard", on: :collection
       end
       resource :session, only: [:destroy, :create]
-      resources :friends, only: [:show, :index, :create]
+      resources :friends, only: [:show, :index, :create, :update]
       resources :bills, only: [:show, :index, :create, :destroy]
       resources :comments, only: [:show, :index, :create, :destroy]
       resources :transactions, only: [:show, :index, :create]

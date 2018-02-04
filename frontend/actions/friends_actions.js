@@ -45,6 +45,10 @@ export const createFriend = (user) => dispatch => {
   });
 };
 
+
+
+
+
 export const fetchSearchedUsers = (query) => dispatch => {
   return FriendApiUtil.searchUsers(query).then(users => {
     return dispatch(receiveSearchedUsers(users));
@@ -55,6 +59,13 @@ export const fetchSearchedUsers = (query) => dispatch => {
 
 export const fetchSingleFriend = (id) => dispatch => {
   return FriendApiUtil.fetchSingleFriend(id).then(friend => {
+    return dispatch(receiveSingleFriend(friend));
+  });
+};
+
+
+export const approveFriendship = (friendId) => dispatch => {
+  return FriendApiUtil.approveFriendship(friendId).then(friend => {
     return dispatch(receiveSingleFriend(friend));
   });
 };
