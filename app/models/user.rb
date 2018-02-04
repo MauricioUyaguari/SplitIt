@@ -21,13 +21,14 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many :in_friendships,
+  has_many :in_friendships,-> { where "accepted = true" },
   foreign_key: :friend_id,
   class_name: :Friendship
 
-  has_many :out_friendships,
+  has_many :out_friendships,-> { where "accepted = true" },
     foreign_key: :requester_id,
     class_name: :Friendship
+
 
     has_many :in_friends,
     through: :in_friendships,
@@ -36,6 +37,16 @@ class User < ApplicationRecord
     has_many :out_friends,
     through: :out_friendships,
     source: :friend
+
+
+
+    has_many :pending_friendships,-> { where "accepted = false" },
+    foreign_key: :friend_id,
+    class_name: :Friendship
+
+    has_many :pending_friends,
+    through: :pending_friendships,
+    source: :requester
 
     ## direct
     #bills
@@ -112,7 +123,6 @@ class User < ApplicationRecord
 
   def all_friends
     all = self.in_friends + self.out_friends
-    all
   end
 
   def self.find_by_username(username)

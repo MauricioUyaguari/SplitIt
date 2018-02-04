@@ -22,14 +22,18 @@ class Api::FriendsController < ApplicationController
   def create
 
     friend_id = params[:user][:id]
-    @friendship = Friendship.new(requester_id: current_user.id, friend_id: friend_id, accepted: true)
-    debugger
+    @friendship = Friendship.new(requester_id: current_user.id, friend_id: friend_id)
     if @friendship.save
       @friend = User.find(@friendship.friend_id)
       render '/api/friends/show'
     else
       render json: @friendship.errors.full_messages
     end
+  end
+
+
+  def update
+    
   end
 
 
