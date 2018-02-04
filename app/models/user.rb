@@ -49,21 +49,10 @@ class User < ApplicationRecord
     source: :requester
 
 
-    def pending_friends_with_friendships
-      id = self.id
-      hello = Friendship.find_by_sql(<<-SQL)
-        SELECT
-        *
-        from
-        friendships
-        left join
-        users
-        on friendships.requester_id = users.id
-        where
-        friendships.friend_id = #{id}
-      SQL
-      debugger
-      hello
+    def find_pending_friendship(requestor_id)
+      friend_id = self.id
+      requester_id = requestor_id
+      Friendship.where(friend_id: friend_id).where(requester_id: requester_id)
     end
 
     ## direct
