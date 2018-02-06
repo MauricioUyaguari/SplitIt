@@ -39,10 +39,9 @@ export const searchUsers = (query) => {
 
 
 export const approveFriendship = (id) => {
-
   return ( $.ajax({
     url: `/api/friends/${id}`,
-    method: 'GET'
+    method: 'PATCH'
   })
 );
 
