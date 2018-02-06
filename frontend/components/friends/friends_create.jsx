@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-const FriendsCreate = ({ user, createFriend}) => {
+const FriendsCreate = ({ user, createFriend, closeModal}) => {
 
 
   const update =  () => {
     createFriend(user);
-
+    closeModal();
   };
 
   return (

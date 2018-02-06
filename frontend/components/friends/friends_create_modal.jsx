@@ -55,7 +55,7 @@ class FriendCreateModal extends React.Component {
                 <div>Add a Friend</div>
                 <div className="close-x" onClick={this.closeModal} >x</div>
               </h2>
-              <FriendFormContainer />
+              <FriendFormContainer closeModal={() => this.closeModal() } />
               <fotter className="modal-close">
                 <button className="close-add-friend" onClick={this.closeModal}>Cancel</button>
               </fotter>
