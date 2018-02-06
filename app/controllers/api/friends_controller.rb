@@ -33,13 +33,13 @@ class Api::FriendsController < ApplicationController
 
   def update
     friendship = current_user.find_pending_friendship(params[:id].to_i)
+    @friend = User.find(params[:id])
     friendship.update(accepted: true)
-    if friendship
+    if friendship && @friend
+      render 'api/friends/show'
     else
       render json: ["an error has occured. Friendship not added"]
     end
-
-
 
   end
 

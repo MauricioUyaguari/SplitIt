@@ -13,6 +13,7 @@ export const receiveAllFriends = (friends) => {
 };
 
 export const receiveSingleFriend = (friendData) => {
+  debugger
 
   return {
     type: RECEIVE_SINGLE_FRIEND,
