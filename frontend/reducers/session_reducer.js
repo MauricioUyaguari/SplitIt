@@ -2,7 +2,7 @@ import{ RECEIVE_CURRENT_USER
   ,RECEIVE_SESSION_ERRORS} from '../actions/session_actions';
 import { RECEIVE_DASHBOARD } from '../actions/currentUser_actions';
 import merge from 'lodash/merge';
-
+import { RECEIVE_SINGLE_FRIEND } from '../actions/friends_actions';
 
 const nullUser = Object.freeze({
   currentUser: null
@@ -11,7 +11,7 @@ const nullUser = Object.freeze({
 
 export const sessionReducer = (state = nullUser, action) => {
   Object.freeze(state);
-
+  debugger
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
     const currentUser = action.currentUser;
@@ -22,6 +22,14 @@ export const sessionReducer = (state = nullUser, action) => {
     return merge({}, {currentUser: current });
     default:
       return state;
+    case RECEIVE_SINGLE_FRIEND:
+    let pending = state.currentUser.pending_friends;
+    pending = pending.filter( friend =>
+    friend.id !== action.friend.id
+    );
+    current = state.currentUser;
+    current.pending_friends = pending;
+    return merge({}, {currentUser: current});
   }
 };
 

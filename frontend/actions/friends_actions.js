@@ -13,7 +13,7 @@ export const receiveAllFriends = (friends) => {
 };
 
 export const receiveSingleFriend = (friendData) => {
-  debugger
+
 
   return {
     type: RECEIVE_SINGLE_FRIEND,
@@ -62,7 +62,6 @@ export const fetchSingleFriend = (id) => dispatch => {
 
 
 export const approveFriendship = (friendId) => dispatch => {
-  debugger
   return FriendApiUtil.approveFriendship(friendId).then(friend => {
     return dispatch(receiveSingleFriend(friend));
   });
