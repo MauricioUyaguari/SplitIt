@@ -24,7 +24,7 @@ class Api::FriendsController < ApplicationController
     @friendship = Friendship.new(requester_id: current_user.id, friend_id: friend_id)
     if @friendship.save
       @friend = User.find(@friendship.friend_id)
-      render '/api/friends/show'
+      render  json: ["Friend Request to #{@friend.email} has been send"]
     else
       render json: @friendship.errors.full_messages
     end
