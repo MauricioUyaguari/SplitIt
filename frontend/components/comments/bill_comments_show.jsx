@@ -41,7 +41,7 @@ class BillCommentsShow  extends React.Component {
             <div className="comment-author">{this.author(comment)}</div>
             <div>{comment.body}</div>
           </div>
-          <button className="close-comment"onClick={() => this.props.deleteComment(comment.id)}>x</button>
+          <button className="close-comment" onClick={() => this.props.deleteComment(comment.id)}>x</button>
         </div>
       </li>
       )

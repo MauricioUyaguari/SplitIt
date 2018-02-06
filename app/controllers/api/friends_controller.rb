@@ -32,6 +32,7 @@ class Api::FriendsController < ApplicationController
 
 
   def update
+    debugger
 
   end
 

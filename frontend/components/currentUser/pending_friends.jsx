@@ -13,12 +13,13 @@ class PendingFriendsView extends React.Component {
 
 renderPendingFriends() {
   const {pendingFriends} = this.props;
+  debugger
   return(pendingFriends.map(requestor =>
     <li key={requestor.id}>
       <div key={requestor.id}>
           <div>{requestor.email}</div>
         </div>
-        <button>Accepted</button>
+        <button onClick={() => this.props.approveFriendship(requestor.id)} >Accepted</button>
     </li>
     )
   );

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PendingFriendsView from './pending_friends';
-
+import { approveFriendship } from '../../actions/friends_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -9,7 +9,12 @@ const mapStateToProps = (state) => {
 };
 
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    approveFriendship: (id) => dispatch(approveFriendship(id))
+  };
+};
 
 
 
-export default connect(mapStateToProps, null)(PendingFriendsView);
+export default connect(mapStateToProps, mapDispatchToProps)(PendingFriendsView);

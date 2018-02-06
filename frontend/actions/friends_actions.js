@@ -46,15 +46,11 @@ export const createFriend = (user) => dispatch => {
 };
 
 
-
-
-
 export const fetchSearchedUsers = (query) => dispatch => {
   return FriendApiUtil.searchUsers(query).then(users => {
     return dispatch(receiveSearchedUsers(users));
   });
 };
-
 
 
 export const fetchSingleFriend = (id) => dispatch => {
@@ -65,6 +61,7 @@ export const fetchSingleFriend = (id) => dispatch => {
 
 
 export const approveFriendship = (friendId) => dispatch => {
+  debugger
   return FriendApiUtil.approveFriendship(friendId).then(friend => {
     return dispatch(receiveSingleFriend(friend));
   });
