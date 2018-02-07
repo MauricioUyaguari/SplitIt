@@ -39,11 +39,12 @@ class FriendsIndex extends React.Component {
   }
 
   render(){
-    
+  
     return (<nav className="friends-index">
       <div className="friends-index-header">
         <span> Friends </span>
-        <FriendCreateModal />
+        <FriendCreateModal
+          clearSearch= {this.props.clearSearch}/>
       </div>
       <ul>
         { this.renderFriends() }

@@ -27,6 +27,8 @@ class FriendCreateModal extends React.Component {
     this.state = {modalIsOpen: false};
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.closeModalandClearSearch = this.closeModalandClearSearch.bind(this);
+
   }
     openModal (){
       this.setState({modalIsOpen: true});
@@ -36,7 +38,16 @@ class FriendCreateModal extends React.Component {
       this.setState({modalIsOpen: false});
     }
 
+    closeModalandClearSearch() {
+      debugger
+      this.props.clearSearch();
+      this.closeModal();
+
+
+    }
+
     render(){
+      debugger
       return(
         <div>
           <button className="addFriendButton" onClick={this.openModal}>+ add</button>
@@ -53,12 +64,12 @@ class FriendCreateModal extends React.Component {
             >
               <h2 className="add-friend-header">
                 <div>Add a Friend</div>
-                <div className="close-x" onClick={this.closeModal} >x</div>
+                <div className="close-x" onClick={this.closeModalandClearSearch} >x</div>
               </h2>
               <FriendFormContainer closeModal={() => this.closeModal() } />
-              <fotter className="modal-close">
-                <button className="close-add-friend" onClick={this.closeModal}>Cancel</button>
-              </fotter>
+              <div className="modal-close">
+                <button className="close-add-friend" onClick={this.closeModalandClearSearch}>Cancel</button>
+              </div>
           </Modal>
       </div>
       );
