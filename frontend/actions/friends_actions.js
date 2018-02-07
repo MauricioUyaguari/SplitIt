@@ -4,7 +4,7 @@ import * as FriendApiUtil from '../util/friend_api_util';
 export const RECEIVE_ALL_FRIENDS = 'RECEIVE_ALL_FRIENDS';
 export const RECEIVE_SINGLE_FRIEND = 'RECEIVE_SINGLE_FRIEND';
 export const RECEIVE_SEARCHED_USERS = 'RECEIVE_SEARCHED_USERS';
-export const RECEIVE_FRIEND_MESSAGE = 'RECEIVE_FRIEND_MESSAGE';
+export const RECEIVE_FRIENDSHIP = 'RECEIVE_FRIENDSHIP';
 
 export const receiveAllFriends = (friends) => {
   return{
@@ -32,9 +32,9 @@ export const receiveSearchedUsers = (users) => {
 };
 
 
-export const receiveFriendshipConfirmation = (message) => {
+export const receiveFriendship = (message) => {
   return {
-    type: RECEIVE_FRIEND_MESSAGE,
+    type: RECEIVE_FRIENDSHIP,
     message
   };
 };
@@ -48,7 +48,7 @@ export const fetchAllFriends = () => dispatch => {
 
 export const createFriendship = (user) => dispatch => {
   return FriendApiUtil.createFriendship(user).then(message => {
-    return dispatch(receiveFriendshipConfirmation(message));
+    return dispatch(receiveFriendship(message));
   });
 };
 
