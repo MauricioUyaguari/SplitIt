@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 
 class PendingFriendsView extends React.Component {
 
@@ -11,6 +11,14 @@ class PendingFriendsView extends React.Component {
 
 
 
+  addFriendship (requestor){
+    this.props.approveFriendship(requestor.id);
+    return (
+      <Redirect to= "/all" />
+    );
+  }
+
+
 renderPendingFriends() {
   const {pendingFriends} = this.props;
 
@@ -19,7 +27,7 @@ renderPendingFriends() {
       <div key={requestor.id}>
           <div>{requestor.email}</div>
         </div>
-        <button onClick={() => this.props.approveFriendship(requestor.id)} >Accepted</button>
+        <button onClick={() => this.addFriendship(requestor)} >Accepted</button>
     </li>
     )
   );
