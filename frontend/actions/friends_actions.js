@@ -5,6 +5,7 @@ export const RECEIVE_ALL_FRIENDS = 'RECEIVE_ALL_FRIENDS';
 export const RECEIVE_SINGLE_FRIEND = 'RECEIVE_SINGLE_FRIEND';
 export const RECEIVE_SEARCHED_USERS = 'RECEIVE_SEARCHED_USERS';
 export const RECEIVE_FRIENDSHIP = 'RECEIVE_FRIENDSHIP';
+export const CLEAR_SEARCH = 'CLEAR_SEARCH';
 
 export const receiveAllFriends = (friends) => {
   return{
@@ -39,6 +40,14 @@ export const receiveFriendship = (message) => {
   };
 };
 
+
+
+export const clearSearch = () => {
+  return {
+    type: CLEAR_SEARCH
+  };
+
+};
 
 export const fetchAllFriends = () => dispatch => {
   return FriendApiUtil.fetchFriends().then(friends => {

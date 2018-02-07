@@ -49,6 +49,14 @@ class User < ApplicationRecord
     source: :requester
 
 
+    has_many :pending_friendships_requests, -> { where "accepted = false" },
+    foreign_key: :requester_id,
+    class_name: :Friendship
+
+    has_many :request_friends,
+    through: :pending_friendships_requests,
+    source: :friend
+
     def find_pending_friendship(requestor_id)
       friend_id = self.id
       requester_id = requestor_id
@@ -138,7 +146,7 @@ class User < ApplicationRecord
 
 
   def search(username)
-    other = self.all_friends.map{|e| e.id} + [self.id]
+    other = self.all_friends.map{|e| e.id} + [self.id] + self.pending_friends.map{|friend| friend.id} + self.request_friends.map{|friend| friend.id}
     User.where.not(id: other).where('email ~ ?', username)
   end
 
