@@ -4,7 +4,7 @@ import { approveFriendship } from '../../actions/friends_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  
   return {
     pendingFriends: state.session.currentUser.pending_friends
   };

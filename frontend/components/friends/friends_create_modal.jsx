@@ -39,7 +39,7 @@ class FriendCreateModal extends React.Component {
     }
 
     closeModalandClearSearch() {
-      debugger
+
       this.props.clearSearch();
       this.closeModal();
 
@@ -47,7 +47,7 @@ class FriendCreateModal extends React.Component {
     }
 
     render(){
-      debugger
+
       return(
         <div>
           <button className="addFriendButton" onClick={this.openModal}>+ add</button>
