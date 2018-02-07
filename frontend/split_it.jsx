@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import * as ApiUtil from './util/session_api_util';
-import { fetchAllFriends,createFriend, fetchSearchedUsers, fetchSingleFriend  } from './actions/friends_actions';
+import { fetchAllFriends,createFriendship, fetchSearchedUsers, fetchSingleFriend  } from './actions/friends_actions';
 import { fetchAllBills } from './actions/bills_actions';
 import { login  } from './actions/session_actions';
 

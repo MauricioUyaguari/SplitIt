@@ -46,8 +46,8 @@ export const fetchAllFriends = () => dispatch => {
   });
 };
 
-export const createFriend = (user) => dispatch => {
-  return FriendApiUtil.createFriend(user).then(message => {
+export const createFriendship = (user) => dispatch => {
+  return FriendApiUtil.createFriendship(user).then(message => {
     return dispatch(receiveFriendshipConfirmation(message));
   });
 };

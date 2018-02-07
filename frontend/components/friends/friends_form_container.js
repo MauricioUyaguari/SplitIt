@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import FriendsForm from './friends_form';
-import { createFriend, fetchSearchedUsers  } from '../../actions/friends_actions';
+import { createFriendship, fetchSearchedUsers  } from '../../actions/friends_actions';
 
 
 
@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createFriend: (user) => dispatch(createFriend(user)),
+    createFriendship: (user) => dispatch(createFriendship(user)),
     fetchSearchedUsers: (query) => dispatch(fetchSearchedUsers(query))
   };
 };

@@ -37,7 +37,7 @@ class FriendsForm extends React.Component {
                         <FriendsCreate
                           key={user.id}
                           user={user}
-                          createFriend={this.props.createFriend}
+                          createFriendship={this.props.createFriendship}
                           closeModal={() => this.props.closeModal() }
                            />
                       ))

@@ -38,7 +38,6 @@ renderPendingFriends() {
 
 render(){
   const {pendingFriends} = this.props;
-  debugger
   return(<div>
   <div>Pending Friend Requests</div>
 
