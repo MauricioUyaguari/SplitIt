@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
 import PendingFriendsView from './pending_friends';
 import { approveFriendship } from '../../actions/friends_actions';
+import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
     pendingFriends: state.session.currentUser.pending_friends
   };
@@ -17,4 +19,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(PendingFriendsView);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PendingFriendsView));

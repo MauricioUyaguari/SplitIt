@@ -13,9 +13,8 @@ class PendingFriendsView extends React.Component {
 
   addFriendship (requestor){
     this.props.approveFriendship(requestor.id);
-    return (
-      <Redirect to= "/all" />
-    );
+    debugger
+    this.props.history.push(`/friends/${requester_id}`);
   }
 
 
