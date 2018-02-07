@@ -13,8 +13,8 @@ class PendingFriendsView extends React.Component {
 
   addFriendship (requestor){
     this.props.approveFriendship(requestor.id);
-    debugger
-    this.props.history.push(`/friends/${requester_id}`);
+
+    this.props.history.push(`/friends/${requestor.id}`);
   }
 
 
@@ -38,7 +38,7 @@ renderPendingFriends() {
 
 render(){
   const {pendingFriends} = this.props;
-
+  debugger
   return(<div>
   <div>Pending Friend Requests</div>
 

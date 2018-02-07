@@ -33,7 +33,6 @@ export const receiveSearchedUsers = (users) => {
 
 
 export const receiveFriendshipConfirmation = (message) => {
-  debugger
   return {
     type: RECEIVE_FRIEND_MESSAGE,
     message
