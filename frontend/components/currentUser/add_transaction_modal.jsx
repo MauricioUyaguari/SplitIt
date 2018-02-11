@@ -29,6 +29,8 @@ class TransactionsFormModal extends React.Component {
           isOpen={this.state.modalIsOpen}
           onRequestOpen={this.closeModal}
           style={customStyles}
+          shouldCloseOnOverlayClick={true}
+          onRequestClose={this.closeModal}
           ariaHideApp={false}
           className={{
           base: 'add-bill-modal add-friend-modal',
