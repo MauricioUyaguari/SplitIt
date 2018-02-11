@@ -23,10 +23,10 @@ renderPendingFriends() {
 
   return(pendingFriends.map(requestor =>
     <li key={requestor.id}>
-      <div key={requestor.id}>
+      <div className="friend-request-div" key={requestor.id}>
           <div>{requestor.email}</div>
         </div>
-        <button onClick={() => this.addFriendship(requestor)} >Accepted</button>
+        <button onClick={() => this.addFriendship(requestor)} >Accept</button>
     </li>
     )
   );
