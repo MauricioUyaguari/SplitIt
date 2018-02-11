@@ -47,6 +47,8 @@ class BillsFormModal extends React.Component {
             style={customStyles}
             ariaHideApp={false}
             friend={friend}
+            shouldCloseOnOverlayClick={true}
+            onRequestClose={this.closeModal}
             className={{
             base: 'add-bill-modal add-friend-modal',
             afterOpen: 'add-friend-modal add-bill-modal',
