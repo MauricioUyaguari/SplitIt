@@ -56,6 +56,8 @@ class FriendCreateModal extends React.Component {
             onRequestOpen={this.closeModal}
             style={customStyles}
             ariaHideApp={false}
+            shouldCloseOnOverlayClick={true}
+            onRequestClose={this.closeModal}
             className={{
             base: 'add-friend-modal',
             afterOpen: 'add-friend-modal',
