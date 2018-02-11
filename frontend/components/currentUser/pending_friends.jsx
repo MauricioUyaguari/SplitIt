@@ -38,9 +38,16 @@ renderPendingFriends() {
 
 render(){
   const {pendingFriends} = this.props;
+  if (pendingFriends.length < 1){
+    return (
+      <div>
+        Welcome to SplitIt.
+      </div>
+    );
+  }
+
   return(<div>
   <div>Pending Friend Requests</div>
-
   <ul>
     {this.renderPendingFriends()}
   </ul>
