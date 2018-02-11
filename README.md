@@ -24,7 +24,9 @@ In order to run on your local machine, you will need to run `npm install` and ru
 Lets user securely log in and create an account. Uses Bcrypt.  Gives a demo login for anyone who just wants to check out the basic layout of the app.
 ![GitHub Logo](/app/assets/images/snipet_User_Auth.png)
 ## Adding friends through searching  by username
-The app gives the ability for the user to search through the user database and add friends.  After searching, one can simply click on "add" to add them to their friends list.
+The app gives the ability for the user to search through the user database and add friends.  After searching, one can simply click on "add" to send a friend request to the chosen user.
+
+The chosen user will then get a friend request and will only get added to the current user's friend once they have accepted the friend request.
 
 
 The following is the ajax request given by the string searched by the user.
