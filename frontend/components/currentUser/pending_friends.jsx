@@ -24,9 +24,10 @@ renderPendingFriends() {
   return(pendingFriends.map(requestor =>
     <li className="friend-request-li" key={requestor.id}>
       <div className="friend-request-div" key={requestor.id}>
+        <img className="friend-request-img" src={window.staticImages.icon_person}></img>
           <div className="request-name">{requestor.email}</div>
-        </div>
         <button className="accept-button" onClick={() => this.addFriendship(requestor)} >Accept</button>
+      </div>
     </li>
     )
   );

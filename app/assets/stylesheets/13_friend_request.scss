@@ -1,0 +1,19 @@
+.friend-request-li {
+  list-style: none;
+  padding: 5px
+}
+
+
+.friend-request-div {
+  display: flex;
+}
+
+.friend-request-div * {
+  padding-left: 2.5px;
+  padding-right: 2.5px;
+}
+
+.friend-request-img {
+  height: 16px;
+  width: 16px;
+}
