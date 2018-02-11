@@ -22,11 +22,11 @@ renderPendingFriends() {
   const {pendingFriends} = this.props;
 
   return(pendingFriends.map(requestor =>
-    <li key={requestor.id}>
+    <li className="friend-request-li" key={requestor.id}>
       <div className="friend-request-div" key={requestor.id}>
-          <div>{requestor.email}</div>
+          <div className="request-name">{requestor.email}</div>
         </div>
-        <button onClick={() => this.addFriendship(requestor)} >Accept</button>
+        <button className="accept-button" onClick={() => this.addFriendship(requestor)} >Accept</button>
     </li>
     )
   );
