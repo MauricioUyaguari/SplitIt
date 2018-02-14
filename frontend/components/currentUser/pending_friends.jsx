@@ -42,14 +42,19 @@ render(){
   if (pendingFriends.length < 1){
     return (
       <div>
-        Welcome to SplitIt.
+        <div>
+          Welcome to Split
+        </div>
+        <div>
+          No Pending Friend Requests
+        </div>
       </div>
     );
   }
 
   return(<div>
   <div>Pending Friend Requests</div>
-  <ul>
+  <ul className="ul-pending-friend">
     {this.renderPendingFriends()}
   </ul>
   </div>);
