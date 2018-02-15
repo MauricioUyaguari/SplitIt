@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const FriendErrors = (props) => {
+const FriendsUIRender = (props) => {
 
 
     return(
@@ -11,4 +11,4 @@ const FriendErrors = (props) => {
     );
 };
 
-export default FriendErrors;
+export default FriendsUIRender;

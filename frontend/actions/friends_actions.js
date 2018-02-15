@@ -6,6 +6,8 @@ export const RECEIVE_SINGLE_FRIEND = 'RECEIVE_SINGLE_FRIEND';
 export const RECEIVE_SEARCHED_USERS = 'RECEIVE_SEARCHED_USERS';
 export const RECEIVE_FRIENDSHIP = 'RECEIVE_FRIENDSHIP';
 export const CLEAR_SEARCH = 'CLEAR_SEARCH';
+export const CLEAR_FRIEND_MESSAGE = 'CLEAR_FRIEND_MESSAGE';
+
 
 export const receiveAllFriends = (friends) => {
   return{
