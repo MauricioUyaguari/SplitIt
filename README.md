@@ -41,10 +41,10 @@ export const searchUsers = (query) => {
 };
 ```
 
-Returns all users that match the string and are not the current user's friends.
+Returns all users that match the string and are not the user's friends or have friend requests send out.
 ```ruby
 def search(username)
-  other = self.all_friends.map{|e| e.id} + [self.id]
+  other = self.all_friends.map{|e| e.id} + [self.id] + self.pending_friends.map{|friend| friend.id} + self.request_friends.map{|friend| friend.id}
   User.where.not(id: other).where('email ~ ?', username)
 end
 ```
@@ -65,8 +65,6 @@ end
 # Moving Forward
 
 * Add Bill/ Transactions to the dashboard, activity and all pages to let the user add bills and transactions to any of their friends
-
-* Be able to friend request and accept to ensure friends want to add each other.
 
 * Add Comments to transactions
 
