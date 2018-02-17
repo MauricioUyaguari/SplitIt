@@ -8,9 +8,12 @@ const FriendsUIRender = (props) => {
     if (props.uiFriend.length < 1){
       return null;
     }
+
+    const message = uiFriend[0];
     return(
+
       <div>
-        This is where erros will go if there are any
+        {message}
       </div>
     );
 };
