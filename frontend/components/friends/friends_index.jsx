@@ -4,7 +4,7 @@ import FriendsIndexItem from './friends_index_item';
 import FriendFormContainer from './friends_form_container';
 import Modal from 'react-modal';
 import FriendCreateModal from './friends_create_modal';
-import FriendsUIRender from '../ui/friends';
+import FriendsUIRenderContainer from '../ui/friends_container';
 
 class FriendsIndex extends React.Component {
   constructor(props){
@@ -49,7 +49,7 @@ class FriendsIndex extends React.Component {
       <ul>
         { this.renderFriends() }
       </ul>
-      <FriendsUIRender uiFriend= {this.props.uiFriend}/> 
+      <FriendsUIRenderContainer/>
     </nav>);
   }
 

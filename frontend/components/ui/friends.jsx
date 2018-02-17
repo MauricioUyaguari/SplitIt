@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 class FriendsUIRender extends React.Component {
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
       message: this.props.uiFriend[0]
     };
@@ -14,8 +14,9 @@ class FriendsUIRender extends React.Component {
 
 
   render() {
+    const message = this.props.uiFriend[0];
     return (
-      <div className="ui-message">{this.state.message}</div>
+      <div className="ui-message">{message}</div>
     );
   }
 

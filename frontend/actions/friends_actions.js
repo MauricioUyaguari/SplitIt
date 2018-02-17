@@ -51,6 +51,14 @@ export const clearSearch = () => {
 
 };
 
+
+export const clearUiMessage = () => {
+  return {
+    type: CLEAR_FRIEND_MESSAGE
+  };
+};
+
+
 export const fetchAllFriends = () => dispatch => {
   return FriendApiUtil.fetchFriends().then(friends => {
     return dispatch(receiveAllFriends(friends));

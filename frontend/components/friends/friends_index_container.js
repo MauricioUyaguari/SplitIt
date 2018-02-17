@@ -5,8 +5,7 @@ import { fetchAllFriends, createFriendship, clearSearch } from '../../actions/fr
 
 const mapStateToProps = (state) => {
   return {
-    friends: Object.values(state.entities.friends),
-    uiFriend: Object.values(state.ui.uiFriend)
+    friends: Object.values(state.entities.friends)
   };
 };
 
