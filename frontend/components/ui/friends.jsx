@@ -1,21 +1,26 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
 
 
-const FriendsUIRender = (props) => {
+class FriendsUIRender extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      message: this.props.uiFriend[0]
+    };
+  }
 
-  const {uiFriend } = props;
 
-    if (props.uiFriend.length < 1){
-      return null;
-    }
 
-    const message = uiFriend[0];
-    return(
 
-      <div>
-        {message}
-      </div>
+  render() {
+    return (
+      <div className="ui-message">{this.state.message}</div>
     );
-};
+  }
+
+
+
+}
 
 export default FriendsUIRender;
