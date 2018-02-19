@@ -10,7 +10,10 @@ class FriendsUIRender extends React.Component {
     };
   }
 
+  handleClick(){
 
+
+  }
 
 
   render() {

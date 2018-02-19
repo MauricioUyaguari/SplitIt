@@ -3,9 +3,18 @@
 .ui-message-div {
   position: fixed;
   bottom: 20px;
-  right: 50%;
-  width: 300px;
+  right: 40%;
+  width: 30%;
   border: 3px solid #73AD21;
   display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer
+}
+
+
+.ui-message {
+  padding: 15px;
+
+
 }
