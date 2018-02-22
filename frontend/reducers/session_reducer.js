@@ -10,6 +10,7 @@ const nullUser = Object.freeze({
 
 
 export const sessionReducer = (state = nullUser, action) => {
+  debugger
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
@@ -19,16 +20,19 @@ export const sessionReducer = (state = nullUser, action) => {
     let current = action.currentUser;
     current.pending_friends = action.pending_friends;
     return merge({}, {currentUser: current });
-    default:
-      return state;
     case RECEIVE_SINGLE_FRIEND:
     let pending = state.currentUser.pending_friends;
+    if (pending === undefined){
+      return merge({}, state);
+    };
     pending = pending.filter( friend =>
     friend.id !== action.friend.id
     );
     current = state.currentUser;
     current.pending_friends = pending;
     return merge({}, {currentUser: current});
+    default:
+      return state;
   }
 };
 
