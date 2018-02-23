@@ -46,9 +46,9 @@ const FriendsBillsIndex = ({ bills, splits, friend, currentUser}) => {
       <div className="no-bill-img">
         <img  src={window.staticImages.no_bill}></img>
       </div>
-      <div>
+      <div className="no-bill-words">
         <h2 className="h2">You have not added any expenses yet</h2>
-        <div className="no-bill-add">To add a new expense, click the orange “Add a bill” button.</div>
+        <p className="no-bill-add">To add a new expense, click the orange “Add a bill” button.</p>
       </div>
     </div>);
   }
