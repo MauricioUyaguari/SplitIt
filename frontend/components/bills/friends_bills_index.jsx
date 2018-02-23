@@ -40,12 +40,15 @@ const FriendsBillsIndex = ({ bills, splits, friend, currentUser}) => {
         );
       };
 
-  if(friend.bills_id === undefined){
-    return (<div>
+  if(friend.bills_id === undefined || friend.bills_id.length - 1){
+
+    return (<div className="no-bill-entire-div">
+      <div className="no-bill-img">
         <img  src={window.staticImages.no_bill}></img>
+      </div>
       <div>
-        <div>You have not added any expenses yet</div>
-        <div>To add a new expense, click the orange “Add a bill” button.</div>
+        <h2 className="h2">You have not added any expenses yet</h2>
+        <div className="no-bill-add">To add a new expense, click the orange “Add a bill” button.</div>
       </div>
     </div>);
   }
