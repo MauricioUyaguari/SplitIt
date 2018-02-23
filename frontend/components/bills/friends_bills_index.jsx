@@ -40,9 +40,13 @@ const FriendsBillsIndex = ({ bills, splits, friend, currentUser}) => {
         );
       };
 
-  if(friend.bills_id === undefined ){
-
+  if(friend.bills_id === undefined){
     return (<div>
+        <img  src={window.staticImages.no_bill}></img>
+      <div>
+        <div>You have not added any expenses yet</div>
+        <div>To add a new expense, click the orange “Add a bill” button.</div>
+      </div>
     </div>);
   }
   return (<div className="bills">
