@@ -3,10 +3,14 @@ import FriendsBillShow from './friends_bills_show';
 import { billsSort } from '../../util/functions';
 
 
-const FriendsBillsIndex = ({ bills, splits, friend, currentUser}) => {
+class FriendsBillsIndex extends React.Component  {
+  constructor(props){
+    super(props);
+    this.renderBills = this.renderBills.bind(this);
+  }
 
-
-  const renderBills = () => {
+  renderBills () {
+    const {bills, friend, splits, currentUser } = this.props;
     const friendsBills = [];
       bills.forEach((el) => {
         if(friend.bills_id.includes(el.id)){
@@ -38,25 +42,32 @@ const FriendsBillsIndex = ({ bills, splits, friend, currentUser}) => {
             />
           )
         );
-      };
+      }
 
-  if(friend.bills_id === undefined || friend.bills_id.length < 1){
-    return (<div className="no-bill-entire-div">
-      <div className="no-bill-img">
-        <img  src={window.staticImages.no_bill}></img>
-      </div>
-      <div className="no-bill-words">
-        <h2 className="h2">You have not added any expenses yet</h2>
-        <p className="no-bill-add">To add a new expense, click the orange “Add a bill” button.</p>
-      </div>
+
+
+
+  render() {
+    const { friends, bills, splits, friend } = this.props;
+    if(friend.bills_id === undefined || friend.bills_id.length < 1){
+      return (<div className="no-bill-entire-div">
+        <div className="no-bill-img">
+          <img  src={window.staticImages.no_bill}></img>
+        </div>
+        <div className="no-bill-words">
+          <h2 className="h2">You have not added any expenses yet</h2>
+          <p className="no-bill-add">To add a new expense, click the orange “Add a bill” button.</p>
+        </div>
+      </div>);
+    }
+    return (<div className="bills">
+        {this.renderBills()}
     </div>);
+
   }
-  return (<div className="bills">
-      {renderBills()}
-  </div>);
 
 
-};
+}
 
 
 export default FriendsBillsIndex;
