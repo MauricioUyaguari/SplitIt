@@ -42,11 +42,14 @@ render(){
   if (pendingFriends.length < 1){
     return (
       <div>
-        <div>
+        <div className="welcome-to-splitit">
           Welcome to Split
         </div>
         <div>
           No Pending Friend Requests
+        </div>
+        <div className="home-page-img">
+          <img src={window.staticImages.home_page}></img>
         </div>
       </div>
     );
