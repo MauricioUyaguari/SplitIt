@@ -40,8 +40,7 @@ const FriendsBillsIndex = ({ bills, splits, friend, currentUser}) => {
         );
       };
 
-  if(friend.bills_id === undefined || friend.bills_id.length - 1){
-
+  if(friend.bills_id === undefined || friend.bills_id.length < 1){
     return (<div className="no-bill-entire-div">
       <div className="no-bill-img">
         <img  src={window.staticImages.no_bill}></img>
