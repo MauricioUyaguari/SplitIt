@@ -8,12 +8,17 @@ class FriendsUIRender extends React.Component {
     this.state = {
       message: this.props.uiFriend
     };
+
+
   }
 
   handleClick(){
-
+    console.log("hi")
+    $( ".ui-message-div" ).css("display", "none")
 
   }
+
+
 
 
   render() {
@@ -23,9 +28,12 @@ class FriendsUIRender extends React.Component {
     }
 
 
+
     return (
+
+
       <div className="ui-message-div">
-        <span>x</span>
+        <span onClick={this.handleClick} >x</span>
         <div className="ui-message"> {message}</div>
       </div>
     );

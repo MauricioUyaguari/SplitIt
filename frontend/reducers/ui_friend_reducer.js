@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_FRIENDSHIP, CLEAR_FRIEND_MESSAGE } from '../actions/friends_actions';
+import { RECEIVE_FRIENDSHIP, CLEAR_FRIEND_MESSAGE, RECEIVES_SINGLE_FRIEND } from '../actions/friends_actions';
 
 
 
@@ -12,6 +12,8 @@ const uiFriendReducer = (state = {}, action) => {
     case RECEIVE_FRIENDSHIP:
     return merge({}, action.message);
     case CLEAR_FRIEND_MESSAGE:
+    return merge({},{});
+    case RECEIVES_SINGLE_FRIEND:
     return merge({},{});
     default:
     return state;
